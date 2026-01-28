@@ -70,10 +70,28 @@ ul {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
+    text-decoration: none; /* Ensure no default underline */
+    position: relative; /* Required for the ::after effect */
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    opacity: 1; /* Keep full opacity on hover for the effect */
+}
+
+/* Underline hover effect for regular links (excluding the button) */
+.nav-links a:not(.nav-btn)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Slightly below the text */
+    height: 2px;
+    width: 0; /* Start invisible */
+    background-color: #fff;
+    transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+.nav-links a:not(.nav-btn):hover::after {
+    width: 100%; /* Expand to full width on hover */
 }
 
 /* Special style for 'Colabore' button */
