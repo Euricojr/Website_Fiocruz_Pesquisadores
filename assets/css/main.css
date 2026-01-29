@@ -1,531 +1,601 @@
 /* Reset & Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    color: #fff;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 /* Utilities */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: transparent;
-    padding: 0;
-    transition: background-color 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  padding: 0;
+  transition: background-color 0.3s ease;
 }
 
 .navbar.navbar-light {
-    background-color: #2c2c2c;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .navbar.navbar-light .nav-links a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .navbar.navbar-light .nav-links a:not(.nav-btn)::after {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .navbar.navbar-light .nav-btn {
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
 }
 
 .navbar.navbar-light .nav-btn:hover {
-    background-color: #ffffff;
-    color: #2c2c2c;
+  background-color: #ffffff;
+  color: #2c2c2c;
 }
 
 .logo img {
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
 }
 
 .navbar.navbar-light .logo img {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .navbar .container {
-    max-width: 100%;
-    padding: 10px 20px; /* Reduzido para deixar a navbar mais fina */
+  max-width: 100%;
+  padding: 10px 20px; /* Reduzido para deixar a navbar mais fina */
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
 }
 
 .nav-links {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .logo img {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .nav-links a {
-    font-family: 'Montserrat', sans-serif; /* Updated to Montserrat */
-    font-size: 1rem;
-    font-weight: 400;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    text-decoration: none; /* Ensure no default underline */
-    position: relative; /* Required for the ::after effect */
+  font-family: "Montserrat", sans-serif; /* Updated to Montserrat */
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  text-decoration: none; /* Ensure no default underline */
+  position: relative; /* Required for the ::after effect */
 }
 
 .nav-links a:hover {
-    opacity: 1; /* Keep full opacity on hover for the effect */
+  opacity: 1; /* Keep full opacity on hover for the effect */
 }
 
 /* Underline hover effect for regular links (excluding the button) */
 .nav-links a:not(.nav-btn)::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* Slightly below the text */
-    height: 2px;
-    width: 0; /* Start invisible */
-    background-color: #fff;
-    transition: width 0.3s ease-in-out; /* Smooth animation */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Slightly below the text */
+  height: 2px;
+  width: 0; /* Start invisible */
+  background-color: #fff;
+  transition: width 0.3s ease-in-out; /* Smooth animation */
 }
 
 .nav-links a:not(.nav-btn):hover::after {
-    width: 100%; /* Expand to full width on hover */
+  width: 100%; /* Expand to full width on hover */
 }
 
 /* Special style for 'Colabore' button */
 .nav-links .nav-btn {
-    border: 1px solid #fff;
-    padding: 8px 20px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+  border: 1px solid #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 .nav-links .nav-btn:hover {
-    background-color: #fff;
-    color: #000; /* Invert colors on hover */
-    opacity: 1; /* Override default opacity hover */
+  background-color: #fff;
+  color: #000; /* Invert colors on hover */
+  opacity: 1; /* Override default opacity hover */
 }
 
 /* Hero Section */
 .hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-image: url('../img/castelo-fiocruz.jpg');
-    background-size: cover;
-    background-position: center center; /* Centered as requested */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Parallax effect to reduce 'zoomed' feel */
-    image-rendering: auto; /* Ensure browser uses best interpolation */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 0;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/castelo-fiocruz.jpg");
+  background-size: cover;
+  background-position: center center; /* Centered as requested */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax effect to reduce 'zoomed' feel */
+  image-rendering: auto; /* Ensure browser uses best interpolation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Gradient overlay: Darker at top for navbar, lighter in center, subtle dark at bottom */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.4) 100%);
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient overlay: Darker at top for navbar, lighter in center, subtle dark at bottom */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-title {
-    font-family: 'Montserrat', sans-serif; /* Institutional font */
-    font-size: 4rem;
-    font-weight: 700; /* Bold for impact */
-    font-style: normal; /* No italics */
-    margin-bottom: 10px;
-    line-height: 1.1;
-    /* Strong text shadow for readability against the lighter background */
-    text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+  font-family: "Montserrat", sans-serif; /* Institutional font */
+  font-size: 4rem;
+  font-weight: 700; /* Bold for impact */
+  font-style: normal; /* No italics */
+  margin-bottom: 10px;
+  line-height: 1.1;
+  /* Strong text shadow for readability against the lighter background */
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
 }
 
 .hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500; /* Increased weight for better readability */
-    font-style: normal; /* No italics */
-    margin-bottom: 40px;
-    opacity: 1; /* Increased opacity */
-    /* Stronger text shadow to pop against complex backgrounds */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.8);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500; /* Increased weight for better readability */
+  font-style: normal; /* No italics */
+  margin-bottom: 40px;
+  opacity: 1; /* Increased opacity */
+  /* Stronger text shadow to pop against complex backgrounds */
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
 /* Buttons */
 .btn {
-    display: inline-block;
-    padding: 12px 32px;
-    border-radius: 4px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-outline {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .btn-outline:hover {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 /* Projetos Section */
 .projetos {
-    background-color: #ffffff;
-    padding: 30px 0 80px 0;
-    margin-top: 70px;
+  background-color: #ffffff;
+  padding: 30px 0 80px 0;
+  margin-top: 70px;
 }
 
 .section-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c2c2c;
-    text-align: center;
-    margin-bottom: 40px;
-    margin-top: 0;
-    padding-top: 0;
-    letter-spacing: -0.5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 0;
+  padding-top: 0;
+  letter-spacing: -0.5px;
 }
 
 /* Projects Grid - 3 columns responsive */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 }
 
 /* Project Card */
 .project-card {
-    background: white;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 /* Card Image */
 .card-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
 .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover .card-image img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Card Body */
 .card-body {
-    padding: 24px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2c2c2c;
-    margin-bottom: 12px;
-    line-height: 1.3;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  text-align: center;
 }
 
 .card-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    flex-grow: 1;
-    text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  flex-grow: 1;
+  text-align: center;
 }
 
 /* Badges/Tags */
 .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
 }
 
 .badge {
-    display: inline-block;
-    background-color: #e8e8e8;
-    color: #2c2c2c;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #2c2c2c;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Card Footer */
 .card-footer {
-    padding: 0 24px 24px 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 0 24px 24px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #2c2c2c;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .card-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background-color: #2c2c2c;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #2c2c2c;
+  transition: width 0.3s ease;
 }
 
 .card-link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* Responsive Grid */
 @media (max-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
-    .projetos {
-        padding: 60px 0;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .projetos {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Simple hide for mobile for this MVP */
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
+  .nav-links {
+    display: none; /* Simple hide for mobile for this MVP */
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 }
 
-/* ===== SOBRE PAGE ===== */
+/* ===== SOBRE PAGE - REDESIGN (Butantan Style) ===== */
 
-/* Main About Section - Grid 2 Columns */
+/* Page Hero */
+.page-hero {
+  position: relative;
+  height: 65vh; /* Aumentado um pouco conforme solicitado (era 50vh) */
+  width: 100%;
+  /* Imagem definida via inline style ou classe especifica se preferir, 
+       mas aqui deixamos genérico para ser sobescrito ou definido no HTML se precisar.
+       Por padrão vou deixar um fallback ou o HTML vai cuidar disso via style inline 
+       para facilitar a troca de imagens por página. 
+       Mas como o usuario pediu uma imagem especifica, vou colocar aqui como default se nao houver inline. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 0; /* Cola no topo */
+}
+
+/* Overlay Escuro */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Leve camada escura para o menu */
+  z-index: 1;
+}
+
+/* Ajuste na Navbar para ela ficar sobre o banner se for transparente */
+/* (A navbar já é fixed e transparente no main.css, então vai funcionar) */
+
+/* Main About Section */
 .about-main {
-    background-color: #ffffff;
-    padding: 80px 0;
-    margin-top: 70px;
+  background-color: #ffffff;
+  /* Remover margin-top pois o banner já ocupa espaço e queremos controle total */
+  margin-top: 0;
+  padding-top: 80px; /* Adicionado espaçamento superior conforme pedido */
+  padding-bottom: 80px;
 }
 
+/* Título (Agora dentro do grid, ajustado) */
+.about-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px; /* Reduzido um pouco pois agora esta direto sobre o texto */
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Grid layout */
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Coluna da imagem menor, texto maior */
+  gap: 60px;
+  align-items: start; /* Alinhar ao topo */
 }
 
+/* Coluna Imagem */
 .about-image {
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  /* Bordas retas conforme pedido */
+  border-radius: 0;
+  box-shadow: none; /* Estilo mais clean/sério */
 }
 
 .about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* Removemos arredondamentos se houver */
 }
 
+/* Coluna Conteúdo */
 .about-content {
-    padding: 20px;
-}
-
-.about-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #2c2c2c;
-    margin-bottom: 30px;
-    line-height: 1.2;
+  padding: 0; /* Reset padding interno */
+  padding-top: 20px; /* Leve ajuste se precisar alinhar oticamente com imagem */
 }
 
 .about-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: #333333;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: justify;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem; /* Aumentado um pouco (era 1rem) */
+  color: #555;
+  line-height: 1.8; /* Aumentado line-height para acompanhar o font-size maior */
+  margin-bottom: 25px;
+  text-align: justify; /* Justificado conforme pedido */
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .page-hero {
+    height: 40vh; /* Um pouco menor no mobile */
+  }
+
+  .about-header {
+    padding-top: 40px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
 }
 
 /* Mission Section - Single Column */
 .about-mission {
-    background-color: #f5f5f5;
-    padding: 80px 0;
+  background-color: #f5f5f5;
+  padding: 80px 0;
 }
 
 .mission-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .mission-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2c2c2c;
-    margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 40px;
 }
 
 .mission-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: #333333;
-    line-height: 1.9;
-    margin-bottom: 25px;
-    text-align: justify;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  text-align: justify;
 }
 
 /* Responsive - Sobre Page */
 @media (max-width: 768px) {
-    .about-main {
-        padding: 60px 0;
-        margin-top: 70px;
-    }
+  .about-main {
+    padding: 60px 0;
+    margin-top: 70px;
+  }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-    .about-title {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
 
-    .about-text {
-        font-size: 0.95rem;
-    }
+  .about-text {
+    font-size: 0.95rem;
+  }
 
-    .about-mission {
-        padding: 60px 0;
-    }
+  .about-mission {
+    padding: 60px 0;
+  }
 
-    .mission-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-    }
+  .mission-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
 
-    .mission-text {
-        font-size: 0.95rem;
-    }
+  .mission-text {
+    font-size: 0.95rem;
+  }
 }

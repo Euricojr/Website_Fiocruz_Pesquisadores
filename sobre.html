@@ -13,7 +13,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-light">
+    <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
                 <a href="index.html">
@@ -30,16 +30,23 @@
         </div>
     </nav>
 
-    <!-- Seção Principal: O que fazemos (Grid 2 Colunas) -->
+    <!-- Page Hero (Banner de Topo) -->
+    <!-- Imagem definida inline conforme solicitado pelo usuário -->
+    <section class="page-hero" style="background-image: url('assets/img/2c00891bc1b29b047472a41caa6ca8dccb8fd090.jpg');">
+    </section>
+
+    <!-- Seção Principal: O que fazemos -->
     <section class="about-main">
         <div class="container">
+            
+            <!-- Grid 2 Colunas (Imagem + Texto) -->
             <div class="about-grid">
-                <!-- Coluna Esquerda: Imagem -->
+                <!-- Coluna 1: Imagem Menor/Detalhe -->
                 <div class="about-image">
-                    <img src="https://picsum.photos/500/600?random=10" alt="Pesquisador em laboratório">
+                    <img src="https://picsum.photos/500/600?random=10" alt="Detalhe laboratório">
                 </div>
 
-                <!-- Coluna Direita: Texto -->
+                <!-- Coluna 2: Texto Institucional -->
                 <div class="about-content">
                     <h2 class="about-title">O que fazemos</h2>
                     <p class="about-text">
@@ -62,6 +69,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
