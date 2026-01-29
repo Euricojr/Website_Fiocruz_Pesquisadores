@@ -43,26 +43,27 @@ ul {
 }
 
 .navbar.navbar-light {
-    background-color: #ffffff;
+    background-color: #2c2c2c;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .navbar.navbar-light .nav-links a {
-    color: #2c2c2c;
+    color: #ffffff;
 }
 
 .navbar.navbar-light .nav-links a:not(.nav-btn)::after {
-    background-color: #2c2c2c;
+    background-color: #ffffff;
 }
 
 .navbar.navbar-light .nav-btn {
-    border: 1px solid #2c2c2c;
-    color: #2c2c2c;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
 }
 
 .navbar.navbar-light .nav-btn:hover {
-    background-color: #2c2c2c;
-    color: #fff;
+    background-color: #ffffff;
+    color: #2c2c2c;
 }
 
 .logo img {
@@ -71,18 +72,19 @@ ul {
 }
 
 .navbar.navbar-light .logo img {
-    filter: brightness(0);
+    filter: brightness(0) invert(1);
 }
 
 .navbar .container {
     max-width: 100%;
-    padding: 0 20px; /* Reduced spacing to 20px for a fuller look */
+    padding: 10px 20px; /* Reduzido para deixar a navbar mais fina */
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
 }
 
 .nav-links {
@@ -91,7 +93,7 @@ ul {
 }
 
 .logo img {
-    margin-top: -15px; /* Adjusted to align better with navbar links */
+    margin-top: 0;
 }
 
 .nav-links a {
@@ -155,6 +157,7 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: 0;
 }
 
 .hero-overlay {
@@ -225,9 +228,9 @@ ul {
 
 /* Projetos Section */
 .projetos {
-    background-color: #f9f9f9;
-    padding: 80px 0;
-    margin-top: 160px;
+    background-color: #ffffff;
+    padding: 30px 0 80px 0;
+    margin-top: 70px;
 }
 
 .section-title {
@@ -236,7 +239,9 @@ ul {
     font-weight: 700;
     color: #2c2c2c;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    padding-top: 0;
     letter-spacing: -0.5px;
 }
 
@@ -252,6 +257,7 @@ ul {
 .project-card {
     background: white;
     border-radius: 8px;
+    border: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     transition: all 0.3s ease;
