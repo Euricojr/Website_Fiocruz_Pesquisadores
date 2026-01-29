@@ -414,3 +414,118 @@ ul {
         font-size: 1.2rem;
     }
 }
+
+/* ===== SOBRE PAGE ===== */
+
+/* Main About Section - Grid 2 Columns */
+.about-main {
+    background-color: #ffffff;
+    padding: 80px 0;
+    margin-top: 70px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.about-content {
+    padding: 20px;
+}
+
+.about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.about-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Mission Section - Single Column */
+.about-mission {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 40px;
+}
+
+.mission-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Responsive - Sobre Page */
+@media (max-width: 768px) {
+    .about-main {
+        padding: 60px 0;
+        margin-top: 70px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
+
+    .about-mission {
+        padding: 60px 0;
+    }
+
+    .mission-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .mission-text {
+        font-size: 0.95rem;
+    }
+}
