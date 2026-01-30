@@ -599,3 +599,110 @@ ul {
     font-size: 0.95rem;
   }
 }
+
+/* ===== EQUIPE PAGE (Minimalist / Academic Style) ===== */
+
+.team-page-body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Container override for team page (more spacious) */
+.team-container {
+    max-width: 1200px;
+    padding: 150px 20px 60px 20px; /* Increased top padding to 150px */
+}
+
+/* Section Styling */
+.team-section {
+    margin-bottom: 80px;
+}
+
+.team-section-title {
+    font-family: 'Montserrat', sans-serif; /* Matched project font */
+    font-weight: 700; /* Bold as requested */
+    font-size: 2rem; /* ~32px */
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+    border-bottom: none; /* Explicitly no border */
+    padding-bottom: 0;
+}
+
+/* Grid Layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns on desktop */
+    gap: 40px; /* Spacious gap */
+}
+
+/* Member Card (Minimalist) */
+.member-card {
+    display: flex;
+    flex-direction: column;
+    /* No border, no shadow */
+    background: transparent;
+}
+
+/* Photo */
+.member-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Square */
+    object-fit: cover;
+    border-radius: 6px; /* Slight rounding */
+    margin-bottom: 16px;
+    /* transition: filter 0.3s ease; - Removed transition as we are not changing filter on hover anymore */
+}
+
+/* Hover effect removed as per user request for colorful photos by default */
+/* .member-card:hover .member-photo {
+    filter: grayscale(0%);
+} */
+
+/* Typography -- FORCE COLORS to override body white */
+.member-info {
+    text-align: left;
+}
+
+.member-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem; /* 16px */
+    color: #222 !important; /* Force dark color */
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.member-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem; /* 14px */
+    color: #666 !important; /* Force grey color */
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.member-aff {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem; /* 12px */
+    color: #888 !important; /* Force light grey color */
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns tablet */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns mobile */
+        gap: 20px;
+    }
+    
+    .team-section-title {
+        font-size: 1.75rem;
+    }
+}
