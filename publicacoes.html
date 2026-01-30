@@ -78,28 +78,52 @@
             font-weight: 500;
             color: #666;
             cursor: pointer;
-            padding-bottom: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            transition: color 0.3s ease;
         }
 
         .filter-btn:hover {
             color: #C65000;
+            background-color: rgba(198, 80, 0, 0.05);
+            transform: translateY(-2px);
         }
 
         .filter-btn.active {
-            color: #C65000;
+            color: #fff;
+            background-color: #C65000;
             font-weight: 600;
+            box-shadow: 0 4px 10px rgba(198, 80, 0, 0.3);
+            transform: translateY(-2px);
         }
 
-        .filter-btn.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #C65000;
+        /* Item Animation */
+        .pub-item {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+        }
+
+        .pub-item.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pub-item:not(.hidden) {
+            animation: fadeInUp 0.5s ease forwards;
         }
 
         /* Publication List - Carnegie Mellon / Google Scholar Style */
@@ -299,28 +323,22 @@
 
             <!-- Filters -->
             <div class="pub-filters">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Artigos</button>
-                <button class="filter-btn">Preprints</button>
-                <button class="filter-btn">Relatórios</button>
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="artigos">Artigos</button>
+                <button class="filter-btn" data-filter="preprints">Preprints</button>
+                <button class="filter-btn" data-filter="relatorios">Relatórios</button>
             </div>
 
             <!-- List -->
             <div class="pub-list">
                 
                 <!-- Item 1 -->
-                <div class="pub-item">
+                <div class="pub-item" data-category="artigos">
                     <div class="pub-year">2025</div>
                     <div class="pub-image">
                         <div class="pub-thumbnail">
                             <!-- Placeholder for document icon if no image -->
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                            <img src="https://picsum.photos/80/110?random=12" alt="Cover">
                         </div>
                     </div>
                     <div class="pub-details">
@@ -334,7 +352,7 @@
                 </div>
 
                 <!-- Item 2 -->
-                <div class="pub-item">
+                <div class="pub-item" data-category="preprints">
                     <div class="pub-year">2025</div>
                     <div class="pub-image">
                         <!-- Example with image -->
@@ -353,17 +371,11 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="pub-item">
+                <div class="pub-item" data-category="relatorios">
                     <div class="pub-year">2024</div>
                     <div class="pub-image">
                         <div class="pub-thumbnail">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                            <img src="https://picsum.photos/80/110?random=13" alt="Cover">
                         </div>
                     </div>
                     <div class="pub-details">
@@ -377,7 +389,7 @@
                 </div>
 
                 <!-- Item 4 -->
-                <div class="pub-item">
+                <div class="pub-item" data-category="artigos">
                     <div class="pub-year">2024</div>
                     <div class="pub-image">
                         <div class="pub-thumbnail">
@@ -395,17 +407,11 @@
                 </div>
 
                 <!-- Item 5 -->
-                <div class="pub-item">
+                <div class="pub-item" data-category="artigos">
                     <div class="pub-year">2023</div>
                     <div class="pub-image">
                         <div class="pub-thumbnail">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                            <img src="https://picsum.photos/80/110?random=14" alt="Cover">
                         </div>
                     </div>
                     <div class="pub-details">
@@ -433,13 +439,35 @@
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script>
-        // Simple Interaction for filters (Visual only for MVP)
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                // Here we would filter the items
+        // Interactive Filter Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const pubItems = document.querySelectorAll('.pub-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update Active State
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter Logic
+                    const filter = btn.getAttribute('data-filter');
+
+                    pubItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        // Reset animation
+                        item.style.animation = 'none';
+                        item.offsetHeight; /* trigger reflow */
+                        item.style.animation = null;
+
+                        if (filter === 'all' || category === filter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
             });
         });
     </script>
