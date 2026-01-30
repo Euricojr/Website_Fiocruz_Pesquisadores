@@ -44,20 +44,21 @@
 
         .pub-header h2 {
             font-family: "Montserrat", sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem; /* Increased from 2.5rem */
             font-weight: 700;
             color: #C65000; /* Laranja da marca solicitado */
             margin-bottom: 0px; 
-            letter-spacing: -0.5px;
+            letter-spacing: -1px; /* Tighter letter-spacing for larger size */
             flex-shrink: 0;
         }
 
         .pub-header p {
             font-family: "Inter", sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.25rem; /* Increased from 1.1rem */
             color: #666;
             max-width: none;
             margin: 0;
+            font-weight: 400;
         }
 
         /* Tabs/Filters */
@@ -74,12 +75,12 @@
             background: none;
             border: none;
             font-family: "Inter", sans-serif;
-            font-size: 1rem;
+            font-size: 1.15rem; /* Increased from 1rem */
             font-weight: 500;
             color: #666;
             cursor: pointer;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 12px 24px; /* Increased from 8px 16px */
+            border-radius: 30px; /* Slightly larger radius */
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
@@ -135,7 +136,7 @@
         .pub-item {
             display: flex;
             align-items: flex-start;
-            padding: 25px 20px;
+            padding: 35px 25px; /* Increased padding */
             border-bottom: 1px solid #eaeaea;
             transition: background-color 0.2s ease;
             text-decoration: none; /* In case the whole row is clickable, but we have a button too */
@@ -147,9 +148,9 @@
 
         /* Column 1: Year */
         .pub-year {
-            flex: 0 0 80px;
+            flex: 0 0 100px; /* Wider column */
             font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Larger font */
             color: #999;
             font-weight: 400;
             padding-top: 5px; /* Visual alignment with title */
@@ -157,13 +158,13 @@
 
         /* Column 2: Image */
         .pub-image {
-            flex: 0 0 100px; /* Slightly wider to accommodate margins */
-            padding-right: 20px;
+            flex: 0 0 140px; /* Wider */
+            padding-right: 25px;
         }
 
         .pub-thumbnail {
-            width: 80px;
-            height: 110px;
+            width: 110px; /* Larger */
+            height: 152px; /* Larger (~1.4 ratio) */
             object-fit: cover;
             border: 1px solid #eee;
             background-color: #f0f0f0;
@@ -192,10 +193,10 @@
 
         .pub-title {
             font-family: "Montserrat", sans-serif;
-            font-size: 18px;
+            font-size: 1.35rem; /* ~22px */
             color: #222; /* Black/Dark Blue */
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.4;
             transition: color 0.2s;
         }
@@ -206,7 +207,7 @@
 
         .pub-authors {
             font-family: "Inter", sans-serif;
-            font-size: 0.95rem;
+            font-size: 1.05rem; /* Larger font */
             color: #666;
             font-style: italic;
             margin-bottom: 8px;
@@ -215,7 +216,7 @@
         .pub-venue {
             display: inline-block;
             font-family: "Inter", sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Larger font */
             color: #C65000;
             font-weight: 600;
         }
@@ -245,7 +246,7 @@
 
         .btn-read {
             font-family: "Montserrat", sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Larger font */
             font-weight: 700;
             color: #C65000;
             text-transform: uppercase;

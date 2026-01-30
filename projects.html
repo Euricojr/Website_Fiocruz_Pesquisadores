@@ -9,6 +9,122 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Standardizing Visual Identity - Projects Page */
+
+        /* 1. Navbar Standardized (Orange #C65000) */
+        .navbar.navbar-light {
+            background-color: #C65000;
+        }
+
+        /* Ensure links are white on orange */
+        .navbar .nav-links li a {
+            color: #ffffff !important;
+            opacity: 1; 
+        }
+
+        .navbar .nav-links li a:hover {
+             opacity: 0.8;
+        }
+
+        /* Styles for 'Colabore' button */
+        .navbar .nav-links .nav-btn {
+            border: 2px solid #ffffff !important;
+            color: #ffffff !important;
+            background: transparent;
+        }
+
+        .navbar .nav-links .nav-btn:hover {
+            background-color: #ffffff;
+            color: #C65000 !important;
+        }
+
+        /* 2. Page Title */
+        .section-title {
+            color: #C65000 !important;
+        }
+
+        /* 3. Cards Buttons & Tags */
+        .card-link {
+            color: #333333; /* Dark Gray (Rest State) */
+            font-weight: 700;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease; /* Smooth transition */
+        }
+        
+        /* Change color specifically when hovering the CARD container */
+        .project-card:hover .card-link {
+            color: #C65000;
+        }
+
+        /* Overriding the default ::after for the orange expanding underline */
+        .card-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: #C65000 !important; /* Force Orange */
+            transition: width 0.3s ease-in-out !important; /* Match Navbar Speed */
+            display: block !important;
+        }
+        
+        .card-link:hover {
+            color: #C65000;
+            border-bottom: none; /* remove potential border conflict */
+        }
+        
+        .card-link:hover::after {
+            width: 100%;
+        }
+
+        /* Description Text Styling */
+        .section-description {
+            font-family: "Inter", sans-serif;
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            max-width: 800px;
+            margin: -25px auto 50px auto; 
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Neutral Gray Tags -> Updated to Light Orange */
+        .badge {
+            background-color: #FFF3E0; /* Light Orange */
+            color: #C65000; /* Dark Orange Text */
+            border: none; /* Cleaner look without border */
+            font-weight: 600;
+        }
+
+        /* 4. Project Card Micro-interactions */
+        .project-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid #C65000; /* Visual consistency */
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* 5. Image Zoom */
+        .card-image {
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .card-image img {
+            transform: scale(1.05); /* Zoom effect */
+        }
+    </style>
 </head>
 <body>
 
@@ -34,6 +150,9 @@
     <section class="projetos">
         <div class="container">
             <h2 class="section-title">Nossos Projetos</h2>
+            <p class="section-description">
+                Conheça as iniciativas que estão transformando a saúde pública através de tecnologia, inovação e pesquisa aplicada.
+            </p>
             
             <div class="projects-grid">
                 <!-- Card 1 -->
