@@ -24,7 +24,7 @@
         }
 
         .navbar .nav-links li a:hover {
-             opacity: 0.8;
+             opacity: 1; /* Match main.css behavior */
         }
 
         /* Styles for 'Colabore' button */
@@ -137,7 +137,7 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="projects.html" class="active">Projetos</a></li>
                 <li><a href="#">Dashboards</a></li>
                 <li><a href="publicacoes.html">Publicações</a></li>
                 <li><a href="equipe.html">Equipe</a></li>
@@ -146,13 +146,19 @@
         </div>
     </nav>
 
-    <!-- Projetos Section -->
-    <section class="projetos">
+    <!-- Header Standard -->
+    <section class="page-header-standard">
         <div class="container">
-            <h2 class="section-title">Nossos Projetos</h2>
-            <p class="section-description">
-                Conheça as iniciativas que estão transformando a saúde pública através de tecnologia, inovação e pesquisa aplicada.
-            </p>
+            <h1>Nossos Projetos</h1>
+            <p class="subtitle">Conheça as iniciativas que estão transformando a saúde pública através de tecnologia, inovação e pesquisa aplicada.</p>
+        </div>
+    </section>
+
+    <!-- Projetos List -->
+    <section class="projetos" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Removed old description block -->
             
             <div class="projects-grid">
                 <!-- Card 1 -->

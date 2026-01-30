@@ -112,6 +112,20 @@ ul {
   opacity: 1; /* Keep full opacity on hover for the effect */
 }
 
+/* Active State for Navbar Links */
+.navbar .nav-links a.active {
+    color: #FFFFFF !important; /* Branco Puro */
+    font-weight: 700;          /* Negrito para destaque */
+    opacity: 1;                /* Opacidade total */
+    /* border-bottom: 2px solid white;  Opcional based on user request, but usually good for accessibility */
+}
+
+.navbar .nav-links a {
+    /* Existing styles above handle color/font, but let's ensure base opacity transition */
+    color: rgba(255, 255, 255, 0.85); /* Slightly transparent by default for contrast with active */
+    transition: all 0.3s ease;
+}
+
 /* Underline hover effect for regular links (excluding the button) */
 .nav-links a:not(.nav-btn)::after {
   content: "";
@@ -126,6 +140,38 @@ ul {
 
 .nav-links a:not(.nav-btn):hover::after {
   width: 100%; /* Expand to full width on hover */
+}
+
+/* Ensure Active Link ALWAYS has the underline */
+.nav-links a.active:not(.nav-btn)::after {
+    width: 100%;
+}
+
+/* Page Header Standard (Master Styles) */
+.page-header-standard {
+    background-color: #FFFFFF; /* Fundo Branco */
+    padding-top: 100px; /* Adjusted to 100px to clear navbar comfortably */
+    padding-bottom: 40px;      /* Espaço até o conteúdo */
+    text-align: center;        /* Centralizado */
+    width: 100%;
+}
+
+.page-header-standard h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #C65000;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.page-header-standard .subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #666666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
 }
 
 /* Special style for 'Colabore' button */
@@ -689,6 +735,39 @@ ul {
     font-size: 0.75rem; /* 12px */
     color: #888 !important; /* Force light grey color */
     margin-top: 4px;
+}
+
+/* Social Buttons (Equipe Cards) */
+.card-actions {
+    display: flex;
+    gap: 0; /* Managed by padding/border */
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px; /* Increased spacing downwards */
+}
+
+.social-btn {
+    border: none; /* Removed border */
+    background: transparent;
+    color: #999 !important; /* Lighter grey for subtlety */
+    font-size: 0.65rem; /* Slightly smaller */
+    padding: 0 15px; /* Spacing */
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+/* Add separator dash to the first item */
+.social-btn:first-child {
+    border-right: 1px solid #ddd;
+}
+
+.social-btn:hover {
+    color: #C65000 !important;
 }
 
 /* Responsive */
