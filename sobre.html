@@ -11,6 +11,67 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="preload" as="image" href="assets/img/2c00891bc1b29b047472a41caa6ca8dccb8fd090.jpg" fetchpriority="high">
 </head>
+<style>
+    /* 1. Navbar Dynamic (Transparent -> Orange) */
+    .navbar {
+        background-color: transparent !important; /* Start Transparent on Photo */
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* State when scrolled (added by main.js) */
+    .navbar.navbar-light {
+        background-color: #C65000 !important; /* Turns Orange on Scroll */
+    }
+
+    .navbar .nav-links a {
+        color: #ffffff !important;
+    }
+    .navbar .nav-links a.active, 
+    .navbar .nav-links a:hover {
+        font-weight: 700;
+    }
+
+    /* 2. Typography Standard */
+    .about-title {
+        color: #C65000 !important;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5rem; /* Large and robust */
+        font-weight: 800;
+        margin-bottom: 24px;
+    }
+    
+    body {
+        background-color: #FFFFFF !important; /* Pure White Background */
+    }
+
+    /* 3. Magic Bar Interaction */
+    .about-text-content {
+        position: relative;
+        padding-bottom: 20px;
+    }
+    
+    .about-text-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%; /* Hidden start */
+        height: 5px; /* Thick bar */
+        background-color: #C65000;
+        transition: width 0.4s ease-in-out;
+    }
+
+    .about-text-content:hover::after {
+        width: 100%; /* Expand to full width */
+    }
+
+    /* 4. Text Content */
+    .about-text {
+        color: #333;
+        line-height: 1.8 !important; /* Elegant spacing */
+        font-size: 1.1rem;
+    }
+</style>
 <body>
 
     <!-- Navbar -->
@@ -50,7 +111,7 @@
                 </div>
 
                 <!-- Coluna 2: Texto Institucional -->
-                <div class="about-content">
+                <div class="about-content about-text-content">
                     <h2 class="about-title">O que fazemos</h2>
                     <p class="about-text">
                         A Fiocruz é uma instituição de pesquisa biomédica de importância estratégica para o Brasil. 
