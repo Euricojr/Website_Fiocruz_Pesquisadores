@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicações - Fiocruz</title>
+    <meta name="description" content="Lista de artigos científicos, preprints e relatórios da Fiocruz.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* Styles specific to Publicacoes page */
+        body {
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        /* Override navbar color for this page */
+        .navbar.navbar-light {
+            background-color: #C65000;
+        }
+
+        .publications-section {
+            margin-top: 70px; /* Navbar height */
+            padding: 60px 0 100px 0;
+            background-color: #fff;
+        }
+
+        /* Header Style 'Clean' */
+        .pub-header {
+            margin-bottom: 50px;
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+
+        .pub-header h2 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #C65000; /* Laranja da marca solicitado */
+            margin-bottom: 0px; 
+            letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+
+        .pub-header p {
+            font-family: "Inter", sans-serif;
+            font-size: 1.1rem;
+            color: #666;
+            max-width: none;
+            margin: 0;
+        }
+
+        /* Tabs/Filters */
+        .pub-filters {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            font-family: "Inter", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            padding-bottom: 15px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            color: #C65000;
+        }
+
+        .filter-btn.active {
+            color: #C65000;
+            font-weight: 600;
+        }
+
+        .filter-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #C65000;
+        }
+
+        /* Publication List - Carnegie Mellon / Google Scholar Style */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pub-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px 20px;
+            border-bottom: 1px solid #eaeaea;
+            transition: background-color 0.2s ease;
+            text-decoration: none; /* In case the whole row is clickable, but we have a button too */
+        }
+
+        .pub-item:hover {
+            background-color: #F9F9F9;
+        }
+
+        /* Column 1: Year */
+        .pub-year {
+            flex: 0 0 80px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            color: #999;
+            font-weight: 400;
+            padding-top: 5px; /* Visual alignment with title */
+        }
+
+        /* Column 2: Image */
+        .pub-image {
+            flex: 0 0 100px; /* Slightly wider to accommodate margins */
+            padding-right: 20px;
+        }
+
+        .pub-thumbnail {
+            width: 80px;
+            height: 110px;
+            object-fit: cover;
+            border: 1px solid #eee;
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ccc;
+        }
+        
+        .pub-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Column 3: Details */
+        .pub-details {
+            flex: 1;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pub-title {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            color: #222; /* Black/Dark Blue */
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            transition: color 0.2s;
+        }
+
+        .pub-item:hover .pub-title {
+            color: #C65000;
+        }
+
+        .pub-authors {
+            font-family: "Inter", sans-serif;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .pub-venue {
+            display: inline-block;
+            font-family: "Inter", sans-serif;
+            font-size: 0.9rem;
+            color: #C65000;
+            font-weight: 600;
+        }
+        
+        .pub-type-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background-color: #eee;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        /* Column 4: Action */
+        .pub-action {
+            flex: 0 0 140px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            align-self: center;
+        }
+
+        .btn-read {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #C65000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-read:hover {
+            transform: translateX(5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pub-item {
+                flex-wrap: wrap;
+                position: relative;
+            }
+            
+            .pub-year {
+                width: 100%;
+                flex: none;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .pub-image {
+                display: none; /* Hide image on mobile for compactness if needed, or keep smaller */
+            }
+
+            .pub-details {
+                flex: 1 1 100%;
+                padding-right: 0;
+            }
+            
+            .pub-action {
+                margin-top: 15px;
+                flex: 1 1 100%;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (Same as projects.html but static for visibility) -->
+    <nav class="navbar navbar-light navbar-static">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logo.png" alt="Fiocruz Logo" style="height: 80px;">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="#">Dashboards</a></li>
+                <li><a href="publicacoes.html" class="active" style="opacity: 1; font-weight: 700;">Publicações</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="#" class="nav-btn">Colabore</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Publicações Section -->
+    <section class="publications-section">
+        <div class="container">
+            
+            <!-- Header -->
+            <div class="pub-header">
+                <h2>Publicações</h2>
+                <p>Explore nossa produção científica recente, incluindo artigos revisados por pares, preprints e relatórios técnicos.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="pub-filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Artigos</button>
+                <button class="filter-btn">Preprints</button>
+                <button class="filter-btn">Relatórios</button>
+            </div>
+
+            <!-- List -->
+            <div class="pub-list">
+                
+                <!-- Item 1 -->
+                <div class="pub-item">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-image">
+                        <div class="pub-thumbnail">
+                            <!-- Placeholder for document icon if no image -->
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="pub-details">
+                        <div class="pub-title">Genomic surveillance of dengue virus type 3 in Brazil: A retrospective analysis</div>
+                        <div class="pub-authors">Silva, M.A., Santos, J.R., Costa, F.P., et al.</div>
+                        <div class="pub-venue">The Lancet Regional Health - Americas</div>
+                    </div>
+                    <div class="pub-action">
+                        <a href="#" class="btn-read">Ler Artigo →</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="pub-item">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-image">
+                        <!-- Example with image -->
+                        <div class="pub-thumbnail">
+                             <img src="https://picsum.photos/80/110?random=10" alt="Cover">
+                        </div>
+                    </div>
+                    <div class="pub-details">
+                        <div class="pub-title">Real-time forecasting of arboviral outbreaks using machine learning and climate data</div>
+                        <div class="pub-authors">Oliveira, T.C., Mendes, R.L., & Souza, P.H.</div>
+                        <div class="pub-venue">MedRxiv <span class="pub-type-tag">Preprint</span></div>
+                    </div>
+                    <div class="pub-action">
+                        <a href="#" class="btn-read">Ler Artigo →</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="pub-item">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-image">
+                        <div class="pub-thumbnail">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="pub-details">
+                        <div class="pub-title">Relatório Técnico Anual: Monitoramento de Vetores no Estado do Rio de Janeiro</div>
+                        <div class="pub-authors">Núcleo de Vigilância Entomológica - Fiocruz</div>
+                        <div class="pub-venue">Relatório Técnico</div>
+                    </div>
+                    <div class="pub-action">
+                        <a href="#" class="btn-read">Baixar PDF →</a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="pub-item">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-image">
+                        <div class="pub-thumbnail">
+                             <img src="https://picsum.photos/80/110?random=11" alt="Cover">
+                        </div>
+                    </div>
+                    <div class="pub-details">
+                        <div class="pub-title">Impact of vaccination strategies on COVID-19 transmission dynamics in urban slums</div>
+                        <div class="pub-authors">Ferreira, A.L., Gomez, D.R., et al.</div>
+                        <div class="pub-venue">Nature Communications</div>
+                    </div>
+                    <div class="pub-action">
+                        <a href="#" class="btn-read">Ler Artigo →</a>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="pub-item">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-image">
+                        <div class="pub-thumbnail">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="pub-details">
+                        <div class="pub-title">Comparative analysis of RNA extraction methods for viral pathogens</div>
+                        <div class="pub-authors">Lima, K.S., & Pereira, J.V.</div>
+                        <div class="pub-venue">Journal of Virological Methods</div>
+                    </div>
+                    <div class="pub-action">
+                        <a href="#" class="btn-read">Ler Artigo →</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Load More (Optional visually) -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn" style="border: 1px solid #ddd; color: #666; font-size: 0.85rem;">Carregar mais publicações</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Include footer if exists? Projects.html didn't show one in previous view, but I'll check common include. -->
+    
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple Interaction for filters (Visual only for MVP)
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Here we would filter the items
+            });
+        });
+    </script>
+</body>
+</html>
