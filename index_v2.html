@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preload" as="image" href="assets/img/hero-bg-2.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -32,7 +33,9 @@
 
     <!-- Hero Section -->
     <!-- Inline style to override CSS background image -->
-    <header class="hero" style="background-image: url('assets/img/hero-bg-2.jpg');">
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="assets/img/hero-bg-2.jpg" class="hero-bg" alt="Laboratório Fiocruz" fetchpriority="high">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1 class="hero-title">Laboratório de pesquisas</h1>

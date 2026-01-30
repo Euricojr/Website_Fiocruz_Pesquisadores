@@ -147,17 +147,26 @@ ul {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url("../img/castelo-fiocruz.jpg");
-  background-size: cover;
-  background-position: center center; /* Centered as requested */
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Parallax effect to reduce 'zoomed' feel */
-  image-rendering: auto; /* Ensure browser uses best interpolation */
+  /* background-image removed for LCP performance - now using <img class="hero-bg"> */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-top: 0;
+  overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+/* New efficient Hero Background Image */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none; /* Prevent interaction */
 }
 
 .hero-overlay {
@@ -431,15 +440,9 @@ ul {
   position: relative;
   height: 65vh; /* Aumentado um pouco conforme solicitado (era 50vh) */
   width: 100%;
-  /* Imagem definida via inline style ou classe especifica se preferir, 
-       mas aqui deixamos genérico para ser sobescrito ou definido no HTML se precisar.
-       Por padrão vou deixar um fallback ou o HTML vai cuidar disso via style inline 
-       para facilitar a troca de imagens por página. 
-       Mas como o usuario pediu uma imagem especifica, vou colocar aqui como default se nao houver inline. */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Background logic moved to <img> tag for LCP */
   margin-top: 0; /* Cola no topo */
+  overflow: hidden;
 }
 
 /* Overlay Escuro */
