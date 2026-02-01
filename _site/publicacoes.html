@@ -1,10 +1,51 @@
----
-layout: default
-title: Publicações
-permalink: /publicacoes.html
-navbar_class: navbar-light navbar-static
----
-<style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicações</title>
+    <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <!-- Index specific style for navbar override, keeping it here as it was in index.html -->
+    <style>
+        /* Ensure Index Navigation matches others exactly in size/border */
+        .navbar .nav-links .nav-btn {
+            border: 2px solid #ffffff !important; /* Thick border like others */
+            padding: 8px 20px; /* Ensure size match */
+            font-weight: 600;
+        }
+        
+        .navbar .container {
+             padding: 10px 20px; /* Standardize vertical padding */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light navbar-static">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/img/logo.png" alt="Fiocruz Logo" style="height: 80px;">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/projetos.html" class="">Projetos</a></li>
+            <li><a href="#">Dashboards</a></li>
+            <li><a href="/publicacoes.html" class="active">Publicações</a></li>
+            <li><a href="/equipe.html" class="">Equipe</a></li>
+            <li><a href="#" class="nav-btn">Colabore</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <style>
     /* Styles specific to Publicacoes page */
     body {
         background-color: #ffffff;
@@ -319,29 +360,109 @@ navbar_class: navbar-light navbar-static
         <!-- List -->
         <div class="pub-list">
             
-            {% for pub in site.data.publications %}
-            <div class="pub-item" data-category="{{ pub.category }}">
-                <div class="pub-year">{{ pub.year }}</div>
+            
+            <div class="pub-item" data-category="artigos">
+                <div class="pub-year">2025</div>
                 <div class="pub-image">
                     <div class="pub-thumbnail">
-                        <img src="{{ pub.image }}" alt="Cover">
+                        <img src="https://picsum.photos/80/110?random=12" alt="Cover">
                     </div>
                 </div>
                 <div class="pub-details">
-                    <div class="pub-title">{{ pub.title }}</div>
-                    <div class="pub-authors">{{ pub.authors }}</div>
+                    <div class="pub-title">Genomic surveillance of dengue virus type 3 in Brazil: A retrospective analysis</div>
+                    <div class="pub-authors">Silva, M.A., Santos, J.R., Costa, F.P., et al.</div>
                     <div class="pub-venue">
-                        {{ pub.venue }}
-                        {% if pub.venue_type %}
-                        <span class="pub-type-tag">{{ pub.venue_type }}</span>
-                        {% endif %}
+                        The Lancet Regional Health - Americas
+                        
                     </div>
                 </div>
                 <div class="pub-action">
-                    <a href="{{ pub.link_url }}" class="btn-read">{{ pub.link_text }}</a>
+                    <a href="#" class="btn-read">Ler Artigo →</a>
                 </div>
             </div>
-            {% endfor %}
+            
+            <div class="pub-item" data-category="preprints">
+                <div class="pub-year">2025</div>
+                <div class="pub-image">
+                    <div class="pub-thumbnail">
+                        <img src="https://picsum.photos/80/110?random=10" alt="Cover">
+                    </div>
+                </div>
+                <div class="pub-details">
+                    <div class="pub-title">Real-time forecasting of arboviral outbreaks using machine learning and climate data</div>
+                    <div class="pub-authors">Oliveira, T.C., Mendes, R.L., & Souza, P.H.</div>
+                    <div class="pub-venue">
+                        MedRxiv
+                        
+                        <span class="pub-type-tag">Preprint</span>
+                        
+                    </div>
+                </div>
+                <div class="pub-action">
+                    <a href="#" class="btn-read">Ler Artigo →</a>
+                </div>
+            </div>
+            
+            <div class="pub-item" data-category="relatorios">
+                <div class="pub-year">2024</div>
+                <div class="pub-image">
+                    <div class="pub-thumbnail">
+                        <img src="https://picsum.photos/80/110?random=13" alt="Cover">
+                    </div>
+                </div>
+                <div class="pub-details">
+                    <div class="pub-title">Relatório Técnico Anual: Monitoramento de Vetores no Estado do Rio de Janeiro</div>
+                    <div class="pub-authors">Núcleo de Vigilância Entomológica - Fiocruz</div>
+                    <div class="pub-venue">
+                        Relatório Técnico
+                        
+                    </div>
+                </div>
+                <div class="pub-action">
+                    <a href="#" class="btn-read">Baixar PDF →</a>
+                </div>
+            </div>
+            
+            <div class="pub-item" data-category="artigos">
+                <div class="pub-year">2024</div>
+                <div class="pub-image">
+                    <div class="pub-thumbnail">
+                        <img src="https://picsum.photos/80/110?random=11" alt="Cover">
+                    </div>
+                </div>
+                <div class="pub-details">
+                    <div class="pub-title">Impact of vaccination strategies on COVID-19 transmission dynamics in urban slums</div>
+                    <div class="pub-authors">Ferreira, A.L., Gomez, D.R., et al.</div>
+                    <div class="pub-venue">
+                        Nature Communications
+                        
+                    </div>
+                </div>
+                <div class="pub-action">
+                    <a href="#" class="btn-read">Ler Artigo →</a>
+                </div>
+            </div>
+            
+            <div class="pub-item" data-category="artigos">
+                <div class="pub-year">2023</div>
+                <div class="pub-image">
+                    <div class="pub-thumbnail">
+                        <img src="https://picsum.photos/80/110?random=14" alt="Cover">
+                    </div>
+                </div>
+                <div class="pub-details">
+                    <div class="pub-title">Comparative analysis of RNA extraction methods for viral pathogens</div>
+                    <div class="pub-authors">Lima, K.S., & Pereira, J.V.</div>
+                    <div class="pub-venue">
+                        Journal of Virological Methods
+                        
+                    </div>
+                </div>
+                <div class="pub-action">
+                    <a href="#" class="btn-read">Ler Artigo →</a>
+                </div>
+            </div>
+            
 
         </div>
         
@@ -388,3 +509,7 @@ navbar_class: navbar-light navbar-static
         });
     });
 </script>
+
+
+</body>
+</html>

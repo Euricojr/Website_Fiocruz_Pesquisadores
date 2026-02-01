@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe</title>
+    <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <!-- Index specific style for navbar override, keeping it here as it was in index.html -->
+    <style>
+        /* Ensure Index Navigation matches others exactly in size/border */
+        .navbar .nav-links .nav-btn {
+            border: 2px solid #ffffff !important; /* Thick border like others */
+            padding: 8px 20px; /* Ensure size match */
+            font-weight: 600;
+        }
+        
+        .navbar .container {
+             padding: 10px 20px; /* Standardize vertical padding */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light navbar-static">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/img/logo.png" alt="Fiocruz Logo" style="height: 80px;">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/projetos.html" class="">Projetos</a></li>
+            <li><a href="#">Dashboards</a></li>
+            <li><a href="/publicacoes.html" class="">Publicações</a></li>
+            <li><a href="/equipe.html" class="active">Equipe</a></li>
+            <li><a href="#" class="nav-btn">Colabore</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <style>
+    /* Standardizing Visual Identity - Equipe Page */
+    
+    /* 1. Navbar Standardized (Orange #C65000) */
+    .navbar.navbar-light {
+        background-color: #C65000;
+    }
+
+    /* Ensure links are white on orange */
+    .navbar .nav-links li a {
+        color: #ffffff !important;
+        opacity: 1; 
+    }
+
+    /* Active Link Styling */
+    .navbar .nav-links li a.active {
+        font-weight: 700;
+        opacity: 1;
+    }
+
+    .navbar .nav-links li a:hover {
+            opacity: 1;
+    }
+
+    /* Styles for 'Colabore' button */
+    .navbar .nav-links .nav-btn {
+        border: 2px solid #ffffff !important;
+        color: #ffffff !important;
+        background: transparent;
+    }
+
+    .navbar .nav-links .nav-btn:hover {
+        background-color: #ffffff;
+        color: #C65000 !important;
+    }
+    
+    /* Page Layout */
+    .team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 20px 80px 20px; /* Reduced top padding to move cards up */
+    }
+
+    /* Page Title */
+    .section-title {
+        color: #C65000;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: #666;
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        margin-bottom: 80px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    /* Section Styling */
+    .team-section {
+        margin-bottom: 80px;
+    }
+
+    .team-section-title {
+        color: #C65000;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 28px; /* Requested 28px */
+        font-weight: 700;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Grid System */
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 40px; /* Requested gap */
+    }
+
+    /* Member Card Design */
+    .member-card {
+        background: transparent; /* Clean look */
+        /* border-bottom: 3px solid #C65000; removed per new 'Delphi' style request preferring cleaner look? 
+            Wait, prompt said: "Design do Card... Sombra suave no container... hover... " 
+            The prompt describes a cleaner card with shadow interaction. */
+        border-radius: 8px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* Soft shadow on hover */
+        background-color: #fff; /* Ensure bg is white on hover if transparent before */
+    }
+
+    /* Photo Styles */
+    .member-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px; /* Requested 8px rounded corners */
+        margin-bottom: 15px;
+        /* filter: grayscale(100%); REMOVED - Color by default */
+        transition: filter 0.4s ease; /* Requested 0.4s transition */
+    }
+
+    .member-card:hover .member-photo {
+        filter: grayscale(0%); /* Color on hover */
+    }
+
+    /* Typography */
+    .member-name {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .member-role {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px; /* Requested 14px */
+        color: #C65000; /* Orange */
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+    }
+
+    .member-aff {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px; /* Requested 12px */
+        color: #777; /* Light Gray */
+    }
+    
+</style>
+
+<!-- Header Standard -->
+<section class="page-header-standard">
+    <div class="container">
+        <h1>Nossa Equipe</h1>
+        <p class="subtitle">Conheça os pesquisadores e especialistas por trás de nossas inovações.</p>
+    </div>
+</section>
+
+<main class="team-container" style="padding-top: 0px;">
+    
+    <!-- Old Title Removed -->
+
+    
+    <section class="team-section">
+        <h2 class="team-section-title">Liderança</h2>
+        <div class="team-grid">
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=11" alt="Foto de Dr. Carlos Mendes" class="member-photo">
+                <h3 class="member-name">Dr. Carlos Mendes</h3>
+                <p class="member-role">Diretor Geral</p>
+                <p class="member-aff">Fiocruz / Presidência</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=5" alt="Foto de Dra. Ana Paula Silva" class="member-photo">
+                <h3 class="member-name">Dra. Ana Paula Silva</h3>
+                <p class="member-role">Diretora Científica</p>
+                <p class="member-aff">Fiocruz / VPPCB</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=3" alt="Foto de Dr. Roberto Almeida" class="member-photo">
+                <h3 class="member-name">Dr. Roberto Almeida</h3>
+                <p class="member-role">Diretor de Inovação</p>
+                <p class="member-aff">Fiocruz / VPAAPS</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section class="team-section">
+        <h2 class="team-section-title">Membros Principais</h2>
+        <div class="team-grid">
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=32" alt="Foto de Fernanda Lima" class="member-photo">
+                <h3 class="member-name">Fernanda Lima</h3>
+                <p class="member-role">Epidemiologista Senior</p>
+                <p class="member-aff">Fiocruz / ENSP</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=12" alt="Foto de Juliana Costa" class="member-photo">
+                <h3 class="member-name">Juliana Costa</h3>
+                <p class="member-role">Cientista de Dados</p>
+                <p class="member-aff">Fiocruz / PROCC</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=59" alt="Foto de Ricardo Santos" class="member-photo">
+                <h3 class="member-name">Ricardo Santos</h3>
+                <p class="member-role">Especialista em Genômica</p>
+                <p class="member-aff">Fiocruz / IOC</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=8" alt="Foto de Marcos Oliveira" class="member-photo">
+                <h3 class="member-name">Marcos Oliveira</h3>
+                <p class="member-role">Biotecnologista</p>
+                <p class="member-aff">Fiocruz / Bio-Manguinhos</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section class="team-section">
+        <h2 class="team-section-title">Conselheiros</h2>
+        <div class="team-grid">
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=68" alt="Foto de Prof. Elena Sousa" class="member-photo">
+                <h3 class="member-name">Prof. Elena Sousa</h3>
+                <p class="member-role">Conselheira Estratégica</p>
+                <p class="member-aff">UFRJ</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=60" alt="Foto de Dr. João Pedro" class="member-photo">
+                <h3 class="member-name">Dr. João Pedro</h3>
+                <p class="member-role">Consultor de Saúde</p>
+                <p class="member-aff">WHO / PAHO</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=45" alt="Foto de Dra. Carla Dias" class="member-photo">
+                <h3 class="member-name">Dra. Carla Dias</h3>
+                <p class="member-role">Consultora Ética</p>
+                <p class="member-aff">PUC-Rio</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=33" alt="Foto de Paulo Freire" class="member-photo">
+                <h3 class="member-name">Paulo Freire</h3>
+                <p class="member-role">Gestão de Projetos</p>
+                <p class="member-aff">Fiotec</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section class="team-section">
+        <h2 class="team-section-title">Colaboradores</h2>
+        <div class="team-grid">
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=18" alt="Foto de Lucas Silva" class="member-photo">
+                <h3 class="member-name">Lucas Silva</h3>
+                <p class="member-role">Doutorando</p>
+                <p class="member-aff">Fiocruz / ENSP</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=22" alt="Foto de Mariana Rocha" class="member-photo">
+                <h3 class="member-name">Mariana Rocha</h3>
+                <p class="member-role">Mestranda</p>
+                <p class="member-aff">Fiocruz / COC</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=52" alt="Foto de Pedro Alves" class="member-photo">
+                <h3 class="member-name">Pedro Alves</h3>
+                <p class="member-role">Desenvolvedor Jr.</p>
+                <p class="member-aff">Fiocruz / ICICT</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=41" alt="Foto de Sofia Martins" class="member-photo">
+                <h3 class="member-name">Sofia Martins</h3>
+                <p class="member-role">Estagiária</p>
+                <p class="member-aff">Fiocruz / IOC</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/300?img=14" alt="Foto de Rafael Costa" class="member-photo">
+                <h3 class="member-name">Rafael Costa</h3>
+                <p class="member-role">Apoio Técnico</p>
+                <p class="member-aff">Fiocruz / EPSJV</p>
+                <div class="card-actions">
+                    <a href="#" class="social-btn lattes">LATTES</a>
+                    <a href="#" class="social-btn linkedin">LINKEDIN</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+</main>
+
+
+</body>
+</html>

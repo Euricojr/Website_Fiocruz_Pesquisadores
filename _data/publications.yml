@@ -1,0 +1,45 @@
+- year: 2025
+  category: artigos
+  title: "Genomic surveillance of dengue virus type 3 in Brazil: A retrospective analysis"
+  authors: "Silva, M.A., Santos, J.R., Costa, F.P., et al."
+  venue: "The Lancet Regional Health - Americas"
+  image: "https://picsum.photos/80/110?random=12"
+  link_text: "Ler Artigo →"
+  link_url: "#"
+
+- year: 2025
+  category: preprints
+  title: "Real-time forecasting of arboviral outbreaks using machine learning and climate data"
+  authors: "Oliveira, T.C., Mendes, R.L., & Souza, P.H."
+  venue: "MedRxiv"
+  venue_type: "Preprint"
+  image: "https://picsum.photos/80/110?random=10"
+  link_text: "Ler Artigo →"
+  link_url: "#"
+
+- year: 2024
+  category: relatorios
+  title: "Relatório Técnico Anual: Monitoramento de Vetores no Estado do Rio de Janeiro"
+  authors: "Núcleo de Vigilância Entomológica - Fiocruz"
+  venue: "Relatório Técnico"
+  image: "https://picsum.photos/80/110?random=13"
+  link_text: "Baixar PDF →"
+  link_url: "#"
+
+- year: 2024
+  category: artigos
+  title: "Impact of vaccination strategies on COVID-19 transmission dynamics in urban slums"
+  authors: "Ferreira, A.L., Gomez, D.R., et al."
+  venue: "Nature Communications"
+  image: "https://picsum.photos/80/110?random=11"
+  link_text: "Ler Artigo →"
+  link_url: "#"
+
+- year: 2023
+  category: artigos
+  title: "Comparative analysis of RNA extraction methods for viral pathogens"
+  authors: "Lima, K.S., & Pereira, J.V."
+  venue: "Journal of Virological Methods"
+  image: "https://picsum.photos/80/110?random=14"
+  link_text: "Ler Artigo →"
+  link_url: "#"

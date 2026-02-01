@@ -1,10 +1,51 @@
----
-layout: default
-title: Sobre
-permalink: /sobre.html
-navbar_class: ""
----
-<style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <!-- Index specific style for navbar override, keeping it here as it was in index.html -->
+    <style>
+        /* Ensure Index Navigation matches others exactly in size/border */
+        .navbar .nav-links .nav-btn {
+            border: 2px solid #ffffff !important; /* Thick border like others */
+            padding: 8px 20px; /* Ensure size match */
+            font-weight: 600;
+        }
+        
+        .navbar .container {
+             padding: 10px 20px; /* Standardize vertical padding */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar ">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/img/logo.png" alt="Fiocruz Logo" style="height: 80px;">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/projetos.html" class="">Projetos</a></li>
+            <li><a href="#">Dashboards</a></li>
+            <li><a href="/publicacoes.html" class="">Publicações</a></li>
+            <li><a href="/equipe.html" class="">Equipe</a></li>
+            <li><a href="#" class="nav-btn">Colabore</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <style>
     /* 1. Navbar Dynamic (Transparent -> Orange) */
     .navbar {
         background-color: transparent !important; /* Start Transparent on Photo */
@@ -120,3 +161,7 @@ navbar_class: ""
         </div>
     </div>
 </section>
+
+
+</body>
+</html>

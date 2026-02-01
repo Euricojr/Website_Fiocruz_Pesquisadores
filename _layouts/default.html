@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Fiocruz - A serviço da vida" }}</title>
+    <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    {% if page.url == "/" %}
+    <link rel="preload" as="image" href="/assets/img/castelo-fiocruz.jpg" fetchpriority="high">
+    {% endif %}
+    
+    <!-- Index specific style for navbar override, keeping it here as it was in index.html -->
+    <style>
+        /* Ensure Index Navigation matches others exactly in size/border */
+        .navbar .nav-links .nav-btn {
+            border: 2px solid #ffffff !important; /* Thick border like others */
+            padding: 8px 20px; /* Ensure size match */
+            font-weight: 600;
+        }
+        
+        .navbar .container {
+             padding: 10px 20px; /* Standardize vertical padding */
+        }
+    </style>
+</head>
+<body>
+
+    {% include navbar.html %}
+
+    {{ content }}
+
+</body>
+</html>

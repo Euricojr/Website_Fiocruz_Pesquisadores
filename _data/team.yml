@@ -1,0 +1,123 @@
+- category: "Liderança"
+  members:
+    - name: "Dr. Carlos Mendes"
+      role: "Diretor Geral"
+      affiliation: "Fiocruz / Presidência"
+      image: "https://i.pravatar.cc/300?img=11"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Dra. Ana Paula Silva"
+      role: "Diretora Científica"
+      affiliation: "Fiocruz / VPPCB"
+      image: "https://i.pravatar.cc/300?img=5"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Dr. Roberto Almeida"
+      role: "Diretor de Inovação"
+      affiliation: "Fiocruz / VPAAPS"
+      image: "https://i.pravatar.cc/300?img=3"
+      links:
+        lattes: "#"
+        linkedin: "#"
+
+- category: "Membros Principais"
+  members:
+    - name: "Fernanda Lima"
+      role: "Epidemiologista Senior"
+      affiliation: "Fiocruz / ENSP"
+      image: "https://i.pravatar.cc/300?img=32"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Juliana Costa"
+      role: "Cientista de Dados"
+      affiliation: "Fiocruz / PROCC"
+      image: "https://i.pravatar.cc/300?img=12"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Ricardo Santos"
+      role: "Especialista em Genômica"
+      affiliation: "Fiocruz / IOC"
+      image: "https://i.pravatar.cc/300?img=59"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Marcos Oliveira"
+      role: "Biotecnologista"
+      affiliation: "Fiocruz / Bio-Manguinhos"
+      image: "https://i.pravatar.cc/300?img=8"
+      links:
+        lattes: "#"
+        linkedin: "#"
+
+- category: "Conselheiros"
+  members:
+    - name: "Prof. Elena Sousa"
+      role: "Conselheira Estratégica"
+      affiliation: "UFRJ"
+      image: "https://i.pravatar.cc/300?img=68"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Dr. João Pedro"
+      role: "Consultor de Saúde"
+      affiliation: "WHO / PAHO"
+      image: "https://i.pravatar.cc/300?img=60"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Dra. Carla Dias"
+      role: "Consultora Ética"
+      affiliation: "PUC-Rio"
+      image: "https://i.pravatar.cc/300?img=45"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Paulo Freire"
+      role: "Gestão de Projetos"
+      affiliation: "Fiotec"
+      image: "https://i.pravatar.cc/300?img=33"
+      links:
+        lattes: "#"
+        linkedin: "#"
+
+- category: "Colaboradores"
+  members:
+    - name: "Lucas Silva"
+      role: "Doutorando"
+      affiliation: "Fiocruz / ENSP"
+      image: "https://i.pravatar.cc/300?img=18"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Mariana Rocha"
+      role: "Mestranda"
+      affiliation: "Fiocruz / COC"
+      image: "https://i.pravatar.cc/300?img=22"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Pedro Alves"
+      role: "Desenvolvedor Jr."
+      affiliation: "Fiocruz / ICICT"
+      image: "https://i.pravatar.cc/300?img=52"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Sofia Martins"
+      role: "Estagiária"
+      affiliation: "Fiocruz / IOC"
+      image: "https://i.pravatar.cc/300?img=41"
+      links:
+        lattes: "#"
+        linkedin: "#"
+    - name: "Rafael Costa"
+      role: "Apoio Técnico"
+      affiliation: "Fiocruz / EPSJV"
+      image: "https://i.pravatar.cc/300?img=14"
+      links:
+        lattes: "#"
+        linkedin: "#"
