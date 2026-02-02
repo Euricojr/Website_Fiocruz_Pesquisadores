@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboards & Ferramentas</title>
+    <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <!-- Index specific style for navbar override, keeping it here as it was in index.html -->
+    <style>
+        /* Ensure Index Navigation matches others exactly in size/border */
+        .navbar .nav-links .nav-btn {
+            border: 2px solid #ffffff !important; /* Thick border like others */
+            padding: 8px 20px; /* Ensure size match */
+            font-weight: 600;
+        }
+        
+        .navbar .container {
+             padding: 10px 20px; /* Standardize vertical padding */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/img/logo.png" alt="Fiocruz Logo" style="height: 80px;">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/projetos.html" class="">Projetos</a></li>
+            <li><a href="/dashboards.html" class="active">Dashboards</a></li>
+            <li><a href="/publicacoes.html" class="">Publicações</a></li>
+            <li><a href="/equipe.html" class="">Equipe</a></li>
+            <li><a href="#" class="nav-btn">Colabore</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <style>
+    /* Styling for Dashboards Page */
+    /* Reuse core styles from Projects but add specific tweaks */
+
+    /* 1. Navbar Standardized (Orange #C65000) */
+    .navbar.navbar-light {
+        background-color: #C65000;
+    }
+    .navbar .nav-links li a {
+        color: #ffffff !important;
+        opacity: 1; 
+    }
+    .navbar .nav-links li a:hover {
+        opacity: 1;
+    }
+    .navbar .nav-links .nav-btn {
+        border: 2px solid #ffffff !important;
+        color: #ffffff !important;
+        background: transparent;
+    }
+    .navbar .nav-links .nav-btn:hover {
+        background-color: #ffffff;
+        color: #C65000 !important;
+    }
+
+    /* 2. Page Title */
+    .section-title {
+        color: #C65000 !important;
+    }
+
+    /* 3. Card Styling */
+    .project-card {
+        transition: all 0.3s ease;
+        border-top: 4px solid #C65000;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background: #fff;
+        border-radius: 8px; /* Slight rounded corners */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Soft shadow */
+    }
+    
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .card-image {
+        overflow: hidden;
+        border-bottom: 1px solid #eee;
+        height: 200px; /* Fixed height for consistency */
+        background-color: #f9f9f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-image img {
+        transition: transform 0.5s ease;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .project-card:hover .card-image img {
+        transform: scale(1.05);
+    }
+    
+    /* Fallback if no image */
+    .no-image-placeholder {
+        color: #ccc;
+        font-size: 3rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #333;
+    }
+
+    .card-description {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    /* Tool Badges */
+    .tool-badge {
+        display: inline-block;
+        padding: 0.35em 0.65em;
+        font-size: 0.75em;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Badge Colors */
+    .badge-r-shiny {
+        background-color: #E3F2FD; /* Light Blue */
+        color: #1565C0; /* Dark Blue */
+    }
+    
+    .badge-powerbi {
+        background-color: #FFF8E1; /* Light Yellow */
+        color: #F57F17; /* Dark Yellow/Orange */
+    }
+    
+    .badge-tableau {
+        background-color: #F3E5F5; /* Light Purple */
+        color: #7B1FA2; /* Dark Purple */
+    }
+
+    .badge-observable {
+        background-color: #FAFAFA; /* Light Gray */
+        color: #212121; /* Almost Black */
+        border: 1px solid #eee;
+    }
+
+    .badge-default {
+        background-color: #F5F5F5;
+        color: #616161;
+    }
+
+    /* Access Button */
+    .card-footer {
+        padding: 1.5rem;
+        padding-top: 0;
+        background: transparent;
+        border-top: none;
+    }
+
+    .access-btn {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        color: #fff;
+        background-color: #C65000;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        text-align: center;
+    }
+
+    .access-btn:hover {
+        background-color: #A04000; /* Darker Orange */
+        color: #fff;
+        text-decoration: none;
+    }
+
+</style>
+
+<!-- Header -->
+<section class="page-header-standard">
+    <div class="container">
+        <h1>Dashboards & Tools</h1>
+        <p class="subtitle">Visualize dados e indicadores de saúde pública através de nossas ferramentas interativas.</p>
+    </div>
+</section>
+
+<!-- Dashboards List -->
+<section class="dashboards" style="padding-top: 0;">
+    <div class="container">
+        <div class="projects-grid"> <!-- Reusing grid layout from projects -->
+            
+            <div class="project-card">
+                <div class="card-image">
+                    
+                    <img src="https://picsum.photos/seed/dash1/800/600" alt="Monitoramento Dengue R-Shiny">
+                    
+                </div>
+                <div class="card-body">
+                    <div>
+                        <!-- Logic for Badge Color -->
+                        
+                        
+                        
+                        <span class="tool-badge badge-r-shiny">R Shiny</span>
+                    </div>
+                    
+                    <h3 class="card-title">Monitoramento Dengue R-Shiny</h3>
+                    <p class="card-description">
+                        Painel interativo para acompanhamento de casos de dengue em tempo real com mapas de calor e séries temporais.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://shiny.rstudio.com/gallery/covid19-tracker.html" target="_blank" class="access-btn">Acessar Ferramenta ↗</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="card-image">
+                    
+                    <img src="https://picsum.photos/seed/dash2/800/600" alt="Análise Epidemiológica Global">
+                    
+                </div>
+                <div class="card-body">
+                    <div>
+                        <!-- Logic for Badge Color -->
+                        
+                        
+                        
+                        <span class="tool-badge badge-powerbi">PowerBI</span>
+                    </div>
+                    
+                    <h3 class="card-title">Análise Epidemiológica Global</h3>
+                    <p class="card-description">
+                        Dashboard desenvolvido no PowerBI para análise exploratória de dados de saúde pública.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" target="_blank" class="access-btn">Acessar Ferramenta ↗</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="card-image">
+                    
+                    <img src="https://picsum.photos/seed/dash3/800/600" alt="Visualização de Dados Genômicos">
+                    
+                </div>
+                <div class="card-body">
+                    <div>
+                        <!-- Logic for Badge Color -->
+                        
+                        
+                        
+                        <span class="tool-badge badge-tableau">Tableau</span>
+                    </div>
+                    
+                    <h3 class="card-title">Visualização de Dados Genômicos</h3>
+                    <p class="card-description">
+                        Dashboard desenvolvido no Tableau para análise exploratória de sequenciamento genético e variantes.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://public.tableau.com/en-us/gallery" target="_blank" class="access-btn">Acessar Ferramenta ↗</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
