@@ -39,12 +39,17 @@ ul {
   z-index: 1000;
   background-color: transparent;
   padding: 0;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 .navbar.navbar-light {
   background-color: #2c2c2c;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.scrolled {
+  background-color: #2c2c2c !important; /* Retorna ao cinza escuro padrão */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar.navbar-light .nav-links a {
