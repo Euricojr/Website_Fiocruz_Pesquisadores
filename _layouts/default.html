@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: "Fiocruz - A serviço da vida" }}</title>
     <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
+    <link rel="icon" type="image/png" href="/assets/img/logo fiocruz web preto.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="/assets/img/logo fiocruz web branco.png" media="(prefers-color-scheme: dark)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
@@ -27,13 +29,17 @@
         }
     </style>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
     {% include navbar.html %}
 
     {{ content }}
+
+    {% unless page.url == "/" %}
+    {% include social-bar.html %}
+    {% endunless %}
 
     <script src="/assets/js/main.js"></script>
 </body>
