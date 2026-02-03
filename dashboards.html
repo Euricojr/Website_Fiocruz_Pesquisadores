@@ -171,6 +171,16 @@ navbar_class: navbar-light
         text-decoration: none;
     }
 
+    /* FIX: Increase BOTTOM padding to prevent footer overlap/cramped look */
+    .dashboards {
+        padding-bottom: 150px !important;
+    }
+    
+    /* Revert top padding if it was unnecessary, or keep it standard */
+    .page-header-standard {
+        padding-top: 100px; /* Standard */
+    }
+
 </style>
 
 <!-- Header -->

@@ -7,8 +7,8 @@ navbar_class: navbar-light navbar-static
 <style>
     /* Styles specific to Publicacoes page */
     body {
-        background-color: #ffffff;
-        color: #333;
+        background-color: var(--bg-body);
+        color: var(--text-desc);
     }
     
     /* Override navbar color for this page */
@@ -31,7 +31,7 @@ navbar_class: navbar-light navbar-static
     .publications-section {
         margin-top: 70px; /* Navbar height */
         padding: 60px 0 100px 0;
-        background-color: #fff;
+        background-color: var(--bg-body);
     }
 
     /* Header Style 'Clean' */
@@ -57,7 +57,7 @@ navbar_class: navbar-light navbar-static
     .pub-header p {
         font-family: "Inter", sans-serif;
         font-size: 1.25rem; /* Increased from 1.1rem */
-        color: #666;
+        color: var(--text-desc);
         max-width: none;
         margin: 0;
         font-weight: 400;
@@ -68,7 +68,7 @@ navbar_class: navbar-light navbar-static
         display: flex;
         gap: 30px;
         margin-bottom: 40px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--border-color);
         padding-bottom: 0px;
         justify-content: center;
     }
@@ -79,7 +79,7 @@ navbar_class: navbar-light navbar-static
         font-family: "Inter", sans-serif;
         font-size: 1.15rem; /* Increased from 1rem */
         font-weight: 500;
-        color: #666;
+        color: var(--text-desc);
         cursor: pointer;
         padding: 12px 24px; /* Increased from 8px 16px */
         border-radius: 30px; /* Slightly larger radius */
@@ -139,13 +139,18 @@ navbar_class: navbar-light navbar-static
         display: flex;
         align-items: flex-start;
         padding: 35px 25px; /* Increased padding */
-        border-bottom: 1px solid #eaeaea;
+        border-bottom: 1px solid var(--border-color);
         transition: background-color 0.2s ease;
         text-decoration: none; /* In case the whole row is clickable, but we have a button too */
     }
 
     .pub-item:hover {
-        background-color: #F9F9F9;
+        background-color: #F9F9F9; /* Restore light gray hover for Light Mode */
+    }
+    
+    /* Reveal hover effect in Dark Mode specifically */
+    body.dark-mode .pub-item:hover {
+        background-color: #1e1e1e; /* Explicit highlight for dark mode */
     }
 
     /* Column 1: Year */
@@ -168,9 +173,9 @@ navbar_class: navbar-light navbar-static
         width: 110px; /* Larger */
         height: 152px; /* Larger (~1.4 ratio) */
         object-fit: cover;
-        border: 1px solid #eee;
-        background-color: #f0f0f0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-card);
+        box-shadow: 0 2px 4px var(--shadow-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -196,7 +201,7 @@ navbar_class: navbar-light navbar-static
     .pub-title {
         font-family: "Montserrat", sans-serif;
         font-size: 1.35rem; /* ~22px */
-        color: #222; /* Black/Dark Blue */
+        color: var(--text-title);
         font-weight: 700;
         margin-bottom: 10px;
         line-height: 1.4;
@@ -210,7 +215,7 @@ navbar_class: navbar-light navbar-static
     .pub-authors {
         font-family: "Inter", sans-serif;
         font-size: 1.05rem; /* Larger font */
-        color: #666;
+        color: var(--text-desc);
         font-style: italic;
         margin-bottom: 8px;
     }
@@ -234,6 +239,12 @@ navbar_class: navbar-light navbar-static
         text-transform: uppercase;
         font-weight: 600;
         vertical-align: middle;
+    }
+    
+    /* Dark Mode Tag Override */
+    body.dark-mode .pub-type-tag {
+        background-color: #333;
+        color: #ccc;
     }
 
     /* Column 4: Action */

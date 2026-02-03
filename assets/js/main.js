@@ -14,4 +14,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   }
+  // Dark Mode Logic
+  const themeSwitch = document.getElementById('switch');
+  const body = document.body;
+  const currentTheme = localStorage.getItem('theme');
+
+  // Check LocalStorage or System Preference
+  if (currentTheme) {
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      if (themeSwitch) themeSwitch.checked = true;
+    }
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    body.classList.add('dark-mode');
+    if (themeSwitch) themeSwitch.checked = true;
+  }
+
+  // Toggle Event Listener
+  if (themeSwitch) {
+      themeSwitch.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          body.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+  }
 });
