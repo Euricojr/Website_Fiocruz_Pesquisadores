@@ -569,7 +569,7 @@ ul {
 .card-description {
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-desc);
   line-height: 1.5;
   margin-bottom: 16px;
   overflow: hidden;
@@ -921,7 +921,7 @@ ul {
 .member-role {
   font-family: "Inter", sans-serif;
   font-size: 0.875rem; /* 14px */
-  color: #666 !important; /* Force grey color */
+  color: var(--text-desc) !important; /* Adaptable grey color */
   margin-bottom: 2px;
   font-weight: 400;
 }
@@ -929,7 +929,7 @@ ul {
 .member-aff {
   font-family: "Inter", sans-serif;
   font-size: 0.75rem; /* 12px */
-  color: #888 !important; /* Force light grey color */
+  color: var(--text-desc) !important; /* Adaptable light grey color */
   margin-top: 4px;
 }
 
