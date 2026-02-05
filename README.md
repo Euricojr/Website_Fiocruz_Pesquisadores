@@ -34,77 +34,108 @@ Siga estes passos para visualizar o site no seu computador antes de fazer altera
 
 ---
 
-## 📝 Como Atualizar o Conteúdo (Importante)
+## 📝 Como Atualizar o Conteúdo
 
-**Boas notícias:** Você NÃO precisa editar arquivos HTML complicados para adicionar novos conteúdos. Tudo é gerenciado através da pasta `_data/`.
+Você pode gerenciar a maior parte do conteúdo do site editando arquivos simples na pasta `_data/`. Não é necessário mexer nos arquivos HTML para estas alterações.
 
-### 1. Adicionar Novos Projetos
+### 1. Projetos (`projects.html`)
 
-Edite o arquivo: `_data/projects.yml`
+Arquivo: `_data/projects.yml`
 
-Para adicionar um novo projeto, basta copiar a estrutura abaixo e colar no final do arquivo:
+Adicione novos projetos copiando o bloco abaixo:
 
 ```yaml
 - title: "Nome do Novo Projeto"
-  description: "Uma breve descrição dos objetivos e impacto do projeto."
-  image: "/assets/img/nome-da-imagem.jpg" # Salve a imagem na pasta assets/img
+  image: "https://link-da-imagem.com/foto.jpg" # URL externa ou caminho local (/assets/img/...)
+  description: "Descrição breve do projeto."
   tags:
-    - "Inovação"
-    - "Saúde Pública"
+    - "Tag 1"
+    - "Tag 2"
 ```
 
-### 2. Adicionar Membros da Equipe
+### 2. Equipe (`equipe.html`)
 
-Edite o arquivo: `_data/team.yml`
+Arquivo: `_data/team.yml`
 
-Os membros são organizados por categorias (Liderança, Membros Principais, etc.). Encontre a categoria certa e adicione um novo item na lista `members`:
+Os membros são divididos por categorias (`Liderança`, `Membros Principais`, etc.). Adicione um novo membro na lista `members`:
 
 ```yaml
-- name: "Dra. Maria Exemplo"
-  role: "Pesquisadora Sênior"
-  affiliation: "Fiocruz / ENSP"
-  image: "https://link-da-foto-ou-caminho-local.jpg"
-  links:
-    lattes: "http://lattes.cnpq.br/..."
-    linkedin: "https://linkedin.com/in/..."
+members:
+  - name: "Nome do Pesquisador"
+    role: "Cargo / Função"
+    affiliation: "Fiocruz / Unidade"
+    image: "https://link-da-foto.jpg"
+    links:
+      lattes: "http://lattes.cnpq.br/..."
+      linkedin: "https://linkedin.com/in/..."
 ```
 
-### 3. Adicionar Publicações
+### 3. Publicações (`publicacoes.html`)
 
-Edite o arquivo: `_data/publications.yml`
+Arquivo: `_data/publications.yml`
 
-Adicione novas publicações no topo da lista para que apareçam primeiro:
+As publicações são exibidas em ordem. Adicione novas no topo da lista:
 
 ```yaml
 - year: 2025
   category: artigos # Opções: artigos, preprints, relatorios
-  title: "Título do Artigo Científico"
-  authors: "Silva, A., Souza, B."
+  title: "Título da Publicação"
+  authors: "Sobrenome, N., Silva, A."
   venue: "Nome da Revista ou Journal"
+  image: "https://link-da-capa-revista.jpg" # Opcional
   link_text: "Ler Artigo →"
   link_url: "https://doi.org/..."
 ```
 
+### 4. Dashboards & Ferramentas (`dashboards.html`)
+
+Arquivo: `_data/dashboards.yml`
+
+Para adicionar paineis (PowerBI, Shiny, etc):
+
+```yaml
+- title: "Nome do Dashboard"
+  description: "Descrição do que a ferramenta faz."
+  tool: "PowerBI" # Ex: R Shiny, Tableau, PowerBI
+  image: "https://link-do-preview.jpg"
+  url: "https://link-para-acessar.com"
+  featured: false # Deixe true se quiser destaque (se implementado)
+```
+
 ---
 
-## 📂 Estrutura de Pastas
+## 📄 Páginas Estáticas
 
-Aqui está um resumo rápido de onde as coisas estão:
+Algumas páginas possuem conteúdo fixo que não muda com frequência. Para alterá-las, você deve editar o arquivo HTML diretamente:
 
-- **`_data/`**: 🧠 **O Cérebro.** Aqui ficam os arquivos `.yml` com todo o texto e informações do site.
-- **`_includes/`**: 🧩 **Peças soltas.** Contém componentes reutilizáveis, como a barra de navegação (`navbar.html`).
-- **`_layouts/`**: 🏗️ **A Base.** O arquivo `default.html` define a estrutura padrão (cabeçalho, corpo) de todas as páginas.
-- **`assets/`**: 🎨 **Recursos Visuais.** Contém as pastas `css` (estilos), `js` (scripts) e `img` (imagens).
-- **`*.html`** (Raiz): As páginas principais do site (`index.html`, `projetos.html`, etc). Elas apenas "chamam" os dados.
+- **Sobre (`sobre.html`)**: Texto institucional e imagem de topo. Edite o texto dentro das tags `<p class="about-text">`.
+- **Colabore (`colabore.html`)**: Informações sobre parcerias e contatos. Edite os textos dentro dos cartões `.collab-card`.
 
 ---
 
-## 🛠️ Tecnologias Usadas
+## 📂 Estrutura de Arquivos
 
-- **Jekyll**: Gerador de sites estáticos.
-- **Liquid**: Linguagem de template usada para criar a lógica (loops, condições).
-- **Ruby**: Linguagem base do Jekyll.
-- **HTML5 / CSS3**: Estrutura e estilo visual do site.
+- **`_data/`**: Contém os arquivos YAML com o conteúdo dinâmico (Projetos, Equipe, Publicações, Dashboards).
+- **`_includes/`**: Componentes reutilizáveis (Ex: `navbar.html`).
+- **`_layouts/`**: Modelos de página (Ex: `default.html`).
+- **`assets/`**: Imagens, CSS e Scripts.
+- **Páginas Principais**:
+  - `index.html` (Home)
+  - `projetos.html`
+  - `equipe.html` (Lê de team.yml)
+  - `publicacoes.html` (Lê de publications.yml)
+  - `dashboards.html` (Lê de dashboards.yml)
+  - `sobre.html`
+  - `colabore.html`
+
+---
+
+## 🛠️ Tecnologias
+
+- **Jekyll**: Gerador de site estático.
+- **Liquid**: Linguagem de templates.
+- **HTML5 / CSS3**: Estrutura e Estilização.
+- **Font Awesome**: Ícones.
 
 ---
 
