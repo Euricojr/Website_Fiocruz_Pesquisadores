@@ -10,8 +10,5 @@
   image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2070&auto=format&fit=crop"
   url: "/dashboards.html"
 
-- title: "Genomic Surveillance of Dengue"
-  category: "NOVA PUBLICAÇÃO"
-  description: "Leia nosso artigo mais recente publicado na The Lancet Regional Health com análise retrospectiva no Brasil."
+- dynamic: "latest_pub"
   image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop"
-  url: "/publicacoes.html"

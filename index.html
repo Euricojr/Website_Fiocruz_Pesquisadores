@@ -6,14 +6,32 @@ title: Insight - Pesquisa Colaborativa em Saúde
 <!-- Hero Slider Premium -->
 <section class="hero-slider">
     {% for destaque in site.data.destaques %}
+    
+    {% if destaque.dynamic == 'latest_pub' %}
+        {% assign pubs_ordenadas = site.data.publications | sort: 'year' | reverse %}
+        {% assign latest_pub = pubs_ordenadas[0] %}
+        
+        {% assign slide_title = latest_pub.title %}
+        {% assign slide_desc = "Leia nosso artigo mais recente publicado em " | append: latest_pub.venue | append: "." %}
+        {% assign slide_url = latest_pub.link_url %}
+        {% assign slide_tag = "NOVA PUBLICAÇÃO" %}
+        {% assign target_blank = 'target="_blank"' %}
+    {% else %}
+        {% assign slide_title = destaque.title %}
+        {% assign slide_desc = destaque.description %}
+        {% assign slide_url = destaque.url | relative_url %}
+        {% assign slide_tag = destaque.category %}
+        {% assign target_blank = '' %}
+    {% endif %}
+
     <div class="slide {% if forloop.first %}active{% endif %}">
         <div class="slide-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(18,18,18,1)), url('{{ destaque.image }}');"></div>
         
-        <div class="container slide-content">
-            <span class="slide-category">{{ destaque.category }}</span>
-            <h1 class="slide-title">{{ destaque.title }}</h1>
-            <p class="slide-desc">{{ destaque.description }}</p>
-            <a href="{{ destaque.url | relative_url }}" class="btn-hero">
+        <div class="container slide-content" style="padding: 90px 20px 0 20px;">
+            <span class="slide-category">{{ slide_tag }}</span>
+            <h1 class="slide-title">{{ slide_title }}</h1>
+            <p class="slide-desc">{{ slide_desc }}</p>
+            <a href="{{ slide_url }}" {{ target_blank }} class="btn-hero">
                 Saiba Mais <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
