@@ -43,3 +43,60 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+
+/* --- Slider Automático --- */
+document.addEventListener('DOMContentLoaded', function() {
+    let slideIndex = 0;
+    let slides = document.querySelectorAll(".slide");
+    let dots = document.querySelectorAll(".dot");
+    let slideInterval;
+
+    function showSlides(n) {
+        if (!slides.length) return;
+        
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+        
+        slideIndex = n;
+        if (slideIndex >= slides.length) {slideIndex = 0}
+        if (slideIndex < 0) {slideIndex = slides.length - 1}
+        
+        slides[slideIndex].classList.add("active");
+        dots[slideIndex].classList.add("active");
+    }
+
+    function startSlider() {
+        if (slides.length > 1) {
+            slideInterval = setInterval(() => { showSlides(slideIndex + 1); }, 6000); // 6 segundos
+        }
+    }
+
+    // Nova função para as setas
+    window.changeSlide = function(n) {
+        clearInterval(slideInterval);
+        showSlides(slideIndex + n);
+        startSlider();
+    };
+
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            clearInterval(slideInterval);
+            showSlides(index);
+            startSlider();
+        });
+    });
+
+    // Event listeners for arrows (using data-dir to avoid inline onclick if possible, but user asked for global fn)
+    // We can also bind the arrows if they exist
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    if (prevBtn) prevBtn.addEventListener("click", () => window.changeSlide(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => window.changeSlide(1));
+
+    if (slides.length > 0) {
+        showSlides(0);
+        startSlider();
+    }
+});
+

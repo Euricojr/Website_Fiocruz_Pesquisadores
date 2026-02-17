@@ -1,16 +1,47 @@
 ---
 layout: default
-title: Fiocruz - A serviço da vida
-navbar_class: ""
+title: Insight - Pesquisa Colaborativa em Saúde
 ---
 
-<!-- Hero Section -->
-<header class="hero">
-    <img src="/assets/img/castelo-fiocruz.jpg" class="hero-bg" alt="Castelo Fiocruz" fetchpriority="high">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <h1 class="hero-title">Laboratório de pesquisas</h1>
-        <p class="hero-subtitle">Descubra nossa instituição</p>
-        <a href="/sobre.html" class="btn btn-outline">Saiba mais</a>
+<!-- Hero Slider Premium -->
+<section class="hero-slider">
+    {% for destaque in site.data.destaques %}
+    <div class="slide {% if forloop.first %}active{% endif %}">
+        <div class="slide-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(18,18,18,1)), url('{{ destaque.image }}');"></div>
+        
+        <div class="container slide-content">
+            <span class="slide-category">{{ destaque.category }}</span>
+            <h1 class="slide-title">{{ destaque.title }}</h1>
+            <p class="slide-desc">{{ destaque.description }}</p>
+            <a href="{{ destaque.url | relative_url }}" class="btn-hero">
+                Saiba Mais <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
     </div>
-</header>
+    {% endfor %}
+    
+    <button class="slider-arrow prev" data-dir="-1" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slider-arrow next" data-dir="1" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <div class="slider-dots">
+        {% for destaque in site.data.destaques %}
+        <span class="dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></span>
+        {% endfor %}
+    </div>
+</section>
+
+<div class="manifesto-section">
+  <div class="container" style="text-align: center">
+    <h2 class="manifesto-title">Insight</h2>
+    <p class="manifesto-lead">
+      Uma iniciativa de pesquisa colaborativa operando na interseção entre
+      Inteligência Artificial, Saúde Pública e Impacto Social.
+    </p>
+    <div class="manifesto-divider"></div>
+    <p class="manifesto-sub">
+      Conectando instituições, dados e pesquisadores para fortalecer as
+      respostas aos desafios epidemiológicos contemporâneos, através de projetos
+      multi-institucionais e redes de pesquisa.
+    </p>
+  </div>
+</div>
