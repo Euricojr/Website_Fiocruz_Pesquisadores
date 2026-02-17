@@ -330,7 +330,8 @@ navbar_class: navbar-light navbar-static
         <!-- List -->
         <div class="pub-list">
             
-            {% for pub in site.data.publications %}
+            {% assign pubs_ordenadas = site.data.publications | sort: 'year' | reverse %}
+            {% for pub in pubs_ordenadas %}
             <div class="pub-item" data-category="{{ pub.category }}">
                 <div class="pub-year">{{ pub.year }}</div>
                 <div class="pub-image">

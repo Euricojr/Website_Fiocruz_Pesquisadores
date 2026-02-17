@@ -1,45 +1,225 @@
-- year: 2025
+- year: "2018"
   category: artigos
-  title: "Genomic surveillance of dengue virus type 3 in Brazil: A retrospective analysis"
-  authors: "Silva, M.A., Santos, J.R., Costa, F.P., et al."
-  venue: "The Lancet Regional Health - Americas"
-  image: "https://picsum.photos/80/110?random=12"
-  link_text: "Ler Artigo →"
-  link_url: "#"
-
-- year: 2025
+  title: "Seasonal dynamics of influenza in Brazil: the latitude effect"
+  authors: A Almeida, C Codeço, PM Luz
+  venue: BMC infectious diseases 18 (1)
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=77
+  link_text: Ler Artigo
+  link_url: https://link.springer.com/article/10.1186/s12879-018-3484-z
+- year: "2009"
+  category: artigos
+  title:
+    "O ensino como negócio: a expansão da oferta dos cursos de formação de tecnólogos
+    em saúde no Brasil"
+  authors: AM Campello, A Almeida, L Costa, M Candeias, MD Seta, M Farah Neto, ...
+  venue: Trabalho
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=95
+  link_text: Ler Artigo
+  link_url: https://www.scielo.br/j/tes/a/GWrQ7bHkmWWVxGsB6B4K7Fx/?lang=pt
+- year: "2013"
+  category: artigos
+  title:
+    "Dinâmica da formação técnica e da ocupação de postos de trabalho em saúde:
+    Brasil anos 2000"
+  authors: M VIEIRA, ARM Almeida, A Campello, AB Moreno, F Chinelli, ...
+  venue: Morosini MVGC
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=56
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/scholar?cluster=15928747327051699688&hl=en&oi=scholarr
+- year: "2024"
+  category: artigos
+  title:
+    "The use of natural language processing methods in reddit to investigate
+    opioid use: scoping review"
+  authors: A Almeida, T Patton, M Conway, A Gupta, SA Strathdee, A Bórquez
+  venue: JMIR infodemiology 4
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=29
+  link_text: Ler Artigo
+  link_url: https://infodemiology.jmir.org/2024/1/e51156
+- year: "2018"
+  category: artigos
+  title:
+    "Dinâmica sazonal da influenza no Brasil: a importância da latitude e do
+    clima"
+  authors: ARM Almeida
+  venue: "Rio de Janeiro: Escola Nacional de Saúde Pública Sergio Arouca (ENSP …"
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=6
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/scholar?cluster=10853492695247864641&hl=en&oi=scholarr
+- year: "2023"
+  category: artigos
+  title:
+    A Psychometric Evaluation and a Framework Test of the HIV Stigma Mechanisms
+    Scale Among a Population-Based Sample of Men and Women Living with HIV in Central
+    Uganda
+  authors: A Almeida, ...
+  venue: AIDS Behavior
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=62
+  link_text: Ler Artigo
+  link_url: https://link.springer.com/article/10.1007/s10461-023-04026-y
+- year: "2025"
+  category: artigos
+  title:
+    "Medication experiences in the treatment of opioid use disorders: Insights
+    from Reddit"
+  authors: A Almeida, M Conway, DJ Grelotti, A Gupta, D Frank, A Bórquez
+  venue: Addiction 120 (8)
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=93
+  link_text: Ler Artigo
+  link_url: https://onlinelibrary.wiley.com/doi/abs/10.1111/add.70022
+- year: "2019"
+  category: artigos
+  title: "Correction to: Seasonal dynamics of influenza in Brazil: the latitude effect"
+  authors: A Almeida, C Codeço, PM Luz
+  venue: BMC Infectious Diseases 19
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=6
+  link_text: Ler Artigo
+  link_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6399819/
+- year: "2009"
+  category: artigos
+  title:
+    "Teaching as business: the growth in the offering of health technologists'
+    education courses in Brazil"
+  authors: AM Campello, A Almeida, L Costa, M Candeias, MD Seta, M Farah Neto, ...
+  venue: Trabalho
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=90
+  link_text: Ler Artigo
+  link_url: https://www.scielo.br/j/tes/a/GWrQ7bHkmWWVxGsB6B4K7Fx/abstract/?lang=en&format=html&stop=next
+- year: "2007"
+  category: artigos
+  title: Análise de estilo robusta
+  authors: AR ALMEIDA, BV MENDES, M NAZARETH
+  venue: Encontro Brasileiro de Finanças 7
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=79
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/scholar?cluster=5134869852535276912&hl=en&oi=scholarr
+- year: "2011"
+  category: artigos
+  title:
+    "Trabalhadores da saúde: diferenças de escolaridade entre o setor público
+    e o privado. Um estudo a partir da PNAD–2005"
+  authors: AB Moreno, A Almeida, L Costa, CR Pierantoni, MR Dal Poz, T França
+  venue: Pierantoni CR
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=60
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/scholar?cluster=18274127049629636004&hl=en&oi=scholarr
+- year: "2026"
+  category: artigos
+  title:
+    Epidemiological and digital syndromic surveillance data on dengue, chikungunya,
+    and SARI in Brazil
+  authors: ME Borges, CT Codeço, D Machado, A Almeida
+  venue: Scientific Data 13 (1)
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=25
+  link_text: Ler Artigo
+  link_url: https://www.nature.com/articles/s41597-025-06155-6
+- year: "2025"
+  category: artigos
+  title:
+    "Medication Experiences in the Treatment for Opioid Use Disorder: Insights
+    From Reddit"
+  authors: A Borquez, M Conway, D Grelotti, A Gupta, S Strathdee, A Almeida
+  venue: Drug and Alcohol Dependence 267
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=73
+  link_text: Ler Artigo
+  link_url: https://elibrary.ru/item.asp?id=81299046
+- year: "2025"
+  category: artigos
+  title:
+    "Potential Substance Use Disorder Epidemics Related to Prescription-Drugs
+    in the United States: Development, Validation and Application of a Risk Assessment
+    Approach"
+  authors:
+    M Funk, T Patton, CH Shrader, D Abramovitz, A Almeida, R Goyal, B Han,
+    ...
+  venue: Drug and Alcohol Dependence 267
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=44
+  link_text: Ler Artigo
+  link_url: https://elibrary.ru/item.asp?id=82061093
+- year: "2024"
+  category: artigos
+  title:
+    "Assessing the Safety, User Acceptability, Dissemination, and Reach of a
+    Comprehensive Web-Based Resource on Medications for Opioid Use Disorder (MOUD
+    Hub): Protocol for a …"
+  authors:
+    MJ Nicholls, A Almeida, J Castello, D Grelotti, B Daugherty, D Gann Jr,
+    ...
+  venue: JMIR Research Protocols 13 (1)
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=6
+  link_text: Ler Artigo
+  link_url: https://www.researchprotocols.org/2024/1/e57065/
+- year: "2024"
   category: preprints
-  title: "Real-time forecasting of arboviral outbreaks using machine learning and climate data"
-  authors: "Oliveira, T.C., Mendes, R.L., & Souza, P.H."
-  venue: "MedRxiv"
-  venue_type: "Preprint"
-  image: "https://picsum.photos/80/110?random=10"
-  link_text: "Ler Artigo →"
-  link_url: "#"
-
-- year: 2024
-  category: relatorios
-  title: "Relatório Técnico Anual: Monitoramento de Vetores no Estado do Rio de Janeiro"
-  authors: "Núcleo de Vigilância Entomológica - Fiocruz"
-  venue: "Relatório Técnico"
-  image: "https://picsum.photos/80/110?random=13"
-  link_text: "Baixar PDF →"
-  link_url: "#"
-
-- year: 2024
+  title:
+    "THE “MOUD HUB,” A COMPREHENSIVE ONLINE RESOURCE ON MEDICATIONS FOR OPIOID
+    USE DISORDER: PROTOCOL FOR A FEASIBILITY STUDY ASSESSING USER ACCEPTABILITY AND
+    REACH (PREPRINT)"
+  authors: M NICHOLLS, A ALMEIDA, JU CASTELLO, D GRELOTTI, B DOHERTY, ...
+  venue: JMIR
+  venue_type: Preprint
+  image: https://picsum.photos/80/110?random=74
+  link_text: Ler Artigo
+  link_url: https://elibrary.ru/item.asp?id=74375794
+- year: "2014"
   category: artigos
-  title: "Impact of vaccination strategies on COVID-19 transmission dynamics in urban slums"
-  authors: "Ferreira, A.L., Gomez, D.R., et al."
-  venue: "Nature Communications"
-  image: "https://picsum.photos/80/110?random=11"
-  link_text: "Ler Artigo →"
-  link_url: "#"
-
-- year: 2023
+  title:
+    "Trabalho técnico não-formal em saúde no Brasil: Inferências a partir da
+    comparação RAIS-PNAD 2009"
+  authors: A Almeida, M Candeias, M Vieira, AM Campello, A Moreno, F Chinelli, ...
+  venue: 11º Congresso Internacional da Rede Unida
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=74
+  link_text: Ler Artigo
+  link_url: http://conferencias.redeunida.org.br/ocs/index.php/redeunida/RU11/paper/view/1062
+- year: "2014"
   category: artigos
-  title: "Comparative analysis of RNA extraction methods for viral pathogens"
-  authors: "Lima, K.S., & Pereira, J.V."
-  venue: "Journal of Virological Methods"
-  image: "https://picsum.photos/80/110?random=14"
-  link_text: "Ler Artigo →"
-  link_url: "#"
+  title: TRABALHADORES TÉCNICOS DE SAÚDE E SUAS TRAJETÓRIAS PROFISSIONAIS NO BRASIL
+  authors: F Chinelli, AM Campello, F Lobo, A Moreno, A Almeida, M Candeias, ...
+  venue: 11º Congresso Internacional da Rede Unida
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=99
+  link_text: Ler Artigo
+  link_url: http://conferencias.redeunida.org.br/ocs/index.php/redeunida/RU11/paper/view/1709/0
+- year: "2009"
+  category: artigos
+  title: Inequalities in Technical Brazilian Health Workforce
+  authors: A Almeida, A Moreno, M Candeias, M Vieira
+  venue: Google Scholar
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=45
+  link_text: Ler Artigo
+  link_url: https://2009.isiproceedings.org/A5%20Docs/1038.pdf
+- year: ""
+  category: artigos
+  title: agentes comunitários de saúde–Brasil
+  authors: F Chinelli, M Vieira, AM Campello, F Lobro, A Moreno, A Almeida, ...
+  venue: Formação Profissional
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=41
+  link_text: Ler Artigo
+  link_url: https://www.academia.edu/download/32882882/AFIRSEActas2013.pdf#page=1352
+- year: ""
+  category: artigos
+  title: O público e o privado na formação de tecnólogos em saúde
+  authors: AM Campello, A Almeida, FJSL Neto, L Leite, M Candeias, M De Setta, ...
+  venue: Google Scholar
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=48
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/scholar?cluster=7778660148773336574&hl=en&oi=scholarr
