@@ -27,7 +27,7 @@ title: Insight - Pesquisa Colaborativa em Saúde
     <div class="slide {% if forloop.first %}active{% endif %}">
         <div class="slide-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(18,18,18,1)), url('{{ destaque.image }}');"></div>
         
-        <div class="container slide-content" style="padding: 90px 20px 0 20px;">
+        <div class="container slide-content">
             <span class="slide-category">{{ slide_tag }}</span>
             <h1 class="slide-title">{{ slide_title }}</h1>
             <p class="slide-desc">{{ slide_desc }}</p>
@@ -46,9 +46,19 @@ title: Insight - Pesquisa Colaborativa em Saúde
         <span class="dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></span>
         {% endfor %}
     </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-down">
+        <a href="#insight-section" aria-label="Rolar para baixo">
+            <div class="arrow">
+                <div class="arrow-top"></div>
+                <div class="arrow-bottom"></div>
+            </div>
+        </a>
+    </div>
 </section>
 
-<div class="manifesto-section">
+<div id="insight-section" class="manifesto-section">
   <div class="container" style="text-align: center">
     <h2 class="manifesto-title">Insight</h2>
     <p class="manifesto-lead">
@@ -63,3 +73,5 @@ title: Insight - Pesquisa Colaborativa em Saúde
     </p>
   </div>
 </div>
+
+
