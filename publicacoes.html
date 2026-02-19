@@ -101,6 +101,49 @@ navbar_class: navbar-light navbar-static
         transform: translateY(-2px);
     }
 
+    /* Search Bar Styles */
+    .search-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        position: relative;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 15px 25px;
+        padding-right: 50px; /* Space for icon */
+        border: 2px solid var(--border-color);
+        border-radius: 50px;
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        outline: none;
+        transition: all 0.3s ease;
+        background-color: var(--bg-card);
+        color: var(--text-title);
+    }
+
+    .search-input:focus {
+        border-color: #C65000;
+        box-shadow: 0 4px 15px rgba(198, 80, 0, 0.15);
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        pointer-events: none;
+    }
+
+    .search-input:focus + .search-icon {
+        color: #C65000;
+    }
+
     /* Item Animation */
     .pub-item {
         opacity: 1;
@@ -319,6 +362,12 @@ navbar_class: navbar-light navbar-static
         
         <!-- Headers Removed -->
 
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar por título, autor ou tema...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
         <!-- Filters -->
         <div class="pub-filters">
             <button class="filter-btn active" data-filter="all">Todos</button>
@@ -368,35 +417,56 @@ navbar_class: navbar-light navbar-static
 <!-- Scripts -->
 <script src="/assets/js/main.js"></script>
 <script>
-    // Interactive Filter Logic
+    // Interactive Search & Filter Logic
     document.addEventListener("DOMContentLoaded", function () {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const pubItems = document.querySelectorAll('.pub-item');
+        const searchInput = document.getElementById('searchInput');
 
+        let currentFilter = 'all';
+
+        function filterPublications() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            pubItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const title = item.querySelector('.pub-title').textContent.toLowerCase();
+                const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
+                // Optional: Search in venue too if desired
+                // const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
+
+                const matchesFilter = (currentFilter === 'all' || category === currentFilter);
+                const matchesSearch = (title.includes(searchTerm) || authors.includes(searchTerm));
+
+                // Reset animation
+                item.style.animation = 'none';
+                item.offsetHeight; /* trigger reflow */
+                item.style.animation = null;
+
+                if (matchesFilter && matchesSearch) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // Filter Button Logic
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // Update Active State
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // Filter Logic
-                const filter = btn.getAttribute('data-filter');
-
-                pubItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    
-                    // Reset animation
-                    item.style.animation = 'none';
-                    item.offsetHeight; /* trigger reflow */
-                    item.style.animation = null;
-
-                    if (filter === 'all' || category === filter) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
+                // Update Current Filter
+                currentFilter = btn.getAttribute('data-filter');
+                
+                // Trigger Filter
+                filterPublications();
             });
         });
+
+        // Search Input Logic
+        searchInput.addEventListener('input', filterPublications);
     });
 </script>
