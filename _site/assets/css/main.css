@@ -281,7 +281,8 @@ ul {
 }
 
 .logo img {
-  margin-top: 0;
+  height: 90px; /* Increased from 80px */
+  margin-top: 10px; /* Adjusted from 6px */
 }
 
 .nav-links a {
