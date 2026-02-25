@@ -100,3 +100,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Variável para controlar o estado atual
+let currentLang = 'pt';
+
+// Função do Toggle
+window.toggleLanguage = function() {
+    var teCombo = document.querySelector('.goog-te-combo');
+    var langBtn = document.getElementById('lang-toggle-btn');
+
+    if (teCombo) {
+        if (currentLang === 'pt') {
+            // Muda para Inglês
+            teCombo.value = 'en';
+            currentLang = 'en';
+            langBtn.innerText = 'PT'; // O botão agora mostra a opção de voltar
+            langBtn.classList.add('active-lang');
+        } else {
+            // Volta para Português
+            teCombo.value = 'pt';
+            currentLang = 'pt';
+            langBtn.innerText = 'EN';
+            langBtn.classList.remove('active-lang');
+        }
+        teCombo.dispatchEvent(new Event('change'));
+    }
+};
