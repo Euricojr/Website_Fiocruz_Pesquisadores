@@ -100,28 +100,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Variável para controlar o estado atual
-let currentLang = 'pt';
+// === Lógica do Botão de Idioma (Toggle) com Memória ===
+let currentLang = localStorage.getItem('siteLang') || 'pt';
 
-// Função do Toggle
-window.toggleLanguage = function() {
+// Função para aplicar a tradução real na página
+function applyTranslation(lang) {
     var teCombo = document.querySelector('.goog-te-combo');
     var langBtn = document.getElementById('lang-toggle-btn');
-
+    
     if (teCombo) {
-        if (currentLang === 'pt') {
-            // Muda para Inglês
-            teCombo.value = 'en';
-            currentLang = 'en';
-            langBtn.innerText = 'PT'; // O botão agora mostra a opção de voltar
-            langBtn.classList.add('active-lang');
-        } else {
-            // Volta para Português
-            teCombo.value = 'pt';
-            currentLang = 'pt';
-            langBtn.innerText = 'EN';
-            langBtn.classList.remove('active-lang');
-        }
+        teCombo.value = lang;
         teCombo.dispatchEvent(new Event('change'));
+        
+        // Atualiza visual do botão
+        if (langBtn) {
+            if (lang === 'en') {
+                langBtn.innerText = 'PT';
+                langBtn.classList.add('active-lang');
+            } else {
+                langBtn.innerText = 'EN';
+                langBtn.classList.remove('active-lang');
+            }
+        }
     }
+}
+
+// Ao clicar no botão Toggle
+window.toggleLanguage = function() {
+    if (currentLang === 'pt') {
+        currentLang = 'en';
+    } else {
+        currentLang = 'pt';
+    }
+    
+    localStorage.setItem('siteLang', currentLang);
+    applyTranslation(currentLang);
 };
+
+// Ao carregar a página, se o usuário tinha salvo 'en', tenta aplicar assim que o Google carregar
+window.addEventListener('load', function() {
+    if (currentLang === 'en') {
+        // O script do Google Tradutor demora alguns milissegundos para renderizar o .goog-te-combo
+        // Um pequeno intervalo garante que o dropdown já existe na tela para acionarmos
+        let checkGoogleLoad = setInterval(function() {
+            if (document.querySelector('.goog-te-combo')) {
+                clearInterval(checkGoogleLoad);
+                applyTranslation('en');
+            }
+        }, 300);
+        
+        // Para se não carregar em 5 segundos
+        setTimeout(() => clearInterval(checkGoogleLoad), 5000);
+    }
+});
