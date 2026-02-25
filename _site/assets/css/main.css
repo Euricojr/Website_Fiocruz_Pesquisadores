@@ -1351,10 +1351,9 @@ ul {
 /* Efeito ao passar o mouse e estado ativo */
 .circular-btn.lang-toggle:hover,
 .circular-btn.lang-toggle.active-lang {
-    background-color: #CB4F08; /* Cor laranja principal */
-    border-color: #CB4F08;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo branco translúcido em vez de laranja opaco */
     color: #ffffff;
-    box-shadow: 0 4px 10px rgba(203, 79, 8, 0.3);
+    border: 2px solid #ffffff; /* Mantém a borda branca */
 }
 
 /* Oculta as barras nativas do Google */
