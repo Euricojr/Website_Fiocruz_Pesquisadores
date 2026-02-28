@@ -73,8 +73,30 @@ members:
 ### 3. Publicações (`publicacoes.html`)
 
 Arquivo: `_data/publications.yml`
+As publicações são exibidas em ordem. Você pode adicioná-las manualmente ou usar nosso **atualizador automático**.
 
-As publicações são exibidas em ordem. Adicione novas no topo da lista:
+#### Opção A: Atualização Automática (Recomendada)
+Nós possuímos um robô (`atualizar_publicacoes.py`) que vasculha o Google Scholar e traz as publicações novas automaticamente.
+
+**Como usar:**
+1. Certifique-se de ter o Python instalado.
+2. No seu terminal, instale os pacotes necessários rodando:
+   ```bash
+   pip install pyyaml requests python-dotenv
+   ```
+3. Crie e configure sua chave da [SerpApi](https://serpapi.com/) no arquivo `.env` (exemplo: `SERPAPI_KEY=sua_chave`).
+4. Rode o atualizador no terminal:
+   ```bash
+   python atualizar_publicacoes.py
+   ```
+
+**Dica sobre Limites (CRÍTICO):** 
+Dentro do arquivo `atualizar_publicacoes.py`, no bloco `PESQUISADORES`, há uma variável chamada `limite`. 
+- Se você colocar `limite: 0`, a API vai puxar **todo o histórico** do pesquisador (pode gastar centenas de créditos se o pesquisador tiver muitas menções e abstracts).
+- O ideal para rodar periodicamente (ex: a cada 15 dias) é manter o `limite` restrito (ex: `limite: 5` ou `25`). Assim a API lê só os itens mais novos, gasta quase nada de créditos e só adiciona ao arquivo o que for lançamento!
+
+#### Opção B: Adição Manual
+Para adicionar manualmente, abra o arquivo `_data/publications.yml` e cole um bloco no topo da lista:
 
 ```yaml
 - year: 2025
