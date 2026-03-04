@@ -175,10 +175,14 @@ navbar_class: navbar-light navbar-static
                 <img src="{{ member.image }}" alt="Foto de {{ member.name }}" class="member-photo">
                 <h3 class="member-name">{{ member.name }}</h3>
                 <p class="member-role">{{ member.role }}</p>
-                <p class="member-aff">{{ member.affiliation }}</p>
+                <p class="member-aff">{{ member.institution }}</p>
                 <div class="card-actions">
-                    <a href="{{ member.links.lattes }}" class="social-btn lattes">LATTES</a>
-                    <a href="{{ member.links.linkedin }}" class="social-btn linkedin">LINKEDIN</a>
+                    {% if member.lattes and member.lattes != "" %}
+                    <a href="{{ member.lattes }}" class="social-btn lattes" target="_blank">LATTES</a>
+                    {% endif %}
+                    {% if member.linkedin and member.linkedin != "" %}
+                    <a href="{{ member.linkedin }}" class="social-btn linkedin" target="_blank">LINKEDIN</a>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

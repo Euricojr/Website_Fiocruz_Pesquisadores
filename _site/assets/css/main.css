@@ -959,9 +959,9 @@ ul {
   letter-spacing: 0.5px;
 }
 
-/* Add separator dash to the first item */
-.social-btn:first-child {
-  border-right: 1px solid #ddd;
+/* Add separator dash between items */
+.social-btn + .social-btn {
+  border-left: 1px solid #ddd;
 }
 
 .social-btn:hover {
