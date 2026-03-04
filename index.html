@@ -60,7 +60,18 @@ title: Insight - Pesquisa Colaborativa em Saúde
 
 <div id="insight-section" class="manifesto-section">
   <div class="container" style="text-align: center">
-    <h2 class="manifesto-title">Insight</h2>
+    <h2 class="manifesto-title" style="margin-top: -100px; margin-bottom: -150px;">
+      <img src="/assets/img/logoinsight.png" alt="Insight Logo" class="insight-logo-image" style="width: 450px; max-width: 90%; height: auto; object-fit: contain; display: inline-block; pointer-events: none; user-select: none; position: relative;">
+    </h2>
+    <style>
+      .insight-logo-image {
+        filter: invert(0.75); /* Cinza (inverte apenas 75% do branco) */
+        transition: filter 0.3s ease;
+      }
+      body.dark-mode .insight-logo-image {
+        filter: none; /* Mantém a cor original (branco) no modo escuro */
+      }
+    </style>
     <p class="manifesto-lead">
       Uma iniciativa de pesquisa colaborativa operando na interseção entre
       Inteligência Artificial, Saúde Pública e Impacto Social.
