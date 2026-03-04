@@ -578,12 +578,7 @@ ul {
   font-size: 0.95rem;
   color: var(--text-desc);
   line-height: 1.5;
-  margin-bottom: 16px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
+  margin-bottom: 24px;
   flex-grow: 1;
   text-align: center;
 }
@@ -1332,30 +1327,41 @@ ul {
 
 /* --- Botão Quadrado de Idioma --- */
 .circular-btn.lang-toggle {
-    width: 38px;
-    height: 38px;
-    border-radius: 6px;
-    background-color: transparent; 
-    color: #ffffff;
-    border: 2px solid #ffffff; /* Match Colabore border */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    box-sizing: border-box;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff; /* Match Colabore border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-sizing: border-box;
 }
 /* Efeito ao passar o mouse e estado ativo */
 .circular-btn.lang-toggle:hover,
 .circular-btn.lang-toggle.active-lang {
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo branco translúcido em vez de laranja opaco */
-    color: #ffffff;
-    border: 2px solid #ffffff; /* Mantém a borda branca */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Fundo branco translúcido em vez de laranja opaco */
+  color: #ffffff;
+  border: 2px solid #ffffff; /* Mantém a borda branca */
 }
 
 /* Oculta as barras nativas do Google */
-#google_translate_element, .skiptranslate, .goog-te-banner-frame { display: none !important; }
-body { top: 0 !important; }
+#google_translate_element,
+.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}

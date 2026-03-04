@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos</title>
+    <title>IA e Cenas de Drogas</title>
     <meta name="description" content="Fiocruz - Instituição nacional de pesquisa e desenvolvimento em ciências biológicas.">
     <link rel="icon" type="image/png" href="/assets/img/logo fiocruz web preto.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="/assets/img/logo fiocruz web branco.png" media="(prefers-color-scheme: dark)">
@@ -42,7 +42,7 @@
         })();
     </script>
 
-    <nav class="navbar navbar-light">
+    <nav class="navbar ">
     <div class="container nav-container">
         <div class="logo">
             <a href="/">
@@ -50,7 +50,7 @@
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="/projetos.html" class="active">Projetos</a></li>
+            <li><a href="/projetos.html" class="">Projetos</a></li>
             <li><a href="/dashboards.html" class="">Dashboards</a></li>
             <li><a href="/publicacoes.html" class="">Publicações</a></li>
             <li><a href="/equipe.html" class="">Equipe</a></li>
@@ -81,211 +81,55 @@
 
 
     <style>
-    /* Standardizing Visual Identity - Projects Page */
-
-    /* 1. Navbar Standardized (Orange #C65000) */
-    .navbar.navbar-light {
+    .project-header {
         background-color: #C65000;
-    }
-
-    /* Ensure links are white on orange */
-    .navbar .nav-links li a {
-        color: #ffffff !important;
-        opacity: 1; 
-    }
-
-    .navbar .nav-links li a:hover {
-            opacity: 1; /* Match main.css behavior */
-    }
-
-    /* Styles for 'Colabore' button */
-    .navbar .nav-links .nav-btn {
-        border: 2px solid #ffffff !important;
-        color: #ffffff !important;
-        background: transparent;
-    }
-
-    .navbar .nav-links .nav-btn:hover {
-        background-color: #ffffff;
-        color: #C65000 !important;
-    }
-
-    /* 2. Page Title */
-    .section-title {
-        color: #C65000 !important;
-    }
-
-    /* 3. Cards Buttons & Tags */
-    .card-link {
-        color: #333333; /* Dark Gray (Rest State) */
-        font-weight: 700;
-        text-decoration: none;
-        position: relative;
-        display: inline-block;
-        transition: color 0.3s ease; /* Smooth transition */
-    }
-    
-    /* Change color specifically when hovering the CARD container */
-    .project-card:hover .card-link {
-        color: #C65000;
-    }
-
-    /* Overriding the default ::after for the orange expanding underline */
-    .card-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0;
-        height: 2px;
-        background-color: #C65000 !important; /* Force Orange */
-        transition: width 0.3s ease-in-out !important; /* Match Navbar Speed */
-        display: block !important;
-    }
-    
-    .card-link:hover {
-        color: #C65000;
-        border-bottom: none; /* remove potential border conflict */
-    }
-    
-    .card-link:hover::after {
-        width: 100%;
-    }
-
-    /* Description Text Styling */
-    .section-description {
-        font-family: "Inter", sans-serif;
-        font-size: 1.1rem;
-        color: #666;
+        color: #fff;
+        padding: 60px 20px;
         text-align: center;
+        margin-bottom: 40px;
+    }
+    .project-header h1 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        margin: 0;
+    }
+    .project-content {
         max-width: 800px;
-        margin: -25px auto 50px auto; 
-        font-weight: 400;
+        margin: 0 auto 60px auto;
+        padding: 0 20px;
+        font-family: "Inter", sans-serif;
+        color: #333;
         line-height: 1.6;
     }
-
-    /* Neutral Gray Tags -> Updated to Light Orange */
-    .badge {
-        background-color: #FFF3E0; /* Light Orange */
-        color: #C65000; /* Dark Orange Text */
-        border: none; /* Cleaner look without border */
-        font-weight: 600;
+    .project-content h2 {
+        color: #C65000;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #FFF3E0;
+        padding-bottom: 10px;
     }
-
-    /* 4. Project Card Micro-interactions */
-    .project-card {
-        transition: all 0.3s ease;
-        border-top: 4px solid #C65000; /* Visual consistency */
-    }
-    
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-
-    /* 5. Image Zoom */
-    .card-image {
-        overflow: hidden;
-    }
-    
-    .card-image img {
-        transition: transform 0.5s ease;
-    }
-    
-    .project-card:hover .card-image img {
-        transform: scale(1.05); /* Zoom effect */
+    .project-content p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
     }
 </style>
 
-<!-- Header Standard -->
-<section class="page-header-standard">
+<div class="project-header">
     <div class="container">
-        <h1>Nossos Projetos</h1>
-        <p class="subtitle">Conheça as iniciativas que estão transformando a saúde pública através de tecnologia, inovação e pesquisa aplicada.</p>
+        <h1>Interface homem-máquina na caracterização de cenas de uso de drogas</h1>
     </div>
-</section>
+</div>
 
-<!-- Projetos List -->
-<section class="projetos" style="padding-top: 0;">
-    <div class="container">
-        
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=800&auto=format&fit=crop" alt="Arboili: Infovigilância Precoce">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Arboili: Infovigilância Precoce</h3>
-                    <p class="card-description">
-                        Sistema de alerta para emergências em saúde pública (arboviroses e síndromes respiratórias) utilizando Natural Language Processing (NLP) e dados da Web como Google Trends.
-                    </p>
-                    <div class="card-tags">
-                        
-                        <span class="badge">NLP</span>
-                        
-                        <span class="badge">EPIDEMIOLOGIA</span>
-                        
-                        <span class="badge">BIG DATA</span>
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="/projetos/arboili.html" class="card-link">Ver detalhes &rarr;</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=800&auto=format&fit=crop" alt="IA e Citizen Science em Cenas de Uso">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">IA e Citizen Science em Cenas de Uso</h3>
-                    <p class="card-description">
-                        Uso do Google Street View, Inteligência Artificial e Ciência Cidadã para mapear e caracterizar o risco sindêmico (crack/HIV/HCV) e vulnerabilidades no Rio de Janeiro.
-                    </p>
-                    <div class="card-tags">
-                        
-                        <span class="badge">INTELIGÊNCIA ARTIFICIAL</span>
-                        
-                        <span class="badge">CITIZEN SCIENCE</span>
-                        
-                        <span class="badge">GEOLOCALIZAÇÃO</span>
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="/projetos/cenas-drogas.html" class="card-link">Ver detalhes &rarr;</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop" alt="Meninas nas Ciências Exatas">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Meninas nas Ciências Exatas</h3>
-                    <p class="card-description">
-                        Intervenção educacional interdisciplinar para combater desigualdades de gênero, motivando e retendo meninas e mulheres do ensino médio e graduação nas áreas ETEC/STEM.
-                    </p>
-                    <div class="card-tags">
-                        
-                        <span class="badge">EDUCAÇÃO</span>
-                        
-                        <span class="badge">EQUIDADE</span>
-                        
-                        <span class="badge">INTERDISCIPLINARIDADE</span>
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="/projetos/meninas-exatas.html" class="card-link">Ver detalhes &rarr;</a>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
+<div class="project-content">
+    <h2>O Desafio</h2>
+    <p>A dificuldade e alto custo de mapear cenas abertas de uso de crack e suas vulnerabilidades (violência, HIV, HCV) no Rio de Janeiro.</p>
+
+    <h2>A Solução (Inovação)</h2>
+    <p>Uso inédito de imagens do Google Street View alimentando algoritmos de Deep Learning (Convolutional Neural Networks) e validação por Ciência Cidadã (Citizen Science).</p>
+
+    <h2>Resultados Esperados</h2>
+    <p>Plataforma (Dashboard) interativa com ecométricas e mapas de risco sindêmico para auxiliar gestores do SUS e SUAS na atenção primária.</p>
+</div>
 
 
     
