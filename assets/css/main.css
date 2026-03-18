@@ -923,7 +923,7 @@ ul {
 .member-role {
   font-family: "Inter", sans-serif;
   font-size: 0.875rem; /* 14px */
-  color: var(--text-desc) !important; /* Adaptable grey color */
+  color: #C65000 !important; /* Orange */
   margin-bottom: 2px;
   font-weight: 400;
 }
