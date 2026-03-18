@@ -7,6 +7,15 @@
     - BIG DATA
   image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=800&auto=format&fit=crop"
   url: "/projetos/arboili.html"
+  status: "Em Desenvolvimento"
+  repo_url: "https://github.com/Insighthub/arboili"
+  events:
+    - icon: "fa-solid fa-file-lines"
+      text: "Artigo principal do projeto (Em breve)"
+      url: "#"
+    - icon: "fa-solid fa-microphone"
+      text: "Apresentação no Congresso X"
+      url: "#"
 
 - id: cenas-drogas
   title: "IA e Citizen Science em Cenas de Uso"
@@ -17,6 +26,15 @@
     - GEOLOCALIZAÇÃO
   image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=800&auto=format&fit=crop"
   url: "/projetos/cenas-drogas.html"
+  status: "Em Análise de Dados"
+  repo_url: "https://github.com/Insighthub/cenas-drogas"
+  events:
+    - icon: "fa-solid fa-video"
+      text: "Webinar sobre Citizen Science"
+      url: "#"
+    - icon: "fa-solid fa-file-lines"
+      text: "Publicação preliminar de Metodologia"
+      url: "#"
 
 - id: meninas-exatas
   title: "Meninas nas Ciências Exatas"
@@ -27,3 +45,12 @@
     - INTERDISCIPLINARIDADE
   image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop"
   url: "/projetos/meninas-exatas.html"
+  status: "Ativo / Em Campo"
+  repo_url: ""
+  events:
+    - icon: "fa-solid fa-users"
+      text: "Início das atividades nas 4 escolas"
+      url: "#"
+    - icon: "fa-solid fa-camera"
+      text: "Trabalho de campo na Fiocruz"
+      url: "#"

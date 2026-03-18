@@ -45,5 +45,34 @@ permalink: /projetos/meninas-exatas.html
         </div>
         <br>
         <p><strong>Público-alvo:</strong> Alunas do Ensino Médio (Rede Pública)</p>
+
+    {% assign p_data = site.data.projects | where: "id", "meninas-exatas" | first %}
+    
+    <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <h3 style="font-size: 1.1rem; margin-bottom: 15px; border-bottom: none; color: #CB4F08;">Publicações & Eventos</h3>
+        
+        {% if p_data.events %}
+        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 20px;">
+            {% for event in p_data.events %}
+            <li style="margin-bottom: 10px; font-size: 0.9rem;">
+                <i class="{{ event.icon }}" style="color: #bbb; margin-right: 8px;"></i> 
+                <a href="{{ event.url }}" target="_blank" style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#CB4F08'" onmouseout="this.style.color='#e0e0e0'">{{ event.text }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">Nenhuma atualização recente.</p>
+        {% endif %}
+
+        {% if p_data.status %}
+        <p style="font-size: 0.95rem; color: #bbb; margin-bottom: 15px;"><strong>Status:</strong> <span style="color: #fff;">{{ p_data.status }}</span></p>
+        {% endif %}
+
+        {% if p_data.repo_url and p_data.repo_url != "" %}
+        <a href="{{ p_data.repo_url }}" target="_blank" class="btn-repo" style="display: block; width: 100%; text-align: center; background: transparent; border: 2px solid #CB4F08; color: #CB4F08; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 20px;" onmouseover="this.style.background='#CB4F08'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#CB4F08';">
+            <i class="fa-brands fa-github"></i> Acessar Repositório
+        </a>
+        {% endif %}
+    </div>
     </div>
 </div>
