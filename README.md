@@ -1,164 +1,123 @@
-# 🏛️ Portal de Pesquisadores da Fiocruz
+# 🏛️ Portal INSIGHT - Fiocruz
 
-Este repositório contém o código-fonte do site estático gerado com **Jekyll**, desenvolvido para divulgar os projetos de pesquisa, a equipe e as publicações científicas da Fiocruz.
+Este repositório contém o código-fonte do portal do **INSIGHT**, um laboratório interdisciplinar que integra inteligência artificial, ciência de dados e epidemiologia. O site é estático e gerado com **Jekyll**, focado em facilitar a gestão de conteúdo sem necessidade de conhecimentos profundos em programação.
 
-O foco deste projeto foi manter o design visual original intacto enquanto tornamos a gestão de conteúdo fácil e dinâmica através de arquivos de dados (YAML).
+A maior parte do conteúdo (Projetos, Equipe, Publicações e Destaques) é gerada automaticamente através de listas de arquivos de dados do tipo YAML (`.yml`).
 
 ---
 
 ## 🚀 Como Rodar Localmente
 
-Siga estes passos para visualizar o site no seu computador antes de fazer alterações.
+Siga estes passos para visualizar o site no seu computador antes de publicar alterações na web:
 
 ### Pré-requisitos
-
 - **Ruby** (Instalado e configurado no PATH)
-- **Jekyll** e **Bundler** (`gem install jekyll bundler`)
+- **Jekyll** e **Bundler** (Instalados via terminal: `gem install jekyll bundler`)
 
 ### Passo a Passo
-
-1.  **Instale as dependências** (apenas na primeira vez):
-
-    ```bash
-    bundle install
-    ```
-
-2.  **Inicie o servidor local**:
-
-    ```bash
-    bundle exec jekyll serve
-    ```
-
-3.  **Acesse no navegador**:
-    Abra `http://localhost:4000` para ver o site.
+1. **Instale as dependências** (apenas na primeira vez):
+   ```bash
+   bundle install
+   ```
+2. **Inicie o servidor local**:
+   ```bash
+   bundle exec jekyll serve
+   ```
+3. **Acesse no navegador**: Abra `http://localhost:4000` para ver o site ao vivo.
 
 ---
 
-## 📝 Como Atualizar o Conteúdo
+## 🖼️ Como Funcionam as Imagens no Site?
 
-Você pode gerenciar a maior parte do conteúdo do site editando arquivos simples na pasta `_data/`. Não é necessário mexer nos arquivos HTML para estas alterações.
+Você tem sempre duas opções para colocar fotos e banners nos arquivos `.yml`:
 
-### 1. Projetos (`projects.html`)
+1. **Local (Recomendado):** Salve a imagem dentro da pasta `assets/img/` do projeto. No arquivo YAML, escreva apenas o caminho:
+   `image: "/assets/img/foto.jpg"`
+2. **Externa (Link da internet):** Clique com o botão direito numa imagem online, copie o endereço e cole no YAML:
+   `image: "https://site.com/foto.jpg"`
 
-Arquivo: `_data/projects.yml`
+*(Se o arquivo YAML não possuir um campo preenchido para lattes ou linkedin, o botão correspondente será **ocultado** automaticamente para manter o design limpo).*
 
-Adicione novos projetos copiando o bloco abaixo:
+---
 
+## 📝 Como Atualizar o Conteúdo (Arquivos de Dados)
+
+Você gerencia o portal editando arquivos simples de texto na pasta `_data/`. O site lê esses arquivos e desenha os cartões e banners sozinho.
+
+### 1. Equipe (`_data/team.yml`)
+A página de **Equipe** lê os dados deste arquivo, que é dividido por categorias ("Liderança Científica", "Membros", etc.).
+
+**Modelo de adição:**
 ```yaml
-- title: "Nome do Novo Projeto"
-  image: "https://link-da-imagem.com/foto.jpg" # URL externa ou caminho local (/assets/img/...)
-  description: "Descrição breve do projeto."
+- category: "NOME DA CATEGORIA"
+  members:
+    - name: "Nome do Membro"
+      role: "Cargo (ex: Voluntário)"
+      institution: "Faculdade / Instituição"
+      image: "/assets/img/foto.jpg"
+      linkedin: "https://www.linkedin.com/..."
+      lattes: "https://lattes.cnpq.br/..."
+```
+
+### 2. Projetos (`_data/projects.yml`)
+A página de **Projetos** carrega uma grade de cartões.
+**Modelo de adição:**
+```yaml
+- title: "Nome do Projeto"
+  image: "/assets/img/banner-projeto.jpg" 
+  description: "Descrição curta com resumo da pesquisa."
   tags:
-    - "Tag 1"
-    - "Tag 2"
+    - "Epidemiologia"
+    - "IA"
+  url: "/projetos/nome-do-projeto.html" # Link interno para o Estudo de Caso
+  external: false
+```
+**Criando um Estudo de Caso Premium para o Projeto:**
+Para que o botão "Ver Detalhes" do projeto funcione, crie um novo arquivo de texto dentro da pasta `projetos/` (ex: `nome-do-projeto.html`). Copie o HTML de uma página existente (como `arboili.html`), altere os textos da "Ficha Técnica" e da "Descrição Completa", e pronto! O design de portal premium fará o resto.
+
+### 3. Banner Destaques da Home (`_data/destaques.yml`)
+O carrossel gigante rotativo da página inicial (`index.html`) puxa as informações deste arquivo. O ideal é ter de 3 a 5 banners rodando.
+
+**Modelo de adição:**
+```yaml
+- title: "Título Gigante do Banner"
+  category: "LABEL EM CIMA DO TÍTULO"
+  description: "Texto de apoio embaixo do título."
+  image: "https://...link-da-imagem" # A foto que vai ficar de fundo
+  url: "/projetos/meu-projeto.html" # Para onde o botão "Saiba Mais" vai levar
 ```
 
-### 2. Equipe (`equipe.html`)
+### 4. Publicações (`_data/publications.yml`)
+A página de **Publicações** exibe os artigos do laboratório e pode ser preenchida de duas formas:
 
-Arquivo: `_data/team.yml`
+#### Opção A: Atualização Automática (Recomendada via Botência-Python)
+Temos um bot (`atualizar_publicacoes.py`) que vasculha o Google Scholar e insere novos artigos automaticamente.
+1. Configure sua chave da SerpApi no arquivo `.env`.
+2. Rode `python atualizar_publicacoes.py`.
+*(Lembre-se de configurar o parâmetro `limite: 15` dentro do script para que a API não gaste todo o seu saldo do Scholar baixando o histórico que já existe na página).*
 
-Os membros são divididos por categorias (`Liderança`, `Membros Principais`, etc.). Adicione um novo membro na lista `members`:
-
+#### Opção B: Atualização Manual
+Basta colar um novo bloco de texto no topo de `_data/publications.yml`:
 ```yaml
-members:
-  - name: "Nome do Pesquisador"
-    role: "Cargo / Função"
-    affiliation: "Fiocruz / Unidade"
-    image: "https://link-da-foto.jpg"
-    links:
-      lattes: "http://lattes.cnpq.br/..."
-      linkedin: "https://linkedin.com/in/..."
-```
-
-### 3. Publicações (`publicacoes.html`)
-
-Arquivo: `_data/publications.yml`
-As publicações são exibidas em ordem. Você pode adicioná-las manualmente ou usar nosso **atualizador automático**.
-
-#### Opção A: Atualização Automática (Recomendada)
-Nós possuímos um robô (`atualizar_publicacoes.py`) que vasculha o Google Scholar e traz as publicações novas automaticamente.
-
-**Como usar:**
-1. Certifique-se de ter o Python instalado.
-2. No seu terminal, instale os pacotes necessários rodando:
-   ```bash
-   pip install pyyaml requests python-dotenv
-   ```
-3. Crie e configure sua chave da [SerpApi](https://serpapi.com/) no arquivo `.env` (exemplo: `SERPAPI_KEY=sua_chave`).
-4. Rode o atualizador no terminal:
-   ```bash
-   python atualizar_publicacoes.py
-   ```
-
-**Dica sobre Limites (CRÍTICO):** 
-Dentro do arquivo `atualizar_publicacoes.py`, no bloco `PESQUISADORES`, há uma variável chamada `limite`. 
-- Se você colocar `limite: 0`, a API vai puxar **todo o histórico** do pesquisador (pode gastar centenas de créditos se o pesquisador tiver muitas menções e abstracts).
-- O ideal para rodar periodicamente (ex: a cada 15 dias) é manter o `limite` restrito (ex: `limite: 5` ou `25`). Assim a API lê só os itens mais novos, gasta quase nada de créditos e só adiciona ao arquivo o que for lançamento!
-
-#### Opção B: Adição Manual
-Para adicionar manualmente, abra o arquivo `_data/publications.yml` e cole um bloco no topo da lista:
-
-```yaml
-- year: 2025
-  category: artigos # Opções: artigos, preprints, relatorios
-  title: "Título da Publicação"
-  authors: "Sobrenome, N., Silva, A."
-  venue: "Nome da Revista ou Journal"
-  image: "https://link-da-capa-revista.jpg" # Opcional
+- year: 2026
+  category: artigos
+  title: "Avanços em Inteligência na Epidemiologia"
+  authors: "Silva, A., Almeida, A."
+  venue: "Revista Saúde Pública"
   link_text: "Ler Artigo →"
-  link_url: "https://doi.org/..."
-```
-
-### 4. Dashboards & Ferramentas (`dashboards.html`)
-
-Arquivo: `_data/dashboards.yml`
-
-Para adicionar paineis (PowerBI, Shiny, etc):
-
-```yaml
-- title: "Nome do Dashboard"
-  description: "Descrição do que a ferramenta faz."
-  tool: "PowerBI" # Ex: R Shiny, Tableau, PowerBI
-  image: "https://link-do-preview.jpg"
-  url: "https://link-para-acessar.com"
-  featured: false # Deixe true se quiser destaque (se implementado)
+  link_url: "https://doi.org/10.1234/..."
 ```
 
 ---
 
-## 📄 Páginas Estáticas
+## 📂 Estrutura de Diretórios Resumida
 
-Algumas páginas possuem conteúdo fixo que não muda com frequência. Para alterá-las, você deve editar o arquivo HTML diretamente:
-
-- **Sobre (`sobre.html`)**: Texto institucional e imagem de topo. Edite o texto dentro das tags `<p class="about-text">`.
-- **Colabore (`colabore.html`)**: Informações sobre parcerias e contatos. Edite os textos dentro dos cartões `.collab-card`.
-
----
-
-## 📂 Estrutura de Arquivos
-
-- **`_data/`**: Contém os arquivos YAML com o conteúdo dinâmico (Projetos, Equipe, Publicações, Dashboards).
-- **`_includes/`**: Componentes reutilizáveis (Ex: `navbar.html`).
-- **`_layouts/`**: Modelos de página (Ex: `default.html`).
-- **`assets/`**: Imagens, CSS e Scripts.
-- **Páginas Principais**:
-  - `index.html` (Home)
-  - `projetos.html`
-  - `equipe.html` (Lê de team.yml)
-  - `publicacoes.html` (Lê de publications.yml)
-  - `dashboards.html` (Lê de dashboards.yml)
-  - `sobre.html`
-  - `colabore.html`
+- **`_data/`**: Contém o cérebro dinâmico (Projetos, Equipe, Publicações, Destaques da Home).
+- **`_includes/`**: Componentes soltos que se repetem no site (Ex: navbar, footer).
+- **`_layouts/`**: Os moldes Mestre (O `default.html` é o que abraça todas as páginas do site).
+- **`assets/img/`**: A pasta raiz onde você deve salvar as fotos e logos.
+- **`projetos/`**: Pasta onde você codifica os textos detalhados (os Estudo de Caso) de cada projeto.
 
 ---
 
-## 🛠️ Tecnologias
-
-- **Jekyll**: Gerador de site estático.
-- **Liquid**: Linguagem de templates.
-- **HTML5 / CSS3**: Estrutura e Estilização.
-- **Font Awesome**: Ícones.
-
----
-
-_Mantido pela equipe de desenvolvimento e pesquisa da Fiocruz._
+_Mantido pela equipe INSIGHT / Fiocruz_
