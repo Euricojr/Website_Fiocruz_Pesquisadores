@@ -58,31 +58,131 @@ title: Insight - Pesquisa Colaborativa em Saúde
     </div>
 </section>
 
-<div id="insight-section" class="manifesto-section">
-  <div class="container" style="text-align: center">
-    <h2 class="manifesto-title" style="margin-top: -100px; margin-bottom: -150px;">
-      <img src="/assets/img/logoinsight.png" alt="Insight Logo" class="insight-logo-image" style="width: 450px; max-width: 90%; height: auto; object-fit: contain; display: inline-block; pointer-events: none; user-select: none; position: relative;">
-    </h2>
-    <style>
-      .insight-logo-image {
-        filter: invert(0.75); /* Cinza (inverte apenas 75% do branco) */
-        transition: filter 0.3s ease;
-      }
-      body.dark-mode .insight-logo-image {
-        filter: none; /* Mantém a cor original (branco) no modo escuro */
-      }
-    </style>
-    <p class="manifesto-lead">
-      Uma iniciativa de pesquisa colaborativa operando na interseção entre
-      Inteligência Artificial, Saúde Pública e Impacto Social.
-    </p>
-    <div class="manifesto-divider"></div>
-    <p class="manifesto-sub">
-      Conectando instituições, dados e pesquisadores para fortalecer as
-      respostas aos desafios epidemiológicos contemporâneos, através de projetos
-      multi-institucionais e redes de pesquisa.
-    </p>
+<style>
+  .about-section {
+      padding: 80px 20px;
+      background-color: transparent; /* Adaptável ao tema */
+      color: var(--text-main);
+  }
+  .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+  }
+  .about-text h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+  }
+  .about-text .highlight {
+      color: #CB4F08; /* Laranja da marca */
+  }
+  .about-lead {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--text-desc);
+      line-height: 1.6;
+      margin-bottom: 25px;
+      border-left: 4px solid #CB4F08;
+      padding-left: 15px;
+  }
+  .about-desc {
+      font-size: 1.05rem;
+      color: var(--text-desc);
+      line-height: 1.8;
+  }
+  
+  /* Cards de Pilares */
+  .about-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 25px;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .pillar-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: #CB4F08;
+  }
+  .pillar-icon {
+      background: rgba(203, 79, 8, 0.15);
+      color: #CB4F08;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+  }
+  .pillar-content h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--text-main);
+  }
+  .pillar-content p {
+      font-size: 0.95rem;
+      color: var(--text-desc);
+      margin: 0;
+      line-height: 1.5;
+  }
+
+  /* Responsividade */
+  @media (max-width: 992px) {
+      .about-container { grid-template-columns: 1fr; gap: 40px; }
+      .about-text h2 { font-size: 2.5rem; }
+  }
+</style>
+
+<section class="about-section">
+  <div class="about-container">
+      <div class="about-text">
+          <h2>Bem-vindo ao <span class="highlight">INSIGHT</span></h2>
+          <p class="about-lead">Um laboratório interdisciplinar que integra inteligência artificial, ciência de dados e epidemiologia para antecipar riscos em saúde e compreender vulnerabilidades em diferentes territórios.</p>
+          <p class="about-desc">Atuamos na interseção entre dados digitais, ambiente urbano e saúde pública, desenvolvendo soluções inovadoras para vigilância epidemiológica, análise de contextos complexos e apoio à tomada de decisão estratégica.</p>
+      </div>
+
+      <div class="about-pillars">
+          <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-network-wired"></i></div>
+              <div class="pillar-content">
+                  <h3>Inteligência Artificial & Dados</h3>
+                  <p>Processamento avançado de dados digitais e modelos preditivos para antecipar cenários de saúde.</p>
+              </div>
+          </div>
+          
+          <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-earth-americas"></i></div>
+              <div class="pillar-content">
+                  <h3>Vulnerabilidades Territoriais</h3>
+                  <p>Análise espacial e compreensão profunda das dinâmicas sociais e ambientais em áreas de risco.</p>
+              </div>
+          </div>
+          
+          <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-venus"></i></div>
+              <div class="pillar-content">
+                  <h3>Equidade na Ciência</h3>
+                  <p>Iniciativas focadas na formação de estudantes e fortalecimento da participação de mulheres nas áreas STEM.</p>
+              </div>
+          </div>
+      </div>
   </div>
-</div>
+</section>
 
 
