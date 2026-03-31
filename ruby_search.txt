@@ -1,0 +1,25 @@
+Nome                ID                                   Versão        Correspondência
+--------------------------------------------------------------------------------------
+Ruby 3.0            RubyInstallerTeam.Ruby.3.0           3.0.7-1       Command: ruby
+Ruby 3.1            RubyInstallerTeam.Ruby.3.1           3.1.7-1       Command: ruby
+Ruby 3.2            RubyInstallerTeam.Ruby.3.2           3.2.11-1      Command: ruby
+Ruby 3.3            RubyInstallerTeam.Ruby.3.3           3.3.11-1      Command: ruby
+Ruby 3.4            RubyInstallerTeam.Ruby.3.4           3.4.9-1       Command: ruby
+Ruby 4.0            RubyInstallerTeam.Ruby.4.0           4.0.2-1       Command: ruby
+Ruby 3.0 with MSYS2 RubyInstallerTeam.RubyWithDevKit.3.0 3.0.7-1       Command: ruby
+Ruby 3.1 with MSYS2 RubyInstallerTeam.RubyWithDevKit.3.1 3.1.7-1       Command: ruby
+Ruby 3.2 with MSYS2 RubyInstallerTeam.RubyWithDevKit.3.2 3.2.11-1      Command: ruby
+Ruby 3.3 with MSYS2 RubyInstallerTeam.RubyWithDevKit.3.3 3.3.11-1      Command: ruby
+Ruby 3.4 with MSYS2 RubyInstallerTeam.RubyWithDevKit.3.4 3.4.9-1       Command: ruby
+Ruby 4.0 with MSYS2 RubyInstallerTeam.RubyWithDevKit.4.0 4.0.2-1       Command: ruby
+EditPlus            ES-Computing.EditPlus                6.1.780.0     Tag: ruby
+RubyMine            JetBrains.RubyMine                   2026.1        Tag: ruby
+RubyMine (EAP)      JetBrains.RubyMine.EAP               261.22158.124 Tag: ruby
+Laragon             LeNgocKhoa.Laragon                   8.6.1         Tag: ruby
+MAMP & MAMP PRO     MAMP.MAMP                            5.0.5         Tag: ruby
+Ruby 2.6            RubyInstallerTeam.Ruby.2.6           2.6.10-1      Tag: ruby
+Ruby 2.7            RubyInstallerTeam.Ruby.2.7           2.7.6-1       Tag: ruby
+Ruby 2.6 with MSYS2 RubyInstallerTeam.RubyWithDevKit.2.6 2.6.10-1      Tag: ruby
+Ruby 2.7 with MSYS2 RubyInstallerTeam.RubyWithDevKit.2.7 2.7.6-1       Tag: ruby
+Sonic Pi            SonicPi.SonicPi                      4.6.0         Tag: ruby
+chsrc               RubyMetric.chsrc                     0.2.5         
