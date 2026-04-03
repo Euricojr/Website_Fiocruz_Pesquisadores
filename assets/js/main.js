@@ -19,15 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const currentTheme = localStorage.getItem('theme');
 
-  // Check LocalStorage or System Preference
-  if (currentTheme) {
-    if (currentTheme === 'dark') {
-      body.classList.add('dark-mode');
-      if (themeSwitch) themeSwitch.checked = true;
-    }
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  // Check LocalStorage only (Default is Light)
+  if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
     if (themeSwitch) themeSwitch.checked = true;
+  } else {
+    // If no preference or explicitly 'light', ensure dark-mode is NOT there
+    body.classList.remove('dark-mode');
   }
 
   // Toggle Event Listener
