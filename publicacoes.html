@@ -320,20 +320,67 @@ navbar_class: navbar-light navbar-static
 
     /* Responsive */
     @media (max-width: 768px) {
+        .pub-header h2 { font-size: 2.2rem; }
+        
+        /* Busca Mobile */
+        .search-container {
+            max-width: 100%;
+            padding: 0 15px;
+            margin-bottom: 25px;
+        }
+        .search-input {
+            text-align: center; /* Volta para o centro conforme pedido */
+            padding: 12px 15px 12px 35px; /* Ajuste compensando o icone */
+            font-size: 0.95rem;
+        }
+        .search-icon {
+            right: 25px; /* Ajuste fino do icone */
+        }
+
+        .pub-filters {
+            display: flex;
+            justify-content: center; /* Centraliza os filtros */
+            gap: 8px; /* Reduz espaço entre botões */
+            margin-bottom: 30px;
+            padding: 0 5px;
+            overflow-x: auto; /* Mantém scroll se a tela for MUITO pequena */
+            width: 100%;
+            margin-left: 0;
+            border-bottom: none; /* Limpa bordas extras no mobile */
+        }
+        
+        .filter-btn {
+            white-space: nowrap;
+            font-size: 0.85rem; /* Fonte levemente menor para caber tudo parelho */
+            padding: 8px 12px;
+            flex-shrink: 0;
+        }
+
         .pub-item {
             flex-wrap: wrap;
             position: relative;
+            padding: 25px 15px;
         }
         
         .pub-year {
             width: 100%;
             flex: none;
-            font-size: 1rem;
-            margin-bottom: 10px;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .pub-title {
+            font-size: 1.15rem; /* Ajuste fino de leitura */
+            margin-bottom: 8px;
+        }
+
+        .pub-authors {
+            font-size: 0.9rem;
         }
 
         .pub-image {
-            display: none; /* Hide image on mobile for compactness if needed, or keep smaller */
+            display: none;
         }
 
         .pub-details {
@@ -342,9 +389,9 @@ navbar_class: navbar-light navbar-static
         }
         
         .pub-action {
-            margin-top: 15px;
+            margin-top: 20px;
             flex: 1 1 100%;
-            justify-content: flex-start;
+            justify-content: center; /* Centraliza o botão 'Ler Artigo' no celular */
         }
     }
 </style>
@@ -411,9 +458,9 @@ navbar_class: navbar-light navbar-static
 
         </div>
         
-        <!-- Load More (Optional visually) -->
+        <!-- Load More Button -->
         <div style="text-align: center; margin-top: 50px;">
-            <a href="#" class="btn" style="border: 1px solid #ddd; color: #666; font-size: 0.85rem;">Carregar mais publicações</a>
+            <button id="loadMoreBtn" class="btn" style="border: 2px solid #C65000; color: #C65000; background: transparent; font-size: 1rem; padding: 12px 35px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-weight: 600;" onmouseover="this.style.background='#C65000'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#C65000';">Carregar mais publicações</button>
         </div>
 
     </div>
@@ -422,56 +469,85 @@ navbar_class: navbar-light navbar-static
 <!-- Scripts -->
 <script src="/assets/js/main.js"></script>
 <script>
-    // Interactive Search & Filter Logic
+    // Interactive Search, Filter & Pagination Logic
     document.addEventListener("DOMContentLoaded", function () {
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const pubItems = document.querySelectorAll('.pub-item');
+        const pubItems = Array.from(document.querySelectorAll('.pub-item'));
         const searchInput = document.getElementById('searchInput');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
 
         let currentFilter = 'all';
+        let itemsPerPage = 7; // Quantidade de arquivos exibidos por vez
+        let visibleCount = itemsPerPage;
+        let filteredItems = [...pubItems];
 
-        function filterPublications() {
+        function renderPublications() {
             const searchTerm = searchInput.value.toLowerCase();
+            filteredItems = [];
 
+            // Identifica todos os itens válidos (pós-filtros)
             pubItems.forEach(item => {
                 const category = item.getAttribute('data-category');
                 const title = item.querySelector('.pub-title').textContent.toLowerCase();
                 const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
-                // Optional: Search in venue too if desired
-                // const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
 
                 const matchesFilter = (currentFilter === 'all' || category === currentFilter);
                 const matchesSearch = (title.includes(searchTerm) || authors.includes(searchTerm));
 
-                // Reset animation
-                item.style.animation = 'none';
-                item.offsetHeight; /* trigger reflow */
-                item.style.animation = null;
-
                 if (matchesFilter && matchesSearch) {
-                    item.classList.remove('hidden');
+                    filteredItems.push(item);
                 } else {
-                    item.classList.add('hidden');
+                    item.classList.add('hidden'); // Oculta os itens filtrados
                 }
             });
+
+            // Aplica a limitação de paginação e reseta animações para os não ocultados
+            filteredItems.forEach((item, index) => {
+                if (index < visibleCount) {
+                    item.classList.remove('hidden');
+                    // Reset CSS animation para ser reativada
+                    item.style.animation = 'none';
+                    item.offsetHeight; // trigger reflow
+                    item.style.animation = null;
+                } else {
+                    item.classList.add('hidden'); // Itens além do limite
+                }
+            });
+
+            // Oculta botão 'Carregar Mais' quando não há mais conteúdo disponível
+            if (visibleCount >= filteredItems.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
         }
 
-        // Filter Button Logic
+        // Interação dos filtros
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update Active State
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                // Update Current Filter
                 currentFilter = btn.getAttribute('data-filter');
                 
-                // Trigger Filter
-                filterPublications();
+                visibleCount = itemsPerPage; // reseta paginação para 7 toda vez que muda o filtro
+                renderPublications();
             });
         });
 
-        // Search Input Logic
-        searchInput.addEventListener('input', filterPublications);
+        // Interação da busca
+        searchInput.addEventListener('input', () => {
+            visibleCount = itemsPerPage; // Reset da paginação na busca
+            renderPublications();
+        });
+
+        // Ação de carregar mais
+        loadMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            visibleCount += itemsPerPage; // Acrescenta +7
+            renderPublications();
+        });
+
+        // Initial setup
+        renderPublications();
     });
 </script>

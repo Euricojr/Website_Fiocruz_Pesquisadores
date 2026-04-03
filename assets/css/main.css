@@ -662,10 +662,57 @@ ul {
   }
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1001; /* ensures it sits on top of the menu */
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Animations for Hamburger to X */
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
 /* Responsive */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .nav-links {
-    display: none; /* Simple hide for mobile for this MVP */
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(203, 79, 8, 0.98); /* Fundo Laranja */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animação fluida */
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+  
+  .nav-utils-group {
+    flex-direction: column !important;
   }
 
   .hero-title {
@@ -1277,15 +1324,37 @@ ul {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .slide-content {
+    padding: 0 45px; /* Evita sobreposição com as setas laterais */
+  }
   .slide-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+    margin-bottom: 15px;
+    line-height: 1.3 !important;
   }
   .slide-desc {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  .slide-category {
+    font-size: 0.70rem;
+    padding: 4px 12px;
+    margin-bottom: 15px;
   }
   .hero-slider {
-    height: 70vh;
-    min-height: 500px;
+    height: 80vh; /* Mais altura vertical no celular */
+    min-height: 550px;
+  }
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .slider-arrow.prev { left: 5px; }
+  .slider-arrow.next { right: 5px; }
+  .btn-hero {
+    padding: 10px 22px;
+    font-size: 0.9rem;
   }
 }
 

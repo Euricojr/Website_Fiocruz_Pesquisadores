@@ -5,6 +5,12 @@
                 <img src="/assets/img/logoinsight.png" alt="Fiocruz Insight Logo">
             </a>
         </div>
+        <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active'); this.classList.toggle('active');">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="/projetos.html" class="{% if page.url == '/projetos.html' %}active{% endif %}">Projetos</a></li>
             <!-- <li><a href="/dashboards.html" class="{% if page.url == '/dashboards.html' %}active{% endif %}">Dashboards</a></li> -->
