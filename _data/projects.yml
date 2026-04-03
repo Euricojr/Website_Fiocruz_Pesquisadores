@@ -5,7 +5,7 @@
     - NLP
     - EPIDEMIOLOGIA
     - BIG DATA
-  image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=800&auto=format&fit=crop"
+  image: "/assets/img/Arboli.jpg"
   url: "/projetos/arboili.html"
   status: "Em Desenvolvimento"
   repo_url: "https://github.com/Insighthub/arboili"
@@ -14,7 +14,7 @@
       text: "Artigo principal do projeto (Em breve)"
       url: "#"
     - icon: "fa-solid fa-microphone"
-      text: "Apresentação no Congresso X"
+      text: "Apresentação no Congresso X (Em breve)"
       url: "#"
 
 - id: cenas-drogas
@@ -24,16 +24,16 @@
     - INTELIGÊNCIA ARTIFICIAL
     - CITIZEN SCIENCE
     - GEOLOCALIZAÇÃO
-  image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=800&auto=format&fit=crop"
+  image: "/assets/img/IA e citizen.jpg"
   url: "/projetos/cenas-drogas.html"
   status: "Em Análise de Dados"
   repo_url: "https://github.com/Insighthub/cenas-drogas"
   events:
     - icon: "fa-solid fa-video"
-      text: "Webinar sobre Citizen Science"
+      text: "Webinar sobre Citizen Science (Em breve)"
       url: "#"
     - icon: "fa-solid fa-file-lines"
-      text: "Publicação preliminar de Metodologia"
+      text: "Publicação preliminar de Metodologia (Em breve)"
       url: "#"
 
 - id: meninas-exatas
@@ -43,14 +43,14 @@
     - EDUCAÇÃO
     - EQUIDADE
     - INTERDISCIPLINARIDADE
-  image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop"
+  image: "/assets/img/Meninas na ciencia.jpg"
   url: "/projetos/meninas-exatas.html"
   status: "Ativo / Em Campo"
   repo_url: ""
   events:
     - icon: "fa-solid fa-users"
-      text: "Início das atividades nas 4 escolas"
+      text: "Início das atividades nas 4 escolas (Em breve)"
       url: "#"
     - icon: "fa-solid fa-camera"
-      text: "Trabalho de campo na Fiocruz"
+      text: "Trabalho de campo na Fiocruz (Em breve)"
       url: "#"

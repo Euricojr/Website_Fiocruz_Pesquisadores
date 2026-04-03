@@ -4,7 +4,7 @@ title: "IA em Cenas de Uso de Drogas"
 permalink: /projetos/cenas-drogas.html
 ---
 <style>
-  .proj-hero { background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,1)), url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2000') center/cover; padding: 100px 20px 50px; text-align: center; color: white; }
+  .proj-hero { background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,1)), url('/assets/img/IA e citizen.jpg') center/cover; padding: 100px 20px 50px; text-align: center; color: white; }
   .proj-title { font-size: 3rem; font-weight: 800; color: #CB4F08; margin-bottom: 15px; }
   .proj-subtitle { font-size: 1.2rem; font-weight: 300; max-width: 800px; margin: 0 auto; color: #ccc; }
   .proj-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; max-width: 1200px; margin: 50px auto; padding: 0 20px; }
@@ -50,29 +50,29 @@ permalink: /projetos/cenas-drogas.html
 
     {% assign p_data = site.data.projects | where: "id", "cenas-drogas" | first %}
     
-    <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+    <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
         <h3 style="font-size: 1.1rem; margin-bottom: 15px; border-bottom: none; color: #CB4F08;">Publicações & Eventos</h3>
         
         {% if p_data.events %}
         <ul style="list-style-type: none; padding-left: 0; margin-bottom: 20px;">
             {% for event in p_data.events %}
             <li style="margin-bottom: 10px; font-size: 0.9rem;">
-                <i class="{{ event.icon }}" style="color: #bbb; margin-right: 8px;"></i> 
-                <a href="{{ event.url }}" target="_blank" style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#CB4F08'" onmouseout="this.style.color='#e0e0e0'">{{ event.text }}</a>
+                <i class="{{ event.icon }}" style="color: var(--text-desc); margin-right: 8px;"></i> 
+                <a href="{{ event.url }}" target="_blank" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#CB4F08'" onmouseout="this.style.color='var(--text-main)'">{{ event.text }}</a>
             </li>
             {% endfor %}
         </ul>
         {% else %}
-        <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">Nenhuma atualização recente.</p>
+        <p style="font-size: 0.9rem; color: var(--text-desc); margin-bottom: 20px;">Nenhuma atualização recente.</p>
         {% endif %}
 
         {% if p_data.status %}
-        <p style="font-size: 0.95rem; color: #bbb; margin-bottom: 15px;"><strong>Status:</strong> <span style="color: #fff;">{{ p_data.status }}</span></p>
+        <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 15px;"><strong>Status:</strong> <span style="color: var(--text-desc);">{{ p_data.status }}</span></p>
         {% endif %}
 
         {% if p_data.repo_url and p_data.repo_url != "" %}
         <a href="{{ p_data.repo_url }}" target="_blank" class="btn-repo" style="display: block; width: 100%; text-align: center; background: transparent; border: 2px solid #CB4F08; color: #CB4F08; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 20px;" onmouseover="this.style.background='#CB4F08'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#CB4F08';">
-            <i class="fa-brands fa-github"></i> Acessar Repositório
+            <i class="fa-brands fa-github"></i> Acessar Repositório (Em breve)
         </a>
         {% endif %}
     </div>
