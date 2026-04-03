@@ -1325,24 +1325,27 @@ ul {
 /* Responsividade */
 @media (max-width: 768px) {
   .slide-content {
-    padding: 0 20px; /* Standard padding reclaimed */
+    padding: 0 20px; 
+    margin-top: 10px; /* Reduced to gain vertical space */
   }
   .slide-title {
-    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
-    margin-bottom: 15px;
-    line-height: 1.3 !important;
+    /* Allow font to go slightly smaller for very long titles */
+    font-size: clamp(1.2rem, 5vw, 1.7rem) !important;
+    margin-bottom: 12px;
+    line-height: 1.25 !important;
   }
   .slide-desc {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
   }
   .slide-category {
     font-size: 0.70rem;
     padding: 4px 12px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   .hero-slider {
-    height: 80vh; /* Mais altura vertical no celular */
+    height: 85vh; /* Slightly more height for content */
     min-height: 550px;
   }
   .slider-arrow {
@@ -1351,6 +1354,12 @@ ul {
   .btn-hero {
     padding: 10px 22px;
     font-size: 0.9rem;
+  }
+  .slider-dots {
+    bottom: 65px; /* Lower position to avoid Saiba Mais button */
+  }
+  .scroll-down {
+    bottom: 20px; /* Adjust to stay below dots */
   }
 }
 
