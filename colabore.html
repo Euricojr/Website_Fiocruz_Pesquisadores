@@ -147,6 +147,15 @@ body.dark-mode .collab-card p {
     color: white;
 }
 
+.btn-coming-soon {
+    background-color: #6c757d !important;
+    color: #f8f9fa !important;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.7;
+    border: none;
+}
+
 /* Section Dados Abertos (Full Width) */
 .open-science-section {
     background-color: #F4F4F4; /* Ciano claro sutil */
@@ -198,6 +207,46 @@ body.dark-mode .open-science-section p {
     background-color: #CB4F08;
     color: white;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .hero-collab {
+        padding: 60px 0;
+        min-height: 40vh;
+    }
+    .hero-collab h1 {
+        font-size: 2.2rem;
+    }
+    .hero-collab p.lead {
+        font-size: 1.1rem !important;
+    }
+    .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    .collab-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .collab-card {
+        padding: 25px 20px;
+    }
+    .card-icon-large {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    .open-science-section {
+        padding: 50px 15px;
+    }
+    .open-science-section h2 {
+        font-size: 1.8rem;
+    }
+    .open-science-section p {
+        font-size: 1.1rem;
+    }
+}
 </style>
 
 <!-- Hero Section -->
@@ -219,7 +268,7 @@ body.dark-mode .open-science-section p {
                 <h3>Para Estudantes</h3>
                 <p>Junte-se a nós! Oferecemos oportunidades para alunos de graduação e pós-graduação ingressarem em iniciação científica, estágios e grupos de estudo focados em inovações para a saúde.</p>
             </div>
-            <a href="#" class="btn-card">Vagas e Oportunidades</a>
+            <a href="javascript:void(0)" class="btn-card btn-coming-soon">Em Breve</a>
         </div>
 
         <!-- Card 2: Pesquisadores -->
@@ -229,7 +278,7 @@ body.dark-mode .open-science-section p {
                 <h3>Para Pesquisadores</h3>
                 <p>Convidamos acadêmicos e cientistas para colaboração na autoria de artigos, uso compartilhado de bases de dados e fortalecimento de projetos em rede de pesquisa interdisciplinar.</p>
             </div>
-            <a href="#" class="btn-card">Propor Pesquisa</a>
+            <a href="javascript:void(0)" class="btn-card btn-coming-soon">Em Breve</a>
         </div>
 
         <!-- Card 3: Parcerias Institucionais -->
@@ -239,7 +288,7 @@ body.dark-mode .open-science-section p {
                 <h3>Parcerias Institucionais</h3>
                 <p>Buscamos laboratórios, universidades, ONGs e órgãos públicos interessados em firmar convênios estratégicos ou financiar projetos colaborativos de impacto na sociedade.</p>
             </div>
-            <a href="#" class="btn-card">Fale com a Liderança</a>
+            <a href="javascript:void(0)" class="btn-card btn-coming-soon">Em Breve</a>
         </div>
     </div>
 </div>
