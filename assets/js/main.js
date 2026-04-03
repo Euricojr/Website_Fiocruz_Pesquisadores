@@ -96,6 +96,32 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlides(0);
         startSlider();
     }
+
+    // Suporte a Swipe para Mobile
+    let touchstartX = 0;
+    let touchendX = 0;
+    const sliderContainer = document.querySelector(".hero-slider");
+
+    if (sliderContainer) {
+        sliderContainer.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        sliderContainer.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            handleGesture();
+        }, {passive: true});
+    }
+
+    function handleGesture() {
+        // Swipe Threshold de 50px
+        if (touchendX < touchstartX - 50) {
+            window.changeSlide(1); // Swipe esquerda -> Próximo
+        }
+        if (touchendX > touchstartX + 50) {
+            window.changeSlide(-1); // Swipe direita -> Anterior
+        }
+    }
 });
 
 // === Lógica do Botão de Idioma (Toggle) com Memória ===

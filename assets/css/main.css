@@ -1325,7 +1325,7 @@ ul {
 /* Responsividade */
 @media (max-width: 768px) {
   .slide-content {
-    padding: 0 45px; /* Evita sobreposição com as setas laterais */
+    padding: 0 20px; /* Standard padding reclaimed */
   }
   .slide-title {
     font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
@@ -1346,12 +1346,8 @@ ul {
     min-height: 550px;
   }
   .slider-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+    display: none;
   }
-  .slider-arrow.prev { left: 5px; }
-  .slider-arrow.next { right: 5px; }
   .btn-hero {
     padding: 10px 22px;
     font-size: 0.9rem;
