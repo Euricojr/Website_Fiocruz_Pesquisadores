@@ -386,7 +386,11 @@ navbar_class: navbar-light navbar-static
                 <div class="pub-year">{{ pub.year }}</div>
                 <div class="pub-image">
                     <div class="pub-thumbnail">
-                        <img src="{{ pub.image }}" alt="Cover">
+                        {% assign pub_img = pub.image %}
+                        {% if pub_img == nil or pub_img == "" or pub_img contains 'picsum.photos' %}
+                            {% assign pub_img = '/assets/img/artigos.jpg' %}
+                        {% endif %}
+                        <img src="{{ pub_img }}" alt="Cover">
                     </div>
                 </div>
                 <div class="pub-details">
