@@ -5,6 +5,7 @@
   --text-title: #333333;
   --text-desc: #666666;
   --text-primary: #333333; /* Fallback alias */
+  --text-main: #333333; /* For index.html consistency */
   --navbar-text: #ffffff;
   --card-bg: #ffffff; /* Alias for consistency */
   --footer-bg: #333333;
@@ -23,6 +24,7 @@ body.dark-mode {
   --text-title: #f0f0f0;
   --text-desc: #b0b0b0;
   --text-primary: #f0f0f0;
+  --text-main: #f0f0f0;
   --navbar-text: #f0f0f0;
   --footer-bg: #000000;
   --border-color: #333333;
@@ -460,6 +462,25 @@ ul {
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.8),
     0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Dark Mode refinements for Hero */
+body.dark-mode .hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+body.dark-mode .slider-dots .dot {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .slider-dots .dot.active {
+    background-color: #CB4F08; /* Laranja da marca */
 }
 
 /* Buttons */
