@@ -8,6 +8,7 @@
   image: "/assets/img/Arboli.jpg"
   url: "/projetos/arboili.html"
   status: "Em Desenvolvimento"
+  website_url: "https://projetoarboili.com.br/"
   repo_url: "https://github.com/Insighthub/arboili"
   events:
     - icon: "fa-solid fa-file-lines"

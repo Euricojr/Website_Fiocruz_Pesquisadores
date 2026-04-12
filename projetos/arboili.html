@@ -74,8 +74,14 @@ permalink: /projetos/arboili.html
         <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 15px;"><strong>Status:</strong> <span style="color: var(--text-desc);">{{ p_data.status }}</span></p>
         {% endif %}
 
+        {% if p_data.website_url and p_data.website_url != "" %}
+        <a href="{{ p_data.website_url }}" target="_blank" class="btn-website" style="display: block; width: 100%; text-align: center; background: #CB4F08; border: 2px solid #CB4F08; color: #fff; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 20px;" onmouseover="this.style.background='transparent'; this.style.color='#CB4F08';" onmouseout="this.style.background='#CB4F08'; this.style.color='#fff';">
+            <i class="fa-solid fa-globe"></i> Acessar Site do Projeto
+        </a>
+        {% endif %}
+
         {% if p_data.repo_url and p_data.repo_url != "" %}
-        <a href="{{ p_data.repo_url }}" target="_blank" class="btn-repo" style="display: block; width: 100%; text-align: center; background: transparent; border: 2px solid #CB4F08; color: #CB4F08; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 20px;" onmouseover="this.style.background='#CB4F08'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#CB4F08';">
+        <a href="{{ p_data.repo_url }}" target="_blank" class="btn-repo" style="display: block; width: 100%; text-align: center; background: transparent; border: 2px solid #CB4F08; color: #CB4F08; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 15px;" onmouseover="this.style.background='#CB4F08'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#CB4F08';">
             <i class="fa-brands fa-github"></i> Acessar Repositório (Em breve)
         </a>
         {% endif %}
