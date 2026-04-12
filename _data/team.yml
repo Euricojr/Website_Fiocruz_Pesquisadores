@@ -43,3 +43,17 @@
       image: "/assets/img/tayene.jpeg"
       linkedin: "https://www.linkedin.com/in/thayene-hellen-siqueira-ba9777258"
       lattes: ""
+
+    - name: "Marcelo Eduardo Borges"
+      role: "Assistente de Pesquisa"
+      institution: ""
+      image: "/assets/img/Marcelo.jpeg"
+      linkedin: "https://www.linkedin.com/in/marcelo-e-borges/"
+      lattes: "https://lattes.cnpq.br/4504018862767268"
+
+    - name: "Aline de Macedo Rodrigues"
+      role: "Assistente de Pesquisa"
+      institution: ""
+      image: "/assets/img/Aline.jpeg"
+      linkedin: ""
+      lattes: "https://lattes.cnpq.br/2008305558686697"
