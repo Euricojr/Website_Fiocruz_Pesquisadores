@@ -40,29 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   }
-
-  // Page Transition Logic
-  document.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (!href) return;
-
-      const isInternal = this.hostname === window.location.hostname || !this.hostname;
-      const isAnchor = href.startsWith('#');
-      const isSpecial = href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:');
-      const isNewTab = this.target === '_blank';
-      const hasDownload = this.hasAttribute('download');
-
-      if (isInternal && !isAnchor && !isSpecial && !isNewTab && !hasDownload && !e.ctrlKey && !e.metaKey) {
-        e.preventDefault();
-        const destination = this.href;
-        document.body.classList.add('page-exit');
-        setTimeout(() => {
-          window.location.href = destination;
-        }, 300); // 300ms coincides with animation duration
-      }
-    });
-  });
 });
 
 /* --- Slider Automático --- */
@@ -75,13 +52,26 @@ document.addEventListener('DOMContentLoaded', function() {
     function showSlides(n) {
         if (!slides.length) return;
         
-        slides.forEach(s => s.classList.remove("active"));
+        const currentActive = slides[Math.max(0, slideIndex)];
+        let newIndex = n;
+        if (newIndex >= slides.length) {newIndex = 0}
+        if (newIndex < 0) {newIndex = slides.length - 1}
+        
+        // Remove active state
+        slides.forEach(s => s.classList.remove("active", "prev-slide"));
         dots.forEach(d => d.classList.remove("active"));
         
-        slideIndex = n;
-        if (slideIndex >= slides.length) {slideIndex = 0}
-        if (slideIndex < 0) {slideIndex = slides.length - 1}
-        
+        // Mantem o atual visível debaixo do novo para evitar o "piscar" escuro
+        if (currentActive && currentActive !== slides[newIndex]) {
+            currentActive.classList.add("prev-slide");
+            setTimeout(() => {
+                if(currentActive.classList.contains("prev-slide")) {
+                    currentActive.classList.remove("prev-slide");
+                }
+            }, 1000);
+        }
+
+        slideIndex = newIndex;
         slides[slideIndex].classList.add("active");
         dots[slideIndex].classList.add("active");
     }
