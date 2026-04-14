@@ -40,6 +40,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   }
+
+  // Page Transition Logic
+  document.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href) return;
+
+      const isInternal = this.hostname === window.location.hostname || !this.hostname;
+      const isAnchor = href.startsWith('#');
+      const isSpecial = href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:');
+      const isNewTab = this.target === '_blank';
+      const hasDownload = this.hasAttribute('download');
+
+      if (isInternal && !isAnchor && !isSpecial && !isNewTab && !hasDownload && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        const destination = this.href;
+        document.body.classList.add('page-exit');
+        setTimeout(() => {
+          window.location.href = destination;
+        }, 300); // 300ms coincides with animation duration
+      }
+    });
+  });
 });
 
 /* --- Slider Automático --- */
