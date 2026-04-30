@@ -1,7 +1,15 @@
-.env
-__pycache__/
+# Site Jekyll
+Website_Fiocruz_Pesquisadores/.env
+Website_Fiocruz_Pesquisadores/_site/
+Website_Fiocruz_Pesquisadores/.jekyll-cache/
+
+# Admin FastAPI
+insight-admin/venv/
+insight-admin/__pycache__/
+insight-admin/data/
+insight-admin/.env
+
+# Python General
 *.py[cod]
 *$py.class
-_site/
-_site
-.jekyll-cache/
+__pycache__/
