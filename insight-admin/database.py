@@ -39,3 +39,32 @@ def get_db_connection():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+def get_user_by_email(email: str):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE email = ?", (email,))
+    user = cursor.fetchone()
+    conn.close()
+    if user:
+        return dict(user)
+    return None
+
+def create_user(email: str, name: str, password: str):
+    from utils.security import hash_password
+    hashed_pwd = hash_password(password)
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "INSERT INTO users (email, hashed_password, name) VALUES (?, ?, ?)",
+            (email, hashed_pwd, name)
+        )
+        conn.commit()
+        user_id = cursor.lastrowid
+        return user_id
+    except sqlite3.IntegrityError:
+        return None  # Email already exists
+    finally:
+        conn.close()
