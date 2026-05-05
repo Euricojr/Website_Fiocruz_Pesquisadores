@@ -43,6 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial Load
     loadSectionData('publications');
 
+    // Sync Publications Button
+    const syncPubsBtn = document.getElementById('sync-pubs-btn');
+    if (syncPubsBtn) {
+        syncPubsBtn.addEventListener('click', async () => {
+            syncPubsBtn.disabled = true;
+            syncPubsBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sincronizando...';
+            
+            try {
+                const res = await API.post('/publications/sync', {});
+                alert(res.message);
+                if (res.success) {
+                    loadSectionData('publications');
+                }
+            } catch (err) {
+                alert('Erro ao sincronizar publicações.');
+            } finally {
+                syncPubsBtn.disabled = false;
+                syncPubsBtn.innerHTML = '<i class="fas fa-sync"></i> Sincronizar Lattes/Scholar';
+            }
+        });
+    }
+
     // Forms handling
     setupForm('form-publication', '/publications/', 'publications');
     setupForm('form-project', '/projects/', 'projects');

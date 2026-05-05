@@ -8,6 +8,7 @@ from typing import Optional
 from auth import get_current_user
 from services.yaml_service import read_yaml, write_yaml
 from services.build import rebuild_site
+from services.sync_service import sync_publications
 
 router = APIRouter()
 FILENAME = "publications.yml"
@@ -46,3 +47,18 @@ def delete_publication(index: int, user: dict = Depends(get_current_user)):
     write_yaml(FILENAME, data)
     rebuild = rebuild_site()
     return {"success": True, "message": "Publication deleted successfully", "rebuild": rebuild}
+
+@router.post("/sync")
+def sync_latest_publications(user: dict = Depends(get_current_user)):
+    """Trigger sync from Google Scholar and rebuild site."""
+    result = sync_publications()
+    rebuild = None
+    if result.get("success") and result.get("new_count", 0) > 0:
+        rebuild = rebuild_site()
+    
+    return {
+        "success": result.get("success"),
+        "message": result.get("message") or f"{result.get('new_count')} novas publicações sincronizadas.",
+        "details": result,
+        "rebuild": rebuild
+    }

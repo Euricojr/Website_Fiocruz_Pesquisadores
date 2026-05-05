@@ -36,6 +36,12 @@ os.makedirs("static/admin", exist_ok=True)
 # Serve static files for the admin panel UI
 app.mount("/static/admin", StaticFiles(directory="static/admin"), name="admin_static")
 
+# Mount Jekyll assets to serve images in the admin panel
+SITE_PATH = os.getenv("SITE_PATH", "../Website_Fiocruz_Pesquisadores")
+assets_path = os.path.join(SITE_PATH, "assets")
+if os.path.exists(assets_path):
+    app.mount("/assets", StaticFiles(directory=assets_path), name="site_assets")
+
 # Register routers
 app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 app.include_router(publications_router, prefix="/api/publications", tags=["publications"])
