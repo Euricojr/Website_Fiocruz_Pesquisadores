@@ -13,11 +13,20 @@ router = APIRouter()
 FILENAME = "projects.yml"
 
 class Project(BaseModel):
+    id: str
     title: str
+    subtitle: Optional[str] = ""
     description: str
+    innovation_text: Optional[str] = ""
+    methodology_text: Optional[str] = ""
     tags: List[str]
     image: Optional[str] = ""
     url: Optional[str] = ""
+    coord_geral: Optional[str] = ""
+    coord_adjunta: Optional[str] = ""
+    status: Optional[str] = ""
+    website_url: Optional[str] = ""
+    repo_url: Optional[str] = ""
 
 @router.get("/")
 def get_projects(user: dict = Depends(get_current_user)):
