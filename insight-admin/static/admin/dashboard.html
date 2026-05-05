@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | INSIGHT Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo_insight.png" alt="INSIGHT" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="publications">
+                    <i class="fas fa-book"></i> <span>Publicações</span>
+                </a>
+                <a href="#" class="nav-item" data-section="projects">
+                    <i class="fas fa-project-diagram"></i> <span>Projetos</span>
+                </a>
+                <a href="#" class="nav-item" data-section="team">
+                    <i class="fas fa-users"></i> <span>Equipe</span>
+                </a>
+                <a href="#" class="nav-item" data-section="images">
+                    <i class="fas fa-images"></i> <span>Imagens</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 id="section-title">Publicações</h2>
+                <div class="user-info">
+                    <span id="user-display-name">Carregando...</span>
+                    <button class="btn btn-small btn-danger" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <!-- Publications Section -->
+                <section id="publications" class="section active">
+                    <div class="page-header">
+                        <h3>Gerenciar Publicações</h3>
+                    </div>
+                    <div class="card">
+                        <form id="form-publication">
+                            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label>Título</label>
+                                    <input type="text" name="title" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Autores</label>
+                                    <input type="text" name="authors" class="form-control" placeholder="Separe por vírgula" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ano</label>
+                                    <input type="text" name="year" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Revista/Evento (Venue)</label>
+                                    <input type="text" name="venue" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tipo (Ex: Conference, Journal)</label>
+                                    <input type="text" name="venue_type" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Categoria (Ex: artigos, preprints)</label>
+                                    <input type="text" name="category" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Link URL (Opcional)</label>
+                                    <input type="text" name="link_url" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Texto do Link (Ex: DOI, PDF)</label>
+                                    <input type="text" name="link_text" class="form-control">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: auto;">Adicionar Publicação</button>
+                        </form>
+                    </div>
+
+                    <div class="card table-container">
+                        <table id="table-publications">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Ano</th>
+                                    <th>Categoria</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="section">
+                    <div class="page-header">
+                        <h3>Gerenciar Projetos</h3>
+                    </div>
+                    <div class="card">
+                        <form id="form-project">
+                            <div class="grid">
+                                <div class="form-group">
+                                    <label>Título</label>
+                                    <input type="text" name="title" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tags (Separe por vírgula)</label>
+                                    <input type="text" name="tags" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Descrição</label>
+                                <textarea name="description" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="grid">
+                                <div class="form-group">
+                                    <label>URL do Projeto</label>
+                                    <input type="text" name="url" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>URL da Imagem</label>
+                                    <input type="text" name="image" class="form-control">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: auto;">Adicionar Projeto</button>
+                        </form>
+                    </div>
+                    <div id="list-projects" class="grid">
+                        <!-- Cards injected here -->
+                    </div>
+                </section>
+
+                <!-- Team Section -->
+                <section id="team" class="section">
+                    <div class="page-header">
+                        <h3>Equipe do Laboratório</h3>
+                    </div>
+                    <div class="card">
+                        <form id="form-team">
+                            <div class="grid">
+                                <div class="form-group">
+                                    <label>Nome Completo</label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Cargo / Papel</label>
+                                    <input type="text" name="role" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Categoria (Ex: Membros, Liderança Científica)</label>
+                                    <input type="text" name="category" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Instituição</label>
+                                    <input type="text" name="institution" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>URL da Foto</label>
+                                    <input type="text" name="image" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Link Lattes</label>
+                                    <input type="text" name="lattes" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Link LinkedIn</label>
+                                    <input type="text" name="linkedin" class="form-control">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: auto;">Adicionar Membro</button>
+                        </form>
+                    </div>
+                    <div id="list-team">
+                        <!-- Grouped data injected here -->
+                    </div>
+                </section>
+
+                <!-- Images Section -->
+                <section id="images" class="section">
+                    <div class="page-header">
+                        <h3>Galeria de Imagens</h3>
+                    </div>
+                    <div class="card">
+                        <form id="form-upload" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Selecionar Imagem (Máx 5MB)</label>
+                                <input type="file" id="upload-file" class="form-control" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: auto;">Enviar Imagem</button>
+                        </form>
+                    </div>
+                    <div id="gallery" class="gallery-grid">
+                        <!-- Images injected here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

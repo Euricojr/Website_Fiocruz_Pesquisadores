@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | INSIGHT Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <img src="img/logo_fiocruz.png" alt="Logo Fiocruz" class="auth-logo">
+            <h1 class="auth-title">INSIGHT</h1>
+            <p class="auth-subtitle">Painel Administrativo</p>
+            
+            <div id="error-alert" class="alert alert-error" style="display: none;"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="exemplo@fiocruz.br" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="login-btn">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Check if already logged in
+        if (localStorage.getItem('access_token')) {
+            window.location.href = 'dashboard.html';
+        }
+
+        const loginForm = document.getElementById('login-form');
+        const errorAlert = document.getElementById('error-alert');
+        const loginBtn = document.getElementById('login-btn');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorAlert.style.display = 'none';
+            loginBtn.disabled = true;
+            loginBtn.innerText = 'Autenticando...';
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Use URLSearchParams for application/x-www-form-urlencoded (OAuth2PasswordRequestForm expects this)
+            const formData = new URLSearchParams();
+            formData.append('username', email);
+            formData.append('password', password);
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem('access_token', data.access_token);
+                    localStorage.setItem('user_name', data.name);
+                    window.location.href = 'dashboard.html';
+                } else {
+                    errorAlert.innerText = data.detail || 'E-mail ou senha incorretos.';
+                    errorAlert.style.display = 'block';
+                }
+            } catch (err) {
+                errorAlert.innerText = 'Erro ao conectar com o servidor.';
+                errorAlert.style.display = 'block';
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.innerText = 'Entrar';
+            }
+        });
+    </script>
+</body>
+</html>
