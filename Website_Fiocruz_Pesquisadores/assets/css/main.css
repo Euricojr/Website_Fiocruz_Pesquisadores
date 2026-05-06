@@ -1429,8 +1429,8 @@ body.dark-mode .slider-dots .dot.active {
   line-height: 1.7;
 }
 
-/* --- Botão Quadrado de Idioma --- */
-.circular-btn.lang-toggle {
+/* --- Botões Utilitários (Idioma, Cadeado, etc) --- */
+.circular-btn {
   width: 38px;
   height: 38px;
   border-radius: 6px;
@@ -1440,24 +1440,33 @@ body.dark-mode .slider-dots .dot.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   box-sizing: border-box;
+  text-decoration: none;
 }
+
+.circular-btn.lang-toggle {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.circular-btn.admin-lock {
+  font-size: 1rem;
+}
+
 /* Efeito ao passar o mouse e estado ativo */
-.circular-btn.lang-toggle:hover,
+.circular-btn:hover,
 .circular-btn.lang-toggle.active-lang {
   background-color: rgba(
     255,
     255,
     255,
     0.2
-  ); /* Fundo branco translúcido em vez de laranja opaco */
+  ); /* Fundo branco translúcido */
   color: #ffffff;
-  border: 2px solid #ffffff; /* Mantém a borda branca */
+  border: 2px solid #ffffff;
 }
 
 /* Oculta as barras nativas do Google */
