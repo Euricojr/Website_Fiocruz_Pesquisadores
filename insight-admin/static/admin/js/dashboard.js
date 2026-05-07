@@ -156,6 +156,17 @@ function renderProjects(data) {
 function renderTeam(data) {
     const container = document.getElementById('list-team');
     container.innerHTML = '';
+
+    // Populate category datalist with existing categories
+    const datalist = document.getElementById('team-categories');
+    if (datalist) {
+        datalist.innerHTML = '';
+        data.forEach(catGroup => {
+            const option = document.createElement('option');
+            option.value = catGroup.category;
+            datalist.appendChild(option);
+        });
+    }
     
     data.forEach((catGroup, catIndex) => {
         const section = document.createElement('div');

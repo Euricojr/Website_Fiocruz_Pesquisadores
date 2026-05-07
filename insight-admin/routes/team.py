@@ -44,7 +44,9 @@ def add_team_member(member: TeamMember, user: dict = Depends(get_current_user)):
             break
             
     if not category_found:
-        raise HTTPException(status_code=404, detail=f"Category '{member.category}' not found")
+        # Automatically create the new category instead of raising 404
+        member_dict = member.model_dump(exclude={"category"}) if hasattr(member, 'model_dump') else member.dict(exclude={"category"})
+        data.append({"category": member.category, "members": [member_dict]})
         
     write_yaml(FILENAME, data)
     rebuild = rebuild_site()
