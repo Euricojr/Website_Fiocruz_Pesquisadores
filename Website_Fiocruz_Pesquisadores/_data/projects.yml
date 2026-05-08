@@ -7,6 +7,11 @@
     - BIG DATA
   image: "/assets/img/Arboli.jpg"
   url: "/projetos/arboili.html"
+  subtitle: "Monitoramento inteligente para detecção precoce de surtos epidemiológicos."
+  innovation_text: "O Arboili utiliza técnicas avançadas de Processamento de Linguagem Natural (NLP) para analisar grandes volumes de dados não estruturados de fontes digitais. Ao contrário dos métodos tradicionais que dependem de notificações hospitalares lentas, nosso sistema detecta tendências de sintomas antes mesmo do diagnóstico clínico oficial, permitindo uma resposta muito mais rápida do sistema de saúde."
+  methodology_text: "A metodologia combina a extração de palavras-chave contextuais do Google Trends com a análise de sentimento e frequência de relatos em redes sociais. Esses dados são processados por modelos de aprendizado de máquina treinados especificamente para o vocabulário epidemiológico brasileiro, gerando alertas geo-referenciados que auxiliam a Fiocruz e órgãos governamentais na alocação de recursos."
+  coord_geral: "Dra. Alexandra Almeida"
+  coord_adjunta: "Dr. Francisco Inácio Bastos"
   status: "Em Desenvolvimento"
   website_url: "https://projetoarboili.com.br/"
   repo_url: "https://github.com/Insighthub/arboili"

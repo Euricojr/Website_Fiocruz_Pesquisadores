@@ -1,3 +1,44 @@
+- year: '2026'
+  category: artigos
+  title: 'Looking through the cracks: vulnerabilities and deprivation in the Brazilian
+    open drug scenes'
+  authors: A Almeida, SM Kiene, ML Zúñiga, D Werb, A Bórquez, FI Bastos
+  venue: Social Science & Medicine
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=7
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=EnBKFUAAAAAJ&pagesize=5&sortby=pubdate&citation_for_view=EnBKFUAAAAAJ:iH-uZ7U-co4C
+- year: '2026'
+  category: artigos
+  title: 'Sanctioning the supply chain: Analyzing US executive orders on tariffs as
+    a tool against the fentanyl crisis'
+  authors: G Brogim, FI Bastos
+  venue: Global Public Health 21 (1)
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=93
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=dzP4uYEAAAAJ&pagesize=5&sortby=pubdate&citation_for_view=dzP4uYEAAAAJ:uQyLbZAWguAC
+- year: '2026'
+  category: artigos
+  title: 'A adolescência em um mundo em transição acelerada: políticas do provisório
+    quanto ao uso prejudicial de substâncias'
+  authors: FI Bastos
+  venue: Saúde em Debate 50 (especial 1)
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=46
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=dzP4uYEAAAAJ&pagesize=5&sortby=pubdate&citation_for_view=dzP4uYEAAAAJ:kcGNQN_anIUC
+- year: '2026'
+  category: artigos
+  title: Perceived difficulty accessing primary health care in a violence-affected
+    community in the municipality of Rio de Janeiro, by sociodemographic characteristics
+    and mental health …
+  authors: AP da Cunha, JC Mota, FIPM Bastos
+  venue: Google Scholar
+  venue_type: Artigo
+  image: https://picsum.photos/80/110?random=64
+  link_text: Ler Artigo
+  link_url: https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=dzP4uYEAAAAJ&pagesize=5&sortby=pubdate&citation_for_view=dzP4uYEAAAAJ:8_tS2Vw13FcC
 - year: '2018'
   category: artigos
   title: 'Seasonal dynamics of influenza in Brazil: the latitude effect'
