@@ -23,9 +23,11 @@ init_db()
 app = FastAPI(title="INSIGHT Admin API", description="Backend for INSIGHT Jekyll site management")
 
 # CORS configuration
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000,http://localhost:4000").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this in production
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

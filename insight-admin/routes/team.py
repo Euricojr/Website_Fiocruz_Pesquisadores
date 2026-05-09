@@ -2,7 +2,7 @@
 team.py - Router for managing team members.
 Handles CRUD operations for team members by interacting with Jekyll's YAML files.
 """
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 from typing import Optional
 from auth import get_current_user
@@ -27,7 +27,7 @@ def get_team_members(user: dict = Depends(get_current_user)):
     return read_yaml(FILENAME)
 
 @router.post("/member")
-def add_team_member(member: TeamMember, user: dict = Depends(get_current_user)):
+def add_team_member(member: TeamMember, background_tasks: BackgroundTasks, user: dict = Depends(get_current_user)):
     """Add a team member to an existing category, save and rebuild site."""
     data = read_yaml(FILENAME)
     
@@ -49,11 +49,11 @@ def add_team_member(member: TeamMember, user: dict = Depends(get_current_user)):
         data.append({"category": member.category, "members": [member_dict]})
         
     write_yaml(FILENAME, data)
-    rebuild = rebuild_site()
-    return {"success": True, "message": "Team member added successfully", "rebuild": rebuild}
+    background_tasks.add_task(rebuild_site)
+    return {"success": True, "message": "Membro da equipe adicionado. O site está sendo reconstruído em segundo plano."}
 
 @router.delete("/member/{category_index}/{member_index}")
-def delete_team_member(category_index: int, member_index: int, user: dict = Depends(get_current_user)):
+def delete_team_member(category_index: int, member_index: int, background_tasks: BackgroundTasks, user: dict = Depends(get_current_user)):
     """Remove a member by category index and member index, save and rebuild."""
     data = read_yaml(FILENAME)
     
@@ -67,5 +67,5 @@ def delete_team_member(category_index: int, member_index: int, user: dict = Depe
     category["members"].pop(member_index)
     
     write_yaml(FILENAME, data)
-    rebuild = rebuild_site()
-    return {"success": True, "message": "Team member deleted successfully", "rebuild": rebuild}
+    background_tasks.add_task(rebuild_site)
+    return {"success": True, "message": "Membro da equipe removido. O site está sendo reconstruído em segundo plano."}

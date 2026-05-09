@@ -33,6 +33,9 @@ async def upload_image(file: UploadFile = File(...), current_user: dict = Depend
     if not is_allowed_extension(file.filename):
         raise HTTPException(status_code=400, detail="Formato de arquivo não suportado. Use JPG, JPEG, PNG, WEBP ou GIF.")
     
+    if not file.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="O arquivo enviado não é uma imagem válida.")
+    
     # Read file content to check size
     contents = await file.read()
     if len(contents) > MAX_FILE_SIZE:

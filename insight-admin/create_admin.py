@@ -28,12 +28,12 @@ def main():
         print("Name cannot be empty.")
         return
         
-    password = input("Password: ")
+    password = getpass.getpass("Password: ")
     if not password:
         print("Password cannot be empty.")
         return
         
-    confirm_password = input("Confirm Password: ")
+    confirm_password = getpass.getpass("Confirm Password: ")
     if password != confirm_password:
         print("Passwords do not match.")
         return

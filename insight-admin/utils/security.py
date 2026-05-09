@@ -10,6 +10,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY", "default-secret-key-please-change-in-production")
+if SECRET_KEY == "default-secret-key-please-change-in-production":
+    print("WARNING: Using default SECRET_KEY. This is insecure for production!")
+
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 8 * 60  # 8 hours
 

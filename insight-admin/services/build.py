@@ -27,12 +27,11 @@ def rebuild_site() -> dict:
     try:
         # Run bundle exec jekyll build
         result = subprocess.run(
-            "bundle exec jekyll build",
+            ["bundle", "exec", "jekyll", "build"],
             cwd=os.path.abspath(site_path),
             capture_output=True,
             text=True,
-            check=False,
-            shell=True
+            check=False
         )
         
         success = result.returncode == 0
