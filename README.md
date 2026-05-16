@@ -1,6 +1,7 @@
 # Guia de Execução Local - Fiocruz Website & Admin
 
 Este repositório contém dois componentes principais:
+
 1. **Backend & Painel Admin** (`insight-admin`): API FastAPI e interface administrativa.
 2. **Frontend** (`Website_Fiocruz_Pesquisadores`): Site público gerado com Jekyll.
 
@@ -24,18 +25,22 @@ Se for a primeira vez rodando o projeto, você precisará criar um usuário admi
 O backend gerencia os dados e serve a interface de administração.
 
 1. **Ative o Ambiente Virtual** (na raiz do projeto):
+
    ```powershell
    .\venv\Scripts\activate
    ```
 
 2. **Entre na pasta do backend**:
+
    ```powershell
    cd insight-admin
    ```
 
 3. **Inicie o servidor**:
+
    ```powershell
-   uvicorn main:app --reload
+   python -m uvicorn main:app --reload
+
    ```
 
 4. **Acesse nos links abaixo**:
@@ -49,11 +54,13 @@ O backend gerencia os dados e serve a interface de administração.
 O site público é gerado estaticamente via Jekyll.
 
 1. **Abra um novo terminal** e entre na pasta:
+
    ```powershell
    cd Website_Fiocruz_Pesquisadores
    ```
 
 2. **Inicie o Jekyll**:
+
    ```powershell
    bundle exec jekyll serve
    ```
