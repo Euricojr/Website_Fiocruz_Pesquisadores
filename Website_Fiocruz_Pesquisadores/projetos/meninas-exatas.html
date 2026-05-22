@@ -15,6 +15,31 @@ permalink: /projetos/meninas-exatas.html
   .proj-sidebar p { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-desc); }
   .proj-sidebar strong { color: var(--text-title); }
   .proj-tag { display: inline-block; background: #CB4F08; color: white; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; margin: 2px; }
+    .schedule-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 0 18px 16px 18px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06); margin-top: 20px; overflow: hidden; }
+    .schedule-header { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 12px 18px; background: #CB4F08; color: #fff; border-radius: 10px 10px 0 0; font-size: 0.95rem; font-weight: 700; margin: 0 -18px 8px -18px; }
+    .schedule-header span { font-weight: 700; color: #fff; }
+    .schedule-header .hdr-name { text-align: left; padding-left: 6px; }
+    .schedule-header .hdr-theme { text-align: left; }
+    .schedule-header .hdr-date { text-align: left; }
+    .schedule-line { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: center; font-size: 1rem; color: var(--text-desc); padding: 12px 8px; border-bottom: 1px solid rgba(0,0,0,.04); text-align: left; }
+    .schedule-line:last-child { border-bottom: none; }
+    .schedule-line .col.name { text-align: left; }
+    .schedule-line .col.theme { text-align: left; }
+    .schedule-line .col.date { text-align: left; }
+    .schedule-line .item-name { color: #CB4F08; font-weight: 700; }
+    .schedule-line .item-theme { font-style: normal; color: var(--text-title); }
+    .schedule-line .item-date { color: var(--text-desc); }
+        /* Gallery styles: fixed-height thumbnails with cover crop */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+        .gallery-item img { width: 100%; height: 260px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); display: block; }
+        @media (max-width: 900px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item img { height: 200px; }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height: 220px; }
+        }
   @media (max-width: 768px) { 
     .proj-grid { grid-template-columns: 1fr; gap: 30px; padding: 0 15px; margin: 30px auto; }
     .proj-hero { padding: 90px 15px 40px; }
@@ -23,6 +48,8 @@ permalink: /projetos/meninas-exatas.html
     .proj-content h2 { font-size: 1.4rem; margin-top: 20px; line-height: 1.3; }
     .proj-content p { font-size: 1rem; line-height: 1.6; }
     .proj-sidebar { padding: 20px; }
+        .schedule-item { grid-template-columns: 1fr; }
+        .gallery-grid { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -38,6 +65,37 @@ permalink: /projetos/meninas-exatas.html
         
         <h2>Empoderamento e Mentoria</h2>
         <p>Além das aulas híbridas semanais, o projeto financia bolsas e promove trabalhos de campo bimestrais (como visitas ao Castelo Mourisco da Fiocruz e ao Museu do Amanhã). Alunas de graduação (Iniciação Científica) atuam como mentoras das alunas do ensino médio, criando um ciclo de inspiração, retenção de talentos e rede de apoio.</p>
+
+                <h2>Próximos encontros</h2>
+                <div class="schedule-card">
+                    <div class="schedule-header">
+                        <span class="hdr-name">Professor(a)</span>
+                        <span class="hdr-theme">Tema</span>
+                        <span class="hdr-date">Data</span>
+                    </div>
+                    <div class="schedule-line">
+                        <span class="col name"><strong class="item-name">Rita</strong></span>
+                        <span class="col theme"><span class="item-theme">Sociologia</span></span>
+                        <span class="col date"><span class="item-date">29/05/2026</span></span>
+                    </div>
+                    <div class="schedule-line">
+                        <span class="col name"><strong class="item-name">Cláudia</strong></span>
+                        <span class="col theme"><span class="item-theme">História</span></span>
+                        <span class="col date"><span class="item-date">05/06/2026</span></span>
+                    </div>
+                    <div class="schedule-line">
+                        <span class="col name"><strong class="item-name">Paula</strong></span>
+                        <span class="col theme"><span class="item-theme">Português</span></span>
+                        <span class="col date"><span class="item-date">12/06/2026</span></span>
+                    </div>
+                </div>
+
+                <h2>Últimos encontros</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="/assets/img/IMG_0483.JPEG" alt="Último encontro 1"></div>
+                    <div class="gallery-item"><img src="/assets/img/IMG_0514.JPEG" alt="Último encontro 2"></div>
+                    <div class="gallery-item"><img src="/assets/img/IMG_0477.JPEG" alt="Último encontro 3"></div>
+                </div>
     </div>
     
     <div class="proj-sidebar">
