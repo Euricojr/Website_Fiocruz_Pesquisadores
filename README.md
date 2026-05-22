@@ -53,19 +53,27 @@ O backend gerencia os dados e serve a interface de administração.
 
 O site público é gerado estaticamente via Jekyll.
 
-1. **Abra um novo terminal** e entre na pasta:
+1. **Abra um novo terminal** e entre na pasta que contém o site Jekyll e o `Gemfile`:
 
    ```powershell
-   cd Website_Fiocruz_Pesquisadores
+   2x cd Website_Fiocruz_Pesquisadores
    ```
 
-2. **Inicie o Jekyll**:
+   > Se você estiver no caminho `...\Insight\Website_Fiocruz_Pesquisadores`, este comando abre a subpasta que contém o `Gemfile` do site.
+
+2. **Instale as dependências** (caso ainda não tenha feito):
+
+   ```powershell
+   bundle install
+   ```
+
+3. **Inicie o Jekyll**:
 
    ```powershell
    bundle exec jekyll serve
    ```
 
-3. **Acesse no link abaixo**:
+4. **Acesse no link abaixo**:
    - **Site:** [http://127.0.0.1:4000](http://127.0.0.1:4000)
 
 ---
