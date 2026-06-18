@@ -9,7 +9,7 @@
   - name: Dr. Francisco Inácio Bastos
     role: Pesquisador Titular
     institution: LIS / ICICT / Fiocruz
-    image: /assets/img/Francisco.gif
+    image: /assets/img/francisco_inacio-1.jpg
     linkedin: ''
     lattes: https://lattes.cnpq.br/6505487564442125
 - category: Membros
@@ -32,7 +32,7 @@
     image: /assets/img/lucas.jpg
     linkedin: https://www.linkedin.com/in/lucasbragac/
     lattes: ''
-  - name: Tayene Hellen
+  - name: Thayene Hellen
     role: Voluntária
     institution: Graduanda da Faculdade de Economia da UFJF
     image: /assets/img/tayene.jpeg
@@ -56,5 +56,3 @@
     image: /assets/img/c8676795-1718229727889.jpg.jpeg
     lattes: ''
     linkedin: https://www.linkedin.com/in/antonio-belletti/?locale=pt
-- category: aa
-  members: []
