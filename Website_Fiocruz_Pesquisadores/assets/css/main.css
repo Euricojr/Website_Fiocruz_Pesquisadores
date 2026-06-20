@@ -1,5 +1,6 @@
 /* Variáveis CSS Básicas (Refined) */
 :root {
+  color-scheme: only light;
   --bg-body: #ffffff;
   --bg-card: #ffffff;
   --text-title: #333333;
@@ -18,6 +19,7 @@ html {
 }
 
 body.dark-mode {
+  color-scheme: only dark;
   --bg-body: #121212;
   --bg-card: #1e1e1e;
   --card-bg: #1e1e1e;
