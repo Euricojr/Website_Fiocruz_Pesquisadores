@@ -4,307 +4,535 @@ title: "Meninas nas Ciências Exatas"
 permalink: /projetos/meninas-exatas.html
 ---
 <style>
-  .proj-hero { background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,1)), url('/assets/img/Meninas na ciencia.jpg') center/cover; padding: 100px 20px 50px; text-align: center; color: white; }
-  .proj-title { font-size: 3rem; font-weight: 800; color: #CB4F08; margin-bottom: 15px; }
-  .proj-subtitle { font-size: 1.2rem; font-weight: 300; max-width: 800px; margin: 0 auto; color: #ccc; }
-  .proj-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-  .proj-content h2 { color: #CB4F08; margin-top: 30px; font-size: 1.8rem; }
-  .proj-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-desc); margin-bottom: 20px; text-align: justify; }
-  .proj-sidebar { background: var(--bg-card); padding: 30px; border-radius: 10px; border: 1px solid var(--border-color); height: fit-content; box-shadow: 0 4px 15px var(--shadow-color); }
-  .proj-sidebar h3 { font-size: 1.3rem; margin-bottom: 20px; border-bottom: 2px solid #CB4F08; padding-bottom: 10px; color: var(--text-title);}
-  .proj-sidebar p { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-desc); }
-  .proj-sidebar strong { color: var(--text-title); }
-  .proj-tag { display: inline-block; background: #CB4F08; color: white; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; margin: 2px; }
-    .schedule-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 0 18px 16px 18px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06); margin-top: 20px; overflow: hidden; }
-    .schedule-header { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 12px 18px; background: #CB4F08; color: #fff; border-radius: 10px 10px 0 0; font-size: 0.95rem; font-weight: 700; margin: 0 -18px 8px -18px; }
-    .schedule-header span { font-weight: 700; color: #fff; }
-    .schedule-header .hdr-name { text-align: left; padding-left: 6px; }
-    .schedule-header .hdr-theme { text-align: left; }
-    .schedule-header .hdr-date { text-align: left; }
-    .schedule-line { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: center; font-size: 1rem; color: var(--text-desc); padding: 12px 8px; border-bottom: 1px solid rgba(0,0,0,.04); text-align: left; }
-    .schedule-line:last-child { border-bottom: none; }
-    .schedule-line .col.name { text-align: left; }
-    .schedule-line .col.theme { text-align: left; }
-    .schedule-line .col.date { text-align: left; }
-    .schedule-line .item-name { color: #CB4F08; font-weight: 700; }
-    .schedule-line .item-theme { font-style: normal; color: var(--text-title); }
-    .schedule-line .item-date { color: var(--text-desc); }
-        /* Gallery styles: fixed-height thumbnails with cover crop */
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
-        .gallery-item img { width: 100%; height: 260px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); display: block; }
-        @media (max-width: 900px) {
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-item img { height: 200px; }
-        }
-        @media (max-width: 480px) {
-            .gallery-grid { grid-template-columns: 1fr; }
-            .gallery-item img { height: 220px; }
-        }
-  @media (max-width: 768px) { 
-    .proj-grid { grid-template-columns: 1fr; gap: 30px; padding: 0 15px; margin: 30px auto; }
-    .proj-hero { padding: 90px 15px 40px; }
-    .proj-title { font-size: 2.2rem; line-height: 1.2; word-break: normal; hyphens: none; }
-    .proj-subtitle { font-size: 1rem; line-height: 1.4; }
-    .proj-content h2 { font-size: 1.4rem; margin-top: 20px; line-height: 1.3; }
-    .proj-content p { font-size: 1rem; line-height: 1.6; }
-    .proj-sidebar { padding: 20px; }
-    .schedule-item { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-  }
+    .proj-hero {
+        background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 1)), url('/assets/img/Meninas na ciencia.jpg') center/cover;
+        padding: 100px 20px 50px;
+        text-align: center;
+        color: white;
+    }
 
-  /* Seção de Equipe / Pessoas Envolvidas */
-  .team-section {
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
-  .team-section-title {
-    color: #CB4F08;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 24px;
-  }
-  .member-card {
-    background: transparent;
-    border-radius: 8px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    height: 100%;
-  }
-  .member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    background-color: var(--bg-card);
-  }
-  .member-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  .member-placeholder {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--border-color);
-    color: var(--text-desc);
-    opacity: 0.85;
-  }
-  .member-placeholder svg {
-    width: 45%;
-    height: 45%;
-    fill: currentColor;
-    opacity: 0.6;
-  }
-  .member-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    flex-grow: 1;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .member-name {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--text-title);
-    margin-bottom: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-  }
-  .member-role {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: #CB4F08;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    transform: scale(0.85);
-    transform-origin: left center;
-  }
-  .member-aff {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: var(--text-desc);
-  }
-  .card-actions {
-    margin-top: auto !important;
-    padding-top: 15px;
-    width: 100%;
-    display: flex;
-    justify-content: center !important;
-  }
-  .social-btn:hover {
+    .proj-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #CB4F08;
+        margin-bottom: 15px;
+    }
+
+    .proj-subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #ccc;
+    }
+
+    .proj-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .proj-content h2 {
+        color: #CB4F08;
+        margin-top: 30px;
+        font-size: 1.8rem;
+    }
+
+    .proj-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-desc);
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .proj-sidebar {
+        background: var(--bg-card);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        height: fit-content;
+        box-shadow: 0 4px 15px var(--shadow-color);
+    }
+
+    .proj-sidebar h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #CB4F08;
+        padding-bottom: 10px;
+        color: var(--text-title);
+    }
+
+    .proj-sidebar p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        color: var(--text-desc);
+    }
+
+    .proj-sidebar strong {
+        color: var(--text-title);
+    }
+
+    .proj-tag {
+        display: inline-block;
+        background: #CB4F08;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        margin: 2px;
+    }
+
+    .schedule-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 0 18px 16px 18px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .schedule-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        padding: 12px 18px;
+        background: #CB4F08;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin: 0 -18px 8px -18px;
+    }
+
+    .schedule-header span {
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .schedule-header .hdr-name {
+        text-align: left;
+        padding-left: 6px;
+    }
+
+    .schedule-header .hdr-theme {
+        text-align: left;
+    }
+
+    .schedule-header .hdr-date {
+        text-align: left;
+    }
+
+    .schedule-line {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        align-items: center;
+        font-size: 1rem;
+        color: var(--text-desc);
+        padding: 12px 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, .04);
+        text-align: left;
+    }
+
+    .schedule-line:last-child {
+        border-bottom: none;
+    }
+
+    .schedule-line .col.name {
+        text-align: left;
+    }
+
+    .schedule-line .col.theme {
+        text-align: left;
+    }
+
+    .schedule-line .col.date {
+        text-align: left;
+    }
+
+    .schedule-line .item-name {
+        color: #CB4F08;
+        font-weight: 700;
+    }
+
+    .schedule-line .item-theme {
+        font-style: normal;
+        color: var(--text-title);
+    }
+
+    .schedule-line .item-date {
+        color: var(--text-desc);
+    }
+
+    /* Gallery styles: fixed-height thumbnails with cover crop */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        display: block;
+    }
+
+    @media (max-width: 900px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gallery-item img {
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-item img {
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .proj-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 0 15px;
+            margin: 30px auto;
+        }
+
+        .proj-hero {
+            padding: 90px 15px 40px;
+        }
+
+        .proj-title {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            word-break: normal;
+            hyphens: none;
+        }
+
+        .proj-subtitle {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .proj-content h2 {
+            font-size: 1.4rem;
+            margin-top: 20px;
+            line-height: 1.3;
+        }
+
+        .proj-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .proj-sidebar {
+            padding: 20px;
+        }
+
+        .schedule-item {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Seção de Equipe / Pessoas Envolvidas */
+    .team-section {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .team-section-title {
+        color: #CB4F08;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 24px;
+    }
+
+    .member-card {
+        background: transparent;
+        border-radius: 8px;
+        padding: 15px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        height: 100%;
+    }
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        background-color: var(--bg-card);
+    }
+
+    .member-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .member-placeholder {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--border-color);
+        color: var(--text-desc);
+        opacity: 0.85;
+    }
+
+    .member-placeholder svg {
+        width: 45%;
+        height: 45%;
+        fill: currentColor;
+        opacity: 0.6;
+    }
+
+    .member-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        flex-grow: 1;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .member-name {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--text-title);
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .member-role {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        color: #CB4F08;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        transform: scale(0.85);
+        transform-origin: left center;
+    }
+
+    .member-aff {
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        color: var(--text-desc);
+    }
+
+    .card-actions {
+        margin-top: auto !important;
+        padding-top: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center !important;
+    }
+
+    .social-btn:hover {
+        color: #CB4F08 !important;
+    }
+
     color: #CB4F08 !important;
-  }
-    color: #CB4F08 !important;
-  }
+    }
 </style>
 
 <div class="proj-hero">
     <h1 class="proj-title">Interdisciplinaridade: um superpoder para combater desigualdades</h1>
-    <p class="proj-subtitle">A marcante e histórica desigualdade e baixa representatividade feminina nas ciências Exatas, Engenharias e Computação (ETEC), perpetuada por estereótipos sem embasamento biológico.</p>
+    <p class="proj-subtitle">A marcante e histórica desigualdade e baixa representatividade feminina nas ciências
+        Exatas, Engenharias e Computação (ETEC), perpetuada por estereótipos sem embasamento biológico.</p>
 </div>
 
 <div class="proj-grid">
     <div class="proj-content">
         <h2>A Força da Interdisciplinaridade</h2>
-        <p>O projeto foge da abordagem tradicional estrita das exatas. A intervenção engaja alunas de quatro escolas públicas periféricas (Rio de Janeiro e São Gonçalo) conectando a <strong>Estatística</strong> com disciplinas do cotidiano e do pensamento crítico: <em>História, Sociologia, Biologia e Português</em>. Inspirado na obra de Daniel Kahneman, o ensino aborda heurística e vieses cognitivos em problemas práticos, como a compreensão de fake news, saúde reprodutiva e desigualdade social.</p>
-        
+        <p>O projeto foge da abordagem tradicional estrita das exatas. A intervenção engaja alunas de quatro escolas
+            públicas periféricas (Rio de Janeiro e São Gonçalo) conectando a <strong>Estatística</strong> com
+            disciplinas do cotidiano e do pensamento crítico: <em>História, Sociologia, Biologia e Português</em>.
+            Inspirado na obra de Daniel Kahneman, o ensino aborda heurística e vieses cognitivos em problemas práticos,
+            como a compreensão de fake news, saúde reprodutiva e desigualdade social.</p>
+
         <h2>Empoderamento e Mentoria</h2>
-        <p>Além das aulas híbridas semanais, o projeto financia bolsas e promove trabalhos de campo bimestrais (como visitas ao Castelo Mourisco da Fiocruz e ao Museu do Amanhã). Alunas de graduação (Iniciação Científica) atuam como mentoras das alunas do ensino médio, criando um ciclo de inspiração, retenção de talentos e rede de apoio.</p>
+        <p>Além das aulas híbridas semanais, o projeto financia bolsas e promove trabalhos de campo bimestrais (como
+            visitas ao Castelo Mourisco da Fiocruz e ao Museu do Amanhã). Alunas de graduação (Iniciação Científica)
+            atuam como mentoras das alunas do ensino médio, criando um ciclo de inspiração, retenção de talentos e rede
+            de apoio.</p>
 
-                <h2>Próximos encontros</h2>
-                <div class="schedule-card">
-                    <div class="schedule-header">
-                        <span class="hdr-name">Professor(a)</span>
-                        <span class="hdr-theme">Tema</span>
-                        <span class="hdr-date">Data</span>
+        <h2>Próximos encontros</h2>
+        <div class="schedule-card">
+            <div class="schedule-header">
+                <span class="hdr-name">Professor(a)</span>
+                <span class="hdr-theme">Tema</span>
+                <span class="hdr-date">Data</span>
+            </div>
+            <div class="schedule-line">
+                <span class="col name"><strong class="item-name">Rita</strong></span>
+                <span class="col theme"><span class="item-theme">Sociologia</span></span>
+                <span class="col date"><span class="item-date">A definir</span></span>
+            </div>
+            <div class="schedule-line">
+                <span class="col name"><strong class="item-name">Cláudia</strong></span>
+                <span class="col theme"><span class="item-theme">História</span></span>
+                <span class="col date"><span class="item-date">A definir</span></span>
+            </div>
+            <div class="schedule-line">
+                <span class="col name"><strong class="item-name">Paula</strong></span>
+                <span class="col theme"><span class="item-theme">Português</span></span>
+                <span class="col date"><span class="item-date">A definir</span></span>
+            </div>
+        </div>
+
+        <h2>Últimos encontros</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="/assets/img/IMG_0483.JPEG" alt="Último encontro 1"></div>
+            <div class="gallery-item"><img src="/assets/img/IMG_0514.JPEG" alt="Último encontro 2"></div>
+            <div class="gallery-item"><img src="/assets/img/IMG_0477.JPEG" alt="Último encontro 3"></div>
+        </div>
+
+        <h2>Pessoas envolvidas</h2>
+
+        <div class="team-section">
+            <h3 class="team-section-title">Coordenadores</h3>
+            <div class="team-grid">
+                <div class="member-card">
+                    <img src="/assets/img/Alexandra.jpg" alt="Foto de Alexandra Almeida" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Alexandra Almeida</h4>
+                        <p class="member-role">Coordenadora</p>
                     </div>
-                    <div class="schedule-line">
-                        <span class="col name"><strong class="item-name">Rita</strong></span>
-                        <span class="col theme"><span class="item-theme">Sociologia</span></span>
-                        <span class="col date"><span class="item-date">A definir</span></span>
-                    </div>
-                    <div class="schedule-line">
-                        <span class="col name"><strong class="item-name">Cláudia</strong></span>
-                        <span class="col theme"><span class="item-theme">História</span></span>
-                        <span class="col date"><span class="item-date">A definir</span></span>
-                    </div>
-                    <div class="schedule-line">
-                        <span class="col name"><strong class="item-name">Paula</strong></span>
-                        <span class="col theme"><span class="item-theme">Português</span></span>
-                        <span class="col date"><span class="item-date">A definir</span></span>
+                    <div class="card-actions">
+                        <a href="https://lattes.cnpq.br/8167370958071286" class="social-btn lattes"
+                            target="_blank">LATTES</a>
+                        <a href="https://www.linkedin.com/in/alexandra-almeida-66a45321/" class="social-btn linkedin"
+                            target="_blank">LINKEDIN</a>
                     </div>
                 </div>
-
-                <h2>Últimos encontros</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item"><img src="/assets/img/IMG_0483.JPEG" alt="Último encontro 1"></div>
-                    <div class="gallery-item"><img src="/assets/img/IMG_0514.JPEG" alt="Último encontro 2"></div>
-                    <div class="gallery-item"><img src="/assets/img/IMG_0477.JPEG" alt="Último encontro 3"></div>
-                </div>
-
-                <h2>Pessoas envolvidas</h2>
-
-                <div class="team-section">
-                    <h3 class="team-section-title">Coordenadores</h3>
-                    <div class="team-grid">
-                        <div class="member-card">
-                            <img src="/assets/img/Alexandra.jpg" alt="Foto de Alexandra Almeida" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Alexandra Almeida</h4>
-                                <p class="member-role">Coordenadora</p>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://lattes.cnpq.br/8167370958071286" class="social-btn lattes" target="_blank">LATTES</a>
-                                <a href="https://www.linkedin.com/in/alexandra-almeida-66a45321/" class="social-btn linkedin" target="_blank">LINKEDIN</a>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/francisco_inacio-1.jpg" alt="Foto de Francisco Bastos" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Francisco Bastos</h4>
-                                <p class="member-role">Coordenador Adjunto</p>
-                            </div>
-                            <div class="card-actions">
-                                <a href="https://lattes.cnpq.br/6505487564442125" class="social-btn lattes" target="_blank">LATTES</a>
-                            </div>
-                        </div>
+                <div class="member-card">
+                    <img src="/assets/img/francisco_inacio-1.jpg" alt="Foto de Francisco Bastos" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Francisco Bastos</h4>
+                        <p class="member-role">Coordenador Adjunto</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://lattes.cnpq.br/6505487564442125" class="social-btn lattes"
+                            target="_blank">LATTES</a>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="team-section">
-                    <h3 class="team-section-title">Professoras</h3>
-                    <div class="team-grid">
-                        <div class="member-card">
-                            <img src="/assets/img/Professora_Ingrid.jpeg" alt="Foto de Ingrid Correia" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Ingrid Correia</h4>
-                                <p class="member-role">Professora</p>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/Professora_Rafaela.jpeg" alt="Foto de Rafaela Oliveira da Silva" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Rafaela Oliveira da Silva</h4>
-                                <p class="member-role">Professora</p>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/Professora_Rita.jpeg" alt="Foto de Rita de Cássia Silva" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Rita de Cássia Silva</h4>
-                                <p class="member-role">Professora</p>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/Professora_Paula.jpg" alt="Foto de Paula Spernau" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Paula Spernau</h4>
-                                <p class="member-role">Professora</p>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/Professora_Claudia.gif" alt="Foto de Cláudia" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Cláudia</h4>
-                                <p class="member-role">Professora</p>
-                            </div>
-                        </div>
+        <div class="team-section">
+            <h3 class="team-section-title">Professoras</h3>
+            <div class="team-grid">
+                <div class="member-card">
+                    <img src="/assets/img/Professora_Ingrid.jpeg" alt="Foto de Ingrid Correia" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Ingrid Correia</h4>
+                        <p class="member-role">Professora</p>
                     </div>
                 </div>
-
-                <div class="team-section">
-                    <h3 class="team-section-title">ICs</h3>
-                    <div class="team-grid">
-                        <div class="member-card">
-                            <img src="/assets/img/IC_isabela.jpeg" alt="Foto de Isabela Santana" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Isabela Santana</h4>
-                                <p class="member-role">Iniciação Científica</p>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/IC_Livia.jpeg" alt="Foto de Lívia Verly" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Lívia Verly</h4>
-                                <p class="member-role">Iniciação Científica</p>
-                            </div>
-                        </div>
-                        <div class="member-card">
-                            <img src="/assets/img/IC_Ana_Julia.jpeg" alt="Foto de Ana Júlia Amaro" class="member-photo">
-                            <div class="member-info">
-                                <h4 class="member-name">Ana Júlia Amaro</h4>
-                                <p class="member-role">Iniciação Científica</p>
-                            </div>
-                        </div>
+                <div class="member-card">
+                    <img src="/assets/img/Professora_Rafaela.jpeg" alt="Foto de Rafaela Oliveira da Silva"
+                        class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Rafaela Oliveira da Silva</h4>
+                        <p class="member-role">Professora</p>
                     </div>
                 </div>
+                <div class="member-card">
+                    <img src="/assets/img/Professora_Rita.jpeg" alt="Foto de Rita de Cássia Silva" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Rita de Cássia Silva</h4>
+                        <p class="member-role">Professora</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="/assets/img/Professora_Paula.jpg" alt="Foto de Paula Spernau" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Paula Spernau</h4>
+                        <p class="member-role">Professora</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="/assets/img/Professora_Claudia.gif" alt="Foto de Cláudia" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Cláudia</h4>
+                        <p class="member-role">Professora</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h3 class="team-section-title">ICs</h3>
+            <div class="team-grid">
+                <div class="member-card">
+                    <img src="/assets/img/IC_isabela.jpeg" alt="Foto de Isabela Santana" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Isabela Santana</h4>
+                        <p class="member-role">Iniciação Científica</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="/assets/img/IC_Livia.jpeg" alt="Foto de Lívia Verly" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Lívia Verly</h4>
+                        <p class="member-role">Iniciação Científica</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <img src="/assets/img/IC_Ana_Julia.jpeg" alt="Foto de Ana Júlia Amaro" class="member-photo">
+                    <div class="member-info">
+                        <h4 class="member-name">Ana Júlia Amaro</h4>
+                        <p class="member-role">Iniciação Científica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <div class="proj-sidebar">
         <h3>Ficha Técnica</h3>
         <p><strong>Coordenação:</strong> Alexandra Almeida</p>
@@ -319,33 +547,41 @@ permalink: /projetos/meninas-exatas.html
         <br>
         <p><strong>Público-alvo:</strong> Alunas do Ensino Médio (Rede Pública)</p>
 
-    {% assign p_data = site.data.projects | where: "id", "meninas-exatas" | first %}
-    
-    <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
-        <h3 style="font-size: 1.1rem; margin-bottom: 15px; border-bottom: none; color: #CB4F08;">Publicações & Eventos</h3>
-        
-        {% if p_data.events %}
-        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 20px;">
-            {% for event in p_data.events %}
-            <li style="margin-bottom: 10px; font-size: 0.9rem;">
-                <i class="{{ event.icon }}" style="color: var(--text-desc); margin-right: 8px;"></i> 
-                <a href="{{ event.url }}" target="_blank" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#CB4F08'" onmouseout="this.style.color='var(--text-main)'">{{ event.text }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p style="font-size: 0.9rem; color: var(--text-desc); margin-bottom: 20px;">Nenhuma atualização recente.</p>
-        {% endif %}
+        {% assign p_data = site.data.projects | where: "id", "meninas-exatas" | first %}
 
-        {% if p_data.status %}
-        <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 15px;"><strong>Status:</strong> <span style="color: var(--text-desc);">{{ p_data.status }}</span></p>
-        {% endif %}
+        <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 15px; border-bottom: none; color: #CB4F08;">Publicações &
+                Eventos</h3>
 
-        {% if p_data.repo_url and p_data.repo_url != "" %}
-        <a href="{{ p_data.repo_url }}" target="_blank" class="btn-repo" style="display: block; width: 100%; text-align: center; background: transparent; border: 2px solid #CB4F08; color: #CB4F08; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 20px;" onmouseover="this.style.background='#CB4F08'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#CB4F08';">
-            <i class="fa-brands fa-github"></i> Acessar Repositório (Em breve)
-        </a>
-        {% endif %}
-    </div>
+            {% if p_data.events %}
+            <ul style="list-style-type: none; padding-left: 0; margin-bottom: 20px;">
+                {% for event in p_data.events %}
+                <li style="margin-bottom: 10px; font-size: 0.9rem;">
+                    <i class="{{ event.icon }}" style="color: var(--text-desc); margin-right: 8px;"></i>
+                    <a href="{{ event.url }}" target="_blank"
+                        style="color: var(--text-main); text-decoration: none; transition: color 0.3s;"
+                        onmouseover="this.style.color='#CB4F08'" onmouseout="this.style.color='var(--text-main)'">{{
+                        event.text }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style="font-size: 0.9rem; color: var(--text-desc); margin-bottom: 20px;">Nenhuma atualização recente.</p>
+            {% endif %}
+
+            {% if p_data.status %}
+            <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 15px;"><strong>Status:</strong> <span
+                    style="color: var(--text-desc);">{{ p_data.status }}</span></p>
+            {% endif %}
+
+            {% if p_data.repo_url and p_data.repo_url != "" %}
+            <a href="{{ p_data.repo_url }}" target="_blank" class="btn-repo"
+                style="display: block; width: 100%; text-align: center; background: transparent; border: 2px solid #CB4F08; color: #CB4F08; padding: 10px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; margin-top: 20px;"
+                onmouseover="this.style.background='#CB4F08'; this.style.color='#fff';"
+                onmouseout="this.style.background='transparent'; this.style.color='#CB4F08';">
+                <i class="fa-brands fa-github"></i> Acessar Repositório (Em breve)
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
