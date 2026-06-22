@@ -3,6 +3,7 @@ layout: default
 title: "Meninas nas Ciências Exatas"
 permalink: /projetos/meninas-exatas.html
 ---
+{% assign p_data = site.data.projects | where: "id", "meninas-exatas" | first %}
 <style>
     .proj-hero {
         background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 1)), url('/assets/img/Meninas na ciencia.jpg') center/cover;
@@ -535,7 +536,12 @@ permalink: /projetos/meninas-exatas.html
 
     <div class="proj-sidebar">
         <h3>Ficha Técnica</h3>
-        <p><strong>Coordenação:</strong> Alexandra Almeida</p>
+        {% if p_data.coord_geral and p_data.coord_geral != "" %}
+        <p><strong>Coordenação Geral:</strong> {{ p_data.coord_geral }}</p>
+        {% endif %}
+        {% if p_data.coord_adjunta and p_data.coord_adjunta != "" %}
+        <p><strong>Coordenação Adjunta:</strong> {{ p_data.coord_adjunta }}</p>
+        {% endif %}
         <p><strong>Apoio/Financiamento:</strong> FAPERJ</p>
         <p><strong>Foco:</strong></p>
         <div>
@@ -546,8 +552,6 @@ permalink: /projetos/meninas-exatas.html
         </div>
         <br>
         <p><strong>Público-alvo:</strong> Alunas do Ensino Médio (Rede Pública)</p>
-
-        {% assign p_data = site.data.projects | where: "id", "meninas-exatas" | first %}
 
         <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
             <h3 style="font-size: 1.1rem; margin-bottom: 15px; border-bottom: none; color: #CB4F08;">Publicações &

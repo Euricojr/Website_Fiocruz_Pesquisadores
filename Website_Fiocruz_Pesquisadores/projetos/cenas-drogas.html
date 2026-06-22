@@ -3,6 +3,7 @@ layout: default
 title: "IA em Cenas de Uso de Drogas"
 permalink: /projetos/cenas-drogas.html
 ---
+{% assign p_data = site.data.projects | where: "id", "cenas-drogas" | first %}
 <style>
   .proj-hero { background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,1)), url('/assets/img/IA e citizen.jpg') center/cover; padding: 100px 20px 50px; text-align: center; color: white; }
   .proj-title { font-size: 3rem; font-weight: 800; color: #CB4F08; margin-bottom: 15px; }
@@ -45,6 +46,12 @@ permalink: /projetos/cenas-drogas.html
     
     <div class="proj-sidebar">
         <h3>Ficha Técnica</h3>
+        {% if p_data.coord_geral and p_data.coord_geral != "" %}
+        <p><strong>Coordenação Geral:</strong> {{ p_data.coord_geral }}</p>
+        {% endif %}
+        {% if p_data.coord_adjunta and p_data.coord_adjunta != "" %}
+        <p><strong>Coordenação Adjunta:</strong> {{ p_data.coord_adjunta }}</p>
+        {% endif %}
         <p><strong>Tecnologias:</strong></p>
         <div>
             <span class="proj-tag">Deep Learning</span>
@@ -55,8 +62,6 @@ permalink: /projetos/cenas-drogas.html
         <br>
         <p><strong>Foco:</strong> Saúde Pública e Assistência Social</p>
         <p><strong>Local:</strong> Rio de Janeiro</p>
-
-    {% assign p_data = site.data.projects | where: "id", "cenas-drogas" | first %}
     
     <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
         <h3 style="font-size: 1.1rem; margin-bottom: 15px; border-bottom: none; color: #CB4F08;">Publicações & Eventos</h3>
